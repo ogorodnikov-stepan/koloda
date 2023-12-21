@@ -1,0 +1,124 @@
+@use 'assets/styles/_index.scss' as *;
+
+.deck-cards {
+  @include flex-col;
+  flex: 1;
+
+  &__content { padding-block-end: var(--content-padding-block); }
+
+  &__no-fields, &__empty { @include feature-empty-state; }
+
+  &__display-modes {
+    @include list-reset;
+    @include flex-row($align: center);
+
+    flex-grow: 1;
+    gap: 0.5rem;
+    line-height: 0;
+  }
+
+  &__display-mode-button {
+    @include button-link-icon;
+
+    padding: 0.25rem;
+
+    &:not(:disabled):hover { background-color: transparent; }
+
+    &[data-is-active="false"]::before {
+      background-color: var(--secondary-color);
+    }
+
+    &[name="table"]::before {
+      width: 1.5rem;
+      height: 1.5rem;
+      mask: url("assets/images/grid.svg") 0 0/1.5rem 1.5rem no-repeat;
+    }
+
+    &[name="slider"]::before {
+      width: 1.5rem;
+      height: 1.5rem;
+      mask: url("assets/images/collection.svg") 0 0/1.5rem 1.5rem no-repeat;
+    }
+  }
+
+  // &__options {
+  //   @include flex-row($justify: center);
+  //   gap: 1.5rem;
+  //   margin-block: 0.75rem;
+  //   margin-inline: var(--content-padding-inline);
+  //   padding-inline: var(--input-padding-inline);
+  // }
+
+  &__progress {
+    @include flex-row($align: center);
+
+    &-status {
+      @include flex-row($align: center);
+
+      gap: 0.5rem;
+      padding-inline: var(--input-padding-inline);
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-inline: 0.25rem;
+      }
+
+      &[data-status="initial"] {
+        color: var(--secondary-color);
+
+        &::before {
+          mask: url("assets/images/calendar.svg") 0 0/1.5rem 1.5rem no-repeat;
+          background-color: var(--secondary-color);
+        }
+      }
+
+      &[data-status="completed"] {
+        color: var(--success-color);
+
+        &::before {
+          mask: url("assets/images/calendar-check.svg") 0 0/1.5rem 1.5rem no-repeat;
+          background-color: var(--success-color);
+        }
+      }
+
+      &[data-status="learning"][data-is-overdue="false"] {
+        color: var(--primary-color);
+
+        &::before {
+          mask: url("assets/images/hourglass-split.svg") 0 0/1.5rem 1.5rem no-repeat;
+          background-color: var(--primary-color);
+        }
+      }
+
+      &[data-status="learning"][data-is-overdue="true"] {
+        color: var(--lesson-badge-rep-color);
+
+        &::before {
+          mask: url("assets/images/hourglass-bottom.svg") 0 0/1.5rem 1.5rem no-repeat;
+          background-color: var(--lesson-badge-rep-color);
+        }
+      }
+    }
+
+    &-divel {
+      @include flex-row($align: center);
+
+      border-radius: 1rem;
+      background-color: var(--divel-badge-bg-color);
+
+      &-index {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        line-height: 2rem;
+        font-weight: 600;
+      }
+
+      &-title { padding-inline-end: 0.75rem; }
+    }
+  }
+}

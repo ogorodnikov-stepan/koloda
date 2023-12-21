@@ -1,0 +1,136 @@
+@use 'assets/styles/_index.scss' as *;
+
+.lesson {
+  &-header {
+    &__content {
+      gap: 0.5rem;
+      padding-inline: var(--layout-padding-inline);
+    }
+  }
+
+  &-main {
+    padding-block-start: 0;
+  }
+
+  &__progress {
+    @include flex-row($align: center);
+
+    gap: 0.5rem;
+    flex-grow: 1;
+
+    &-text { display: none; }
+
+    &-bar, &-bar-fill {
+      height: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    &-bar {
+      flex-grow: 1;
+      background-color: var(--lesson-progress-bar-bg-color);
+      box-shadow: var(--lesson-progress-bar-shadow);
+
+      &-fill {
+        background-color: var(--lesson-progress-bar-fill-bg-color);
+        box-shadow: var(--lesson-progress-bar-fill-shadow);
+      }
+    }
+  }
+
+  &__queue {
+    &-button {
+      @include button-link-icon;
+      padding: 0.5rem;
+
+      &::before {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      &[data-is-done="true"] {
+        --button-link-color: var(--success-color);
+        --button-link-hover-color: var(--success-color);
+      }
+
+      &[data-is-done="true"]::before {
+        mask: url("assets/images/cloud-check.svg") 0 0/1.5rem 1.5rem no-repeat;
+      }
+
+      &[data-is-done="false"]::before {
+        mask: url("assets/images/cloud-arrow-down.svg") 0 0/1.5rem 1.5rem no-repeat;
+      }
+    }
+
+    &-table {
+      margin: 0.5rem 1rem;
+      vertical-align: middle;
+      border-collapse: collapse;
+
+      &-cell {
+        padding: 0.25rem;
+
+        &[data-cell-type="head"] { @include table-head-cell-formatting; }
+
+        &[data-cell-column="cards"],
+        &[data-cell-column="repping"] {
+          text-align: center;
+        }
+
+        &-value {
+          display: block;
+          padding-block: var(--input-padding-block);
+          padding-inline: var(--input-padding-inline);
+
+          &[data-is-loaded="true"]::before {
+            content: "";
+            display: inline-block;
+            height: 1.5rem;
+            width: 1.5rem;
+            mask: url("assets/images/check.svg") 0 0/1.5rem 1.5rem no-repeat;
+            background-color: var(--success-color);
+          }
+        }
+      }
+
+      &-row:not([data-row-type="body"]:last-child) {
+        border-bottom: 0.1px dotted var(--table-border-color);
+      }
+
+      &-head { font-weight: 700; }
+    }
+  }
+
+  &__terminate {
+    &-button {
+      @include button-link-icon;
+
+      padding: 0.5rem;
+
+      &::before {
+        height: 1.5rem;
+        width: 1.5rem;
+        mask: url("assets/images/x.svg") 0 0/1.5rem 1.5rem no-repeat;
+      }
+    }
+
+    &-content {
+      @include flex-col($align: center);
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    &-message { font-weight: 600; }
+
+    &-actions {
+      @include flex-row;
+      gap: 1rem;
+    }
+
+    &-confirm,
+    &-cancel { white-space: nowrap; }
+
+    &-confirm { @include button-grey-bg-red-text; }
+    &-cancel,
+    &-close { @include button-link; }
+  }
+}

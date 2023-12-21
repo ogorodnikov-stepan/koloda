@@ -1,0 +1,41 @@
+.autocomplete {
+  &__content { position: relative; }
+  &__input { width: 100%; }
+
+  &__control {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    padding: calc(var(--input-padding-block) + (0.75rem / 2));
+    border: 0;
+    background-color: transparent;
+    color: var(--primary-color);
+    box-shadow: none;
+    text-align: initial;
+    line-height: 0;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: transparent;
+      color: var(--secondary-color);
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
+      background: url("assets/images/chevron.svg") 50% no-repeat;
+    }
+  }
+
+  &[data-is-open="true"] &__control::after { transform: scaleY(-1); }
+
+  &[data-is-readonly="true"] &__input {
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &[data-is-readonly="true"] &__control { display: none; }
+}

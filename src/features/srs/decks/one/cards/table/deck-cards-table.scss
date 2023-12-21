@@ -1,0 +1,118 @@
+@use 'assets/styles/_index.scss' as *;
+
+$cell-padding: 0.25rem;
+$border-width: 0.1px; // consistent 1px width in chrome
+
+$sticky-cell-z-index: 1;
+$cell-z-index: auto;
+
+.deck-cards__table {
+  overflow-y: auto;
+  width: 100%;
+  vertical-align: middle;
+  border-collapse: collapse;
+
+  &-wrapper {
+    overflow-y: hidden;
+    margin-inline: var(--content-padding-inline);
+  }
+
+  &-head { font-weight: 700; }
+
+  &-row:not([data-row-type="body"]:last-child):not([data-is-dragging="true"]) {
+    border-bottom: $border-width dotted var(--table-border-color);
+  }
+
+  &-row[data-is-dragging="true"] { display: table; }
+
+  &-cell {
+    padding: $cell-padding;
+    z-index: $cell-z-index;
+
+    &[data-cell-type="head"] {
+      @include table-head-cell-formatting;
+
+      position: sticky;
+      z-index: $sticky-cell-z-index;
+      inset-block-start: 0;
+    }
+
+    &[data-cell-column="index"] {
+      @include table-head-cell-formatting;
+
+      position: sticky;
+      z-index: $sticky-cell-z-index;
+      inset-inline-start: 0;
+      width: 0%;
+      padding-inline: 0;
+      background-color: var(--content-bg-color);
+      font-size: var(--h3-font-size);
+      white-space: no-wrap;
+    }
+
+    &[data-cell-column="actions"] {
+      position: sticky;
+      z-index: $sticky-cell-z-index;
+      inset-inline-end: 0;
+      min-width: calc(5rem + 2 * $cell-padding);
+      width: calc(5rem + 2 * $cell-padding);
+      background-color: var(--content-bg-color);
+    }
+
+    &[data-cell-column="value"] {
+      min-width: 10rem;
+    }
+
+    &-value {
+      display: block;
+      padding-block: var(--input-padding-block);
+      padding-inline: var(--input-padding-inline);
+    }
+  }
+
+  &-item {
+    &-progress {
+      &-reset-button {
+        @include button-link-icon;
+
+        padding: 0.5rem;
+
+        &::before {
+          content: "";
+          width: 1.5rem;
+          height: 1.5rem;
+          mask: url("assets/images/clock-history.svg") 0 0/1.5rem 1.5rem no-repeat;
+        }
+      }
+
+      &-complete-button {
+        @include button-link-icon;
+
+        padding: 0.5rem;
+
+        &::before {
+          content: "";
+          width: 1.5rem;
+          height: 1.5rem;
+          mask: url("assets/images/check-square.svg") 0 0/1.5rem 1.5rem no-repeat;
+        }
+      }
+    }
+  }
+
+  &-delete, &-drag { display: inline-block; }
+
+  &-add {
+    width: calc(100% - (var(--content-padding-inline) * 2));
+    margin-block-start: 1rem;
+    margin-inline: var(--content-padding-inline);
+    padding-block: 0.75rem;
+  }
+}
+
+.deck-cards[data-mode="edit"] .deck-cards__table {
+  .deck-cards__progress-divel-title,
+  .deck-cards__progress-status-text {
+    display: none;
+  }
+}

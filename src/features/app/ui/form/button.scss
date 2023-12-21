@@ -1,0 +1,18 @@
+@use 'assets/styles/_index.scss' as *;
+
+.button {
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: var(--button-border-radius);
+  background: var(--button-bg-color);
+  color: var(--button-color);
+  cursor: pointer;
+  outline: 0;
+  line-height: var(--button-line-height);
+
+  &:disabled {
+    cursor: auto;
+    background: var(--button-bg-color-disabled);
+    color: var(--button-disabled-color);
+  }
+}

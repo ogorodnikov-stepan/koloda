@@ -1,0 +1,50 @@
+@use 'assets/styles/_index.scss' as *;
+
+.learnings {
+  &__no-items { @include feature-empty-state; }
+
+  &__content {
+    padding-block: var(--content-padding-block);
+    padding-inline: var(--content-padding-inline);
+  }
+
+  &__table {
+
+    &-cell {
+      padding: 0.25rem;
+
+      &[data-cell-type="head"] { @include table-head-cell-formatting; }
+
+      &[data-cell-column="title"] { width: 100%; }
+      &[data-cell-column="badge"] { text-align: center; }
+    }
+
+    &-item {
+      &-title {
+        font-size: var(--h2-font-size);
+        font-weight: 700;
+      }
+    }
+
+    & .lesson__badge {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // &-tutorial {
+
+  //   max-width: 30rem;
+  //   margin: 1.5rem;
+
+  //   &__actions {
+  //     @include flex-col($align: center, $gap: 0.5rem);
+
+  //     margin-top: 2rem;
+  //   }
+
+  //   &__disable { @include button-link; }
+
+  //   &__continue { @include button-blue; }
+  // }
+}

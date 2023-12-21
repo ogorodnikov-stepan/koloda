@@ -1,0 +1,15 @@
+@use 'assets/styles/_index.scss' as *;
+
+.account {
+  &-profile, &-settings { padding-inline: var(--input-padding-inline); }
+
+  &-profile__user {
+    @include flex-row($align: center, $gap: 0.25rem);
+
+    &-full-name {
+      font-weight: 600;
+
+      &:not(.text-input) { padding-inline: var(--input-padding-inline); }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+@use './colors' as *;
+
+@mixin color-scheme-light {
+  --bg-color-root: #{$stone-50};
+  --focus-visible-outline-color: #{$orange-400};
+  // text
+  --primary-color: #{$black};
+  --secondary-color: #{$grey-500};
+  --placeholder-color: #{$grey-400};
+  --disabled-color: #{$grey-200};
+  --loading-color: var(--secondary-color);
+  --success-color: #{$green-700};
+  --error-color: #{$red-500};
+  // content
+  --content-bg-color: #{$white};
+  --content-block-shadow: 0 1px 3px 0 #{transparentize($black, 0.95)};
+  --content-section-border: 0.1px solid #{$grey-200};
+  --content-subsection-border: 0.1px dotted #{$grey-200};
+  // links
+  --link-color: #{$blue-500};
+  --link-hover-color: #{$blue-700};
+  --link-alternative-color: #{$grey-700};
+  // modal
+  --modal-overlay-bg-color: #{transparentize($black, 0.75)};
+  --modal-content-bg-color: var(--content-bg-color);
+  --modal-content-shadow: 0 2px 8px 0 #{transparentize($black, 0.8)};
+  //  label
+  --label-color: var(--secondary-color);
+  --label-color-error: #{$red-500};
+  //  input
+  --input-border-color: var(--input-bg-color);
+  --input-border-color-focus: #{$orange-200};
+  --input-border-color-error: #{$red-100};
+  --input-border-width: 1px;
+  --input-border-style: solid;
+  --input-border: var(--input-border-width) var(--input-border-style) var(--input-border-color);
+  --input-bg-color: #{$grey-50};
+  --input-focus-bg-color: var(--input-bg-color);
+  --input-error-bg-color: #{$red-50};
+  --input-correct-bg-color: #{$green-50};
+  --input-color: var(--primary-color);
+  --input-placeholder-error-color: #{$red-500};
+  --input-placeholder-color: var(--placeholder-color);
+  --input-shadow: 0px 0px 1px 0px #{transparentize($black, 0.95)} inset;
+  --input-errors-color: #{$red-500};
+  // editor
+  --editor-input-border-color: var(--input-border-color);
+  --editor-input-border-width: var(--input-border-width);
+  --editor-input-border-style: var(--input-border-style);
+  --editor-input-bg-color: var(--input-bg-color);
+  --editor-input-placeholder-color: var(--placeholder-color);
+  --editor-input-shadow: var(--input-shadow);
+  --editor-toolbar-button-border-width: 0px; // px suffix to make calc() work
+  --editor-toolbar-button-border: 0;
+  --editor-toolbar-button-bg-color: #{$grey-50};
+  --editor-toolbar-button-active-bg-color: #{$grey-200};
+  --editor-toolbar-button-color: var(--secondary-color);
+  --editor-toolbar-button-active-color: #{$grey-700};
+  --editor-toolbar-button-shadow: 0 0 1px 0 #{transparentize($black, 0.8)};
+  --editor-toolbar-button-active-shadow: var(--icon-button-hover-shadow);
+  // number input
+  --number-input-buttons-shadow: 0 0 2px 0 #{transparentize($black, 0.5)};
+  // button
+  --button-bg-color: #{$blue-500};
+  --button-bg-color-disabled: #{$grey-400};
+  --button-color: #{$white};
+  --button-disabled-color: #{$white};
+  // grey button
+  --button-grey-border: 1px solid #{$grey-200};
+  --button-grey-bg-color: #{$grey-50};
+  --button-grey-disabled-bg-color: #{$grey-50};
+  --button-grey-hover-bg-color: #{$grey-100};
+  --button-grey-shadow: 0 1px 2px 0 #{transparentize($black, 0.95)};
+  // grey button blue text
+  --button-grey-blue-color: #{$blue-500};
+  --button-grey-blue-hover-color: #{$blue-600};
+  --button-grey-blue-disabled-color: #{$grey-300};
+  // grey button red text
+  --button-grey-red-color: #{$red-700};
+  --button-grey-red-hover-color: #{$red-800};
+  --button-grey-red-disabled-color: #{$grey-300};
+  // grey button green text
+  --button-grey-green-color: #{$green-700};
+  --button-grey-green-hover-color: #{$green-800};
+  --button-grey-green-disabled-color: #{$grey-300};
+  // blue button
+  --button-blue-border: 1px solid #{$blue-600};
+  --button-blue-bg-color: #{$blue-500};
+  --button-blue-color: #{$grey-50};
+  --button-blue-hover-border: 1px solid #{$blue-700};
+  --button-blue-hover-bg-color: #{$blue-600};
+  --button-blue-hover-color: #{$grey-100};
+  --button-blue-disabled-border: #{$blue-300};
+  --button-blue-disabled-bg-color: #{$blue-200};
+  --button-blue-disabled-color: #{$grey-100};
+  --button-blue-shadow: 0 1px 2px 0 #{transparentize($black, 0.8)};
+  // --button-blue-shadow: none;
+  // icon button
+  --icon-button-hover-shadow: 0px 0px 3px 0px #{transparentize($black, 0.95)} inset;
+  --icon-button-hover-bg-color: #{$grey-50};
+  // link button
+  --button-link-color: var(--link-color);
+  --button-link-hover-bg-color: #{$blue-50};
+  --button-link-hover-color: #{$blue-700};
+  --button-link-disabled-color: var(--disabled-color);
+  --button-link-inset-shadow: 0px 0px 2px 0px #{transparentize($black, 0.95)} inset;
+  // checkbox
+  --checkbox-border: 0.1px solid #{$grey-300};
+  --checkbox-bg-color: var(--content-bg-color);
+  --checkbox-checked-bg-color: #{$blue-500};
+  --checkbox-checked-icon-color: var(--content-bg-color);
+  // select
+  --select-bg-color: var(--input-bg-color);
+  --select-shadow: var(--input-shadow);
+  --select-items-border: 1px solid var(--select-items-bg-color);
+  --select-items-bg-color: #{$white};
+  --select-items-hover-bg-color: #{$blue-50};
+  --select-items-hover-shadow: 0px 0px 2px 0px #{transparentize($black, 0.95)} inset;
+  --select-items-selected-bg-color: transparent;
+  --select-items-shadow: 0 1px 3px 0 #{transparentize($black, 0.8)};
+  // tables
+  --table-border-color: #{$grey-200};
+  --table-border-color-dragging: #{$grey-50};
+  // dropdown
+  --dropdown-bg-color: var(--content-bg-color);
+  --dropdown-shadow: 0 1px 4px 0 #{transparentize($black, 0.8)};
+  --dropdown-overlay-bg-color: #{transparentize($black, 0.75)};
+  // header
+  --header-bg-color: #{$grey-50};
+  --header-shadow: none;
+  // menu
+  --menu-overlay-bg-color: #{transparentize($black, 0.75)};
+  --menu-item-color: var(--link-alternative-color);
+  --menu-item-active-color: var(--link-color);
+  // switcher
+  --switcher-shadow: var(--icon-button-hover-shadow);
+  --switcher-button-bg-color: #{$white};
+  --switcher-button-border-color: transparent;
+  --switcher-button-shadow: 0 0 1px 0 #{transparentize($black, 0.8)};
+  // add button
+  --add-button-bg-color: transparent;
+  --add-button-bg-color-hover: #{$grey-50};
+  --add-button-border-color: #{$blue-200};
+  --add-button-border-color-hover: #{$grey-200};
+  --add-button-color: var(--link-color);
+  --add-button-color-hover: var(--secondary-color);
+  // drag'n'drop
+  --dragging-background-color: #{$orange-50};
+  // tabs
+  --tab-header-color: var(--link-alternative-color);
+  --tab-header-color-hover: var(--link-color);
+  --tab-header-selected-color: var(--link-color);
+  --tab-header-disabled-color: var(--disabled-color);
+  // slider
+  --slider-selected-item-bg-color: var(--button-link-hover-bg-color);
+  // many
+  --many-item-border: 0.1px solid #{$grey-100};
+  --many-item-hover-bg-color: #{$blue-50};
+  // lesson
+  --lesson-progress-bar-bg-color: #{$grey-200};
+  --lesson-progress-bar-fill-bg-color: #{$green-500};
+  --lesson-progress-bar-shadow: 0px 0px 3px 0px #{transparentize($black, 0.95)} inset;
+  --lesson-progress-bar-fill-shadow: 0 0 2px 0 #{transparentize($black, 0.8)};
+  // lesson badge
+  --lesson-badge-inactive-bg-color: #{$grey-100};
+  --lesson-badge-inactive-color: #{$grey-600};
+  --lesson-badge-new-bg-color: #{$green-100};
+  --lesson-badge-new-color: #{$green-600};
+  --lesson-badge-new-hover-bg-color: #{$green-200};
+  --lesson-badge-new-hover-color: #{$green-700};
+  --lesson-badge-rep-bg-color: #{$purple-100};
+  --lesson-badge-rep-color: #{$purple-600};
+  --lesson-badge-rep-hover-bg-color: #{$purple-200};
+  --lesson-badge-rep-hover-color: #{$purple-700};
+  // divel
+  --divel-badge-bg-color: #{$purple-100};
+  // avatar
+  --avatar-bg: radial-gradient(circle, #{transparentize($grey-600, 0)} 0%, #{transparentize($grey-500, 0)} 100%);;
+  --avatar-color: #{$white};
+}
+
+@mixin color-scheme-dark {}
+
+:root:not([data-color-scheme="light"]) {
+  @media (prefers-color-scheme: dark) {
+    @include color-scheme-dark;
+  }
+}
+
+:root, :root[data-color-scheme="light"] {
+  @include color-scheme-light;
+}
+
+:root[data-color-scheme="dark"] {
+  @include color-scheme-dark;
+}

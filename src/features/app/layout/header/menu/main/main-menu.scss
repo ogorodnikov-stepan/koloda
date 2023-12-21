@@ -1,0 +1,143 @@
+@use 'assets/styles/_index.scss' as *;
+
+$toggle-padding: 0.5rem;
+$toggle-width: 1.75rem;
+$toggle-height: 1.75rem;
+
+.main-menu {
+  @include screen-m { flex-grow: 1; }
+
+  min-width: 4.125rem;
+
+  &__overlay[data-is-open="true"] {
+    position: fixed;
+    inset: 0;
+    background-color: var(--menu-overlay-bg-color);
+  }
+
+  &__toggle {
+    @include button-link;
+
+    padding: $toggle-padding;
+    line-height: 0;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: $toggle-width;
+      height: $toggle-height;
+      background-color: var(--link-alternative-color);
+    }
+
+    &[data-is-open="false"]::after {
+      mask: url("assets/images/list.svg") 0 0/1.75rem 1.75rem no-repeat;
+    }
+
+    &[data-is-open="true"]::after {
+      mask: url("assets/images/x.svg") 0 0/1.75rem 1.75rem no-repeat;
+    }
+
+    @include screen-m { display: none; }
+  }
+
+  &__items {
+    @include flex-col($align: flex-start);
+    gap: 0.5rem;
+    min-width: 20rem;
+
+    @include screen-xs-s {
+      position: absolute;
+      padding: var(--content-padding-block) var(--content-padding-inline);
+      border-radius: var(--dropdown-border-radius);
+      background-color: var(--dropdown-bg-color);
+      box-shadow: var(--dropdown-shadow);
+
+      &[data-is-open="false"] { display: none; }
+    }
+
+    @include screen-xs {
+      inset-block-start: calc(($toggle-padding * 2) + $toggle-height + (var(--header-padding-block) * 2));
+      inset-inline-start: $toggle-padding;
+      width: calc(100% - var(--content-padding-inline) * 2);
+    }
+
+    @include screen-s {
+      inset-block-start: $toggle-padding;
+      inset-inline-start: calc(($toggle-padding * 2) + $toggle-width + (var(--header-padding-inline) * 2));
+    }
+
+    @include screen-m {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    @include screen-xs-s {
+      &, &-link { width: 100%; }
+    }
+
+    &-link {
+
+      &.active {
+        color: var(--menu-item-active-color);
+
+        @include screen-xs-s { @include button-link-hover-styles; }
+
+        @include screen-m {
+          &::after {
+            content: "";
+            position: absolute;
+            inset-block-start: 2.5rem;
+            inset-inline: var(--menu-item-padding-inline);
+            height: 3px;
+            border-radius: 1.5px;
+            background-color: var(--menu-item-active-color);
+          }
+        }
+      }
+
+      &:hover { @include button-link-hover-styles; }
+    }
+  }
+
+  &__add {
+    @include screen-m { width: 20rem; }
+
+    .tabs-header {
+      justify-content: space-around;
+      padding-inline: 1rem;
+      border-block-end: var(--content-section-border);
+    }
+
+    .tab__content { padding: 1.5rem 1rem; }
+  }
+
+  .dropdown {
+    @include screen-xs-s { padding-block-start: 1rem; }
+
+    &__toggle {
+      @include screen-xs-s {
+        width: 100%;
+        pointer-events: none;
+        font-size: var(--h3-font-size);
+
+        &-value { margin-inline: auto; }
+        &::after { display: none; }
+      }
+    }
+
+    &__content {
+      @include screen-xs-s {
+        position: static;
+        box-shadow: none;
+
+        &[data-is-open="false"] { display: block; }
+      }
+
+      @include screen-m {
+        inset-inline-end: 0;
+      }
+    }
+  }
+}

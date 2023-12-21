@@ -1,0 +1,92 @@
+{
+  "titles": {
+    "app": "Koloda",
+    "delimiter": " - ",
+    "demo": "Demo",
+    "account": "Account",
+    "reppings": "Algorithms",
+    "decks": "Decks",
+    "lesson": "Learning"
+  },
+  "layout": {
+    "header": {
+      "menu": {
+        "main": {
+          "home": "Home",
+          "decks": "Decks",
+          "reppings": "Algorithms",
+          "new": {
+            "text": "Create",
+            "items": {
+              "deck": "Deck",
+              "repping": "Algorithm"
+            }
+          }
+        },
+        "secondary": {
+          "user": {
+            "profile": "Profile",
+            "logout": "Log Out"
+          }
+        }
+      }
+    }
+  },
+  "ui": {
+    "feature": {
+      "many": {
+        "load": "Load more",
+        "options": {
+          "title": "Sorting and filters",
+          "sorting": {
+            "label": "Sort by"
+          },
+          "filters": {
+            "title": "Filters",
+            "clear": "Clear"
+          }
+        }
+      }
+    },
+    "editbar": {
+      "click": {
+        "button": {
+          "edit": "Edit",
+          "view": "View",
+          "save": "Save",
+          "saving": "Saving",
+          "discard": "Cancel"
+        }
+      }
+    },
+    "statusbar": {
+      "discard": "Discard",
+      "message": {
+        "initial": "",
+        "saving": "Saving",
+        "saved": "Saved",
+        "discarded": "",
+        "error": "Error"
+      }
+    }
+  },
+  "pages": {
+    "error": {
+      "404": {
+        "title": "Not found",
+        "text": "This page was deleted or never existed."
+      },
+      "unknown": "Unexpected error occured.",
+      "500": "Oops. Something went wrong.",
+      "502": "Server is temporarily unavailable."
+    },
+    "demo": {
+      "title": "Setting up a demo",
+      "language": {
+        "label": "Content language",
+        "message": "Initial data will be created in this language. You can still change interface language."
+      },
+      "submit": "Get Started"
+    }
+  }
+}

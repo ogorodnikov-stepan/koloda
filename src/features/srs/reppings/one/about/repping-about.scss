@@ -1,0 +1,22 @@
+@use 'assets/styles/_index.scss' as *;
+
+.repping-about {
+  &__content {
+    @include flex-col($align: center);
+
+    gap: 1rem;
+  }
+
+  &__timestamps,
+  &__eligibility,
+  &__status,
+  &__title,
+  &__description { width: 100%; }
+
+  &[data-mode="view"] { .editor__label { display: none; } }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}

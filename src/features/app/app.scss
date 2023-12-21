@@ -1,0 +1,154 @@
+@use 'assets/styles/_index.scss' as *;
+
+.add-button {
+  @include focus-border { border-style: var(--input-border-style); }
+
+  border: 2px dashed var(--add-button-border-color);
+  background-color: var(--add-button-bg-color);
+  color: var(--add-button-color);
+  font-weight: 500;
+
+  &:hover {
+    border-color: var(--add-button-border-color-hover);
+    background-color: var(--add-button-bg-color-hover);
+    color: var(--add-button-color-hover);
+  }
+}
+
+.delete-inline-button {
+  @include button-link-icon;
+  @include inline-flex-row($align: center);
+  gap: 0.5rem;
+  padding: 0.5rem;
+
+
+  &::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    mask: url("assets/images/trash.svg") 0 0/1.5rem 1.5rem no-repeat;
+  }
+}
+
+.delete-button {
+  @include button-grey-bg-red-text;
+
+  display: flex;
+  gap: 0.5rem;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 1.375rem;
+    height: 1.375rem;
+    mask: url("assets/images/trash.svg") 0 0/1.375rem 1.375rem no-repeat;
+    background-color: var(--button-color);
+  }
+}
+
+.drag-handle {
+  @include focus-outline;
+  @include button-link-hover;
+
+  padding: 0.5rem;
+  border-radius: var(--input-border-radius);
+  line-height: 0;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    mask: url("assets/images/grip-vertical.svg") 0 0/1.5rem 1.5rem no-repeat;
+    background-color: var(--secondary-color);
+  }
+}
+
+.is-eligible {
+  @include inline-flex-row($align: center);
+
+  gap: 0.5rem;
+  padding-inline: var(--input-padding-inline);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  &[data-is-eligible="true"]::before {
+    mask: url("assets/images/patch-check.svg") 0 0/1.5rem 1.5rem no-repeat;
+    background-color: var(--success-color);
+  }
+
+  &[data-is-eligible="false"]::before {
+    mask: url("assets/images/patch-exclamation.svg") 0 0/1.5rem 1.5rem no-repeat;
+    background-color: var(--error-color);
+  }
+}
+
+.timestamps {
+  @include flex-col;
+
+  padding-inline: var(--input-padding-inline);
+  color: var(--secondary-color);
+
+  @include screen-m {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.eligibility {
+  position: relative;
+}
+
+.is-eligible:hover + .requirements {
+  display: flex;
+}
+
+.requirements {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  inset-block-start: 1.5rem;
+  padding-block-start: 1rem;
+
+  &:hover { display: flex;}
+}
+
+.requirements-list {
+  @include list-reset;
+  @include flex-col;
+
+  gap: 0.5rem;
+  padding: var(--content-section-padding-block) var(--input-padding-inline);
+  border-radius: var(--dropdown-border-radius);
+  background-color: var(--content-bg-color);
+  box-shadow: var(--dropdown-shadow);
+  white-space: nowrap;
+
+  &-item {
+    @include flex-row($align: center);
+
+    gap: 0.5rem;
+    padding-inline-end: 1.5rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    &[data-is-checked="true"]::before {
+      mask: url("assets/images/check.svg") 0 0/1.5rem 1.5rem no-repeat;
+      background-color: var(--success-color);
+    }
+
+    &[data-is-checked="false"]::before {
+      mask: url("assets/images/x.svg") 0 0/1.5rem 1.5rem no-repeat;
+      background-color: var(--error-color);
+    }
+  }
+}

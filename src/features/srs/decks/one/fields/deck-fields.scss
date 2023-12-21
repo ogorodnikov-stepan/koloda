@@ -1,0 +1,76 @@
+@use 'assets/styles/_index.scss' as *;
+
+$cell-padding: 0.25rem;
+$border-width: 0.1px;
+
+.deck-fields {
+  @include flex-col;
+  flex: 1;
+
+  &__content {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+
+  &__empty { @include feature-empty-state; }
+
+  &__table {
+    width: calc(100% - (var(--content-padding-inline) * 2));
+    max-width: 30rem;
+    margin-block: 0.5rem 1rem;
+    margin-inline: var(--content-padding-inline);
+    vertical-align: middle;
+    border-collapse: collapse;
+
+    &-cell {
+      padding: $cell-padding;
+
+      &[data-cell-type="head"] { @include table-head-cell-formatting; }
+
+      &[data-cell-column="index"] {
+        width: 0%;
+        padding-inline: 0;
+        color: var(--secondary-color);
+        font-size: var(--h3-font-size);
+        font-weight: 700;
+        white-space: no-wrap;
+      }
+
+      &-value {
+        display: block;
+        padding-block: var(--input-padding-block);
+        padding-inline: var(--input-padding-inline);
+      }
+    }
+
+    &-row:not([data-row-type="body"]:last-child):not([data-is-dragging="true"]) {
+      border-bottom: $border-width dotted var(--table-border-color);
+    }
+
+    &-head { font-weight: 700; }
+
+    &-delete, &-drag { display: inline-block; }
+  }
+
+  &__add {
+    width: 100%;
+    margin-block-start: 0.5rem;
+    padding-block: calc(var(--input-padding-block) + $cell-padding);
+  }
+
+  &[data-mode="view"] {
+    .deck-fields__table-row:not([data-row-type="body"]:last-child) {
+      border-bottom: $border-width dotted var(--table-border-color);
+    }
+  }
+
+  &[data-mode="edit"] {
+    .deck-fields__table-cell {
+      &[data-cell-column="title"] { min-width: 12rem; }
+      &[data-cell-column="type"] { min-width: 8rem; }
+      &[data-cell-column="role"] { min-width: 8rem; }
+      &[data-cell-column="actions"] { min-width: calc(5rem + 2 * $cell-padding); }
+    }
+  }
+}

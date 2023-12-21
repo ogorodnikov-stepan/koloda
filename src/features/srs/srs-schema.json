@@ -1,0 +1,773 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+
+
+  "definitions": {
+    "language": {
+      "$id": "#language",
+      "enum": ["en", "ru"]
+    },
+
+    "position": {
+      "$id": "#position",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "is_eligible": {
+      "$id": "#is_eligible",
+      "type": "boolean"
+    },
+
+    "is_eligible_filter": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/is_eligible" }
+    },
+
+    "repping_id": {
+      "$id": "#repping_id",
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "repping_title": {
+      "$id": "#repping_title",
+      "type": "string",
+      "pattern": "^[\\s|\\S]*$",
+      "minLength": 1,
+      "maxLength": 128
+    },
+
+    "repping_description": {
+      "$id": "#repping_description",
+      "type": "array"
+    },
+
+    "repping_divels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "#/definitions/divel_id" },
+          "title": { "$ref": "#/definitions/divel_title" },
+          "phases": { "$ref": "#/definitions/divel_phases" },
+          "is_default": { "type": "boolean" }
+        },
+        "required": ["id", "title"],
+        "additionalProperties": false
+      }
+    },
+
+    "divel_id": {
+      "$id": "#divel_id",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "divel_title": {
+      "$id": "#divel_title",
+      "type": "string",
+      "pattern": "^[\\s|\\S]*$",
+      "minLength": 1,
+      "maxLength": 128
+    },
+
+    "divel_phases": {
+      "$id": "#divel_phases",
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+
+    "phase": {
+      "$id": "#phase_content",
+      "type": "object"
+    },
+
+    "phase_id": {
+      "$id": "#phase_id",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "deck_id": {
+      "$id": "#deck_id",
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "deck_title": {
+      "$id": "#deck_title",
+      "type": "string",
+      "pattern": "^[\\s|\\S]*$",
+      "minLength": 1,
+      "maxLength": 128
+    },
+
+    "deck_description": {
+      "$id": "#deck_description",
+      "type": "array"
+    },
+
+    "deck_category_id": {
+      "$id": "#category_id",
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+
+    "category_id_filter": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/deck_category_id" }
+    },
+
+    "deck_subject_id": {
+      "$id": "#subject_id",
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+
+    "subject_id_filter": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/deck_subject_id" }
+    },
+
+    "deck_language_id": {
+      "$id": "#language_id",
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+
+    "language_id_filter": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/deck_language_id" }
+    },
+
+    "field_id": {
+      "$id": "#field_id",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "field_title": {
+      "$id": "#field_title",
+      "type": "string",
+      "pattern": "^[\\s|\\S]*$",
+      "minLength": 1,
+      "maxLength": 128
+    },
+
+    "field_type": {
+      "$id": "#field_type",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "field_role": {
+      "$id": "#field_role",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "deck_fields": {
+      "$id": "#deck_fields",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "#/definitions/field_id" },
+          "title": { "$ref": "#/definitions/field_title" },
+          "type": { "$ref": "#/definitions/field_type" },
+          "role": { "$ref": "#/definitions/field_role" }
+        },
+        "required": ["id", "title", "type", "role"],
+        "additionalProperties": false
+       }
+    },
+
+    "card_id": {
+      "$id": "#card_id",
+      "type": "integer",
+      "minimum": 0
+    },
+
+    "card_content": {
+      "$id": "#card_content",
+      "type": "object"
+    },
+
+    "card_progress": {
+      "$id": "#card_progress",
+      "type": "object",
+      "properties": {
+        "is_completed": { "$ref": "#/definitions/result_is_completed" },
+        "due_at": { "$ref": "#/definitions/result_due_at" },
+        "divel": { "$ref": "#/definitions/divel_id" },
+        "phase": { "$ref": "#/definitions/phase_id" }
+      }
+    },
+
+    "deck_cards": {
+      "$id": "#deck_cards",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "$ref": "#/definitions/card_id" },
+          "content": { "$ref": "#/definitions/card_content" },
+          "progress": { "$ref": "#/definitions/card_progress" }
+        },
+        "required": ["id", "content"],
+        "additionalProperties": false
+      }
+    },
+
+    "learning_created_at": {
+      "$id": "#learning_created_at",
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "first_learned_at": {
+      "$id": "#first_learned_at",
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "last_learned_at": {
+      "$id": "#last_learned_at",
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "lesson_type": {
+      "type": "string",
+      "enum": ["new", "rep"]
+    },
+
+    "lesson_deck_limit": {
+      "$id": "#lesson_deck_limit",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 500
+    },
+
+    "result_due_at": {
+      "$id": "#result_due_at",
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "result_is_completed": {
+      "$id": "#result_is_completed",
+      "type": "boolean"
+    },
+
+    "learning_settings": {
+      "$id": "#learning_settings",
+      "type": "object",
+      "properties": {
+        "lesson_limits": {
+          "type": "object",
+          "properties": {
+            "new": { "$ref": "#/definitions/lesson_deck_limit" },
+            "rep": { "$ref": "#/definitions/lesson_deck_limit" }
+          }
+        }
+      }
+    }
+  },
+
+
+
+  "properties": {
+    "subjects_get": {
+      "type": "object",
+      "properties": {
+        "language": { "$ref": "#/definitions/language" }
+      },
+      "required": ["language"],
+      "additionalProperties": false
+    },
+
+    "languages_get": {
+      "type": "object",
+      "properties": {
+        "language": { "$ref": "#/definitions/language" }
+      },
+      "required": ["language"],
+      "additionalProperties": false
+    },
+
+    "reppings_get": {
+      "type": "object",
+      "properties": {
+        "sort": {
+          "enum": ["+title", "-title", "+created_at", "-created_at", "+updated_at", "-updated_at"]
+        },
+        "filters": {
+          "type": "object",
+          "properties": {
+            "is_eligible": { "$ref": "#/definitions/is_eligible_filter" }
+          },
+          "additionalProperties": false
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200
+         },
+        "offset": {
+          "type": "integer",
+          "minimum": 1
+         }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+
+    "repping_add": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/repping_title" }
+      },
+      "required": ["title"],
+      "additionalProperties": false
+    },
+
+    "repping_import": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/repping_title" },
+        "description": { "$ref": "#/definitions/repping_description" },
+        "divels": { "$ref": "#/definitions/repping_divels" }
+      },
+      "required": ["title"],
+      "additionalProperties": false
+    },
+
+    "repping_get": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+
+    "repping_update": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/repping_id" },
+        "title": { "$ref": "#/definitions/repping_title" },
+        "description": { "$ref": "#/definitions/repping_description" }
+      },
+      "required": ["id", "title"],
+      "additionalProperties": false
+    },
+
+    "repping_delete": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+
+    "divels_get": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["repping_id"],
+      "additionalProperties": false
+    },
+
+    "divels_update": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" },
+        "divels": { "$ref": "#/definitions/repping_divels" }
+      },
+      "required": ["repping_id"],
+      "additionalProperties": false
+    },
+
+    "divel_add": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" },
+        "title": { "$ref": "#/definitions/divel_title" },
+        "phases": { "$ref": "#/definitions/divel_phases" }
+      },
+      "required": ["repping_id", "title"],
+      "additionalProperties": false
+    },
+
+    "divel_update": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" },
+        "id": { "$ref": "#/definitions/divel_id" },
+        "title": { "$ref": "#/definitions/divel_title" },
+        "phases": { "$ref": "#/definitions/divel_phases" }
+      },
+      "required": ["repping_id", "id"],
+      "additionalProperties": false
+    },
+
+    "divel_get": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" },
+        "id": { "$ref": "#/definitions/divel_id" }
+      },
+      "required": ["repping_id", "id"],
+      "additionalProperties": false
+    },
+
+    "divel_move": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" },
+        "id": { "$ref": "#/definitions/divel_id" },
+        "position": { "$ref": "#/definitions/position" }
+      },
+      "required": ["repping_id", "id", "position"],
+      "additionalProperties": false
+    },
+
+    "divel_delete": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" },
+        "id": { "$ref": "#/definitions/divel_id" }
+      },
+      "required": ["repping_id", "id"],
+      "additionalProperties": false
+    },
+
+    "decks_get": {
+      "type": "object",
+      "properties": {
+        "sort": {
+          "enum": ["+title", "-title", "+created_at", "-created_at", "+updated_at", "-updated_at"]
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+         },
+        "offset": {
+          "type": "integer",
+          "minimum": 1
+         },
+         "filters": {
+          "type": "object",
+          "properties": {
+            "category_id": { "$ref": "#/definitions/category_id_filter" },
+            "subject_id": { "$ref": "#/definitions/subject_id_filter" },
+            "language_id": { "$ref": "#/definitions/language_id_filter" },
+            "is_eligible": { "$ref": "#/definitions/is_eligible_filter" }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+
+    "deck_add": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/deck_title" }
+      },
+      "required": ["title"],
+      "additionalProperties": false
+    },
+
+    "deck_import": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/deck_title" },
+        "description": { "$ref": "#/definitions/deck_description" },
+        "category_id": { "$ref": "#/definitions/deck_category_id" },
+        "subject_id": { "$ref": "#/definitions/deck_subject_id" },
+        "language_id": { "$ref": "#/definitions/deck_language_id" },
+        "fields": { "$ref": "#/definitions/deck_fields" },
+        "cards": { "$ref": "#/definitions/deck_cards" },
+        "repping_id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["title", "category_id", "subject_id", "language_id", "fields", "cards"],
+      "additionalProperties": false
+    },
+
+    "deck_get": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+
+    "deck_update": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/deck_id" },
+        "title": { "$ref": "#/definitions/deck_title" },
+        "description": { "$ref": "#/definitions/deck_description" },
+        "category_id": { "$ref": "#/definitions/deck_category_id" },
+        "subject_id": { "$ref": "#/definitions/deck_subject_id" },
+        "language_id": { "$ref": "#/definitions/deck_language_id" }
+      },
+      "required": ["id", "title"],
+      "additionalProperties": false
+    },
+
+    "deck_delete": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+
+    "fields_get": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["deck_id"],
+      "additionalProperties": false
+    },
+
+    "fields_set": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "fields": { "$ref": "#/definitions/deck_fields" }
+      },
+      "required": ["deck_id", "fields"],
+      "additionalProperties": false
+    },
+
+    "cards_get": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["deck_id"],
+      "additionalProperties": false
+    },
+
+    "cards_set": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "cards": { "$ref": "#/definitions/deck_cards" }
+      },
+      "required": ["deck_id", "cards"],
+      "additionalProperties": false
+    },
+
+    "card_add": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "content": { "$ref": "#/definitions/card_content" }
+      },
+      "required": ["deck_id", "content"],
+      "additionalProperties": false
+    },
+
+    "card_update": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "id": { "$ref": "#/definitions/card_id" },
+        "content": { "$ref": "#/definitions/card_content" }
+      },
+      "required": ["deck_id", "id", "content"],
+      "additionalProperties": false
+    },
+
+    "card_move": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "id": { "$ref": "#/definitions/card_id" },
+        "position": { "$ref": "#/definitions/position" }
+      },
+      "required": ["deck_id", "id", "position"],
+      "additionalProperties": false
+    },
+
+    "card_delete": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "id": { "$ref": "#/definitions/card_id" }
+      },
+      "required": ["deck_id", "id"],
+      "additionalProperties": false
+    },
+
+    "learnings_get": {
+      "type": "object",
+      "properties": {
+        "sort": {
+          "enum": ["+title", "-title", "+last_learned_at", "-last_learned_at"]
+        },
+        "filters": {
+          "type": "object",
+          "properties": {
+            "category_id": { "$ref": "#/definitions/category_id_filter" },
+            "subject_id": { "$ref": "#/definitions/subject_id_filter" },
+            "language_id": { "$ref": "#/definitions/language_id_filter" }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 200
+         },
+        "offset": {
+          "type": "integer",
+          "minimum": 1
+         }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+
+    "learning_get": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["deck_id"],
+      "additionalProperties": false
+    },
+
+    "learning_add": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "repping_id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["deck_id"],
+      "additionalProperties": false
+    },
+
+    "learning_update": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" },
+        "settings": { "$ref": "#/definitions/learning_settings" }
+      },
+      "required": ["deck_id", "settings"],
+      "additionalProperties": false
+    },
+
+    "learning_delete": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["deck_id"],
+      "additionalProperties": false
+    },
+
+    "learnings_meta_get": {
+      "enum": [{}]
+    },
+
+    "lesson_get": {
+      "type": "object",
+      "properties": {
+        "type": { "$ref": "#/definitions/lesson_type" },
+        "limit": { "$ref": "#/definitions/lesson_deck_limit" },
+        "deck": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    },
+
+    "lesson_deck_get": {
+      "type": "object",
+      "properties": {
+        "type": { "$ref": "#/definitions/lesson_type" },
+        "limit": { "$ref": "#/definitions/lesson_deck_limit" },
+        "id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["type", "id"],
+      "additionalProperties": false
+    },
+
+    "lesson_repping_get": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+
+    "lesson_results_set": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "deck_id": { "$ref": "#/definitions/deck_id" },
+              "cards": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "card_id": { "$ref": "#/definitions/card_id" },
+                    "divel": { "$ref": "#/definitions/divel_id" },
+                    "phase": { "$ref": "#/definitions/phase_id" },
+                    "due_at": { "$ref": "#/definitions/result_due_at" },
+                    "is_completed": { "$ref": "#/definitions/result_is_completed" }
+                  },
+                  "required": ["card_id", "due_at"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": ["deck_id", "cards"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["data"],
+      "additionalProperties": false
+    },
+
+    "lesson_action_component_data": {
+      "type": "object",
+      "properties": {
+        "fields": { "$ref": "#/definitions/deck_fields" },
+        "content": { "$ref": "#/definitions/card_content" }
+      },
+      "required": ["type", "deck_id"],
+      "additionalProperties": false
+    }
+  },
+
+
+
+  "type": "object",
+  "required": [],
+  "additionalProperties": false
+}

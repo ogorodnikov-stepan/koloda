@@ -1,0 +1,6 @@
+@use 'assets/styles/_index.scss' as *;
+
+.label {
+  display: block;
+  padding-inline: var(--input-padding-inline);
+}

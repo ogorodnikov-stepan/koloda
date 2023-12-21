@@ -1,0 +1,36 @@
+@use 'assets/styles/_index.scss' as *;
+
+.checkbox {
+  @include flex-row($align: center);
+  gap: 0.5rem;
+
+  &__input {
+    appearance: none;
+    height: 1.25rem;
+    width: 1.25rem;
+    padding: 0;
+    border: var(--checkbox-border);
+    border-radius: 0.25rem;
+    background-color: var(--checkbox-bg-color);
+
+    &:checked {
+      border-width: 0;
+      background-color: var(--checkbox-checked-bg-color);
+
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 1.25rem;
+        width: 1.25rem;
+        background-color: var(--checkbox-checked-icon-color);
+        mask: url("assets/images/check.svg");
+      }
+    }
+  }
+
+  &__label {
+    padding-inline: 0;
+    font-size: 0.875rem;
+    color: var(--checkbox-color);
+  }
+}

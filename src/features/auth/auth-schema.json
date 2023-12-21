@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+
+
+  "definitions": {
+    "uid": {
+      "$id": "#uid",
+      "type": "string",
+      "format": "uuid"
+    },
+
+    "login": {
+      "$id": "#login",
+      "type": "string",
+      "format": "email"
+    },
+
+    "email": {
+      "$id": "#email",
+      "type": "string",
+      "format": "email"
+    },
+
+    "full_name": {
+      "$id": "#full_name",
+      "type": "string",
+      "pattern": "^\\S[\\s\\S]+$",
+      "maxLength": 128
+    },
+
+    "password": {
+      "$id": "#password",
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 32,
+      "pattern": "^[\\s\\S]*$"
+    },
+
+    "confirm_token": {
+      "$id": "#confirm_token",
+      "type": "string",
+      "minLength": 52,
+      "maxLength": 52,
+      "pattern": "^[2346789bdfghjmnpqrtBDFGHJLMNPQRT]+$"
+    },
+
+    "user_profile": {
+      "$id": "#user_profile",
+      "type": "object",
+      "properties": {
+        "full_name": { "$ref": "#/definitions/full_name" }
+      },
+      "required": ["full_name"],
+      "additionalProperties": false
+    }
+  },
+
+
+
+  "properties": {
+    "login": {
+      "type": "object",
+      "properties": {
+        "login": { "$ref": "#/definitions/login" },
+        "password": { "$ref": "#/definitions/password" }
+      },
+      "required": ["login", "password"],
+      "additionalProperties": false
+    },
+
+    "signup_demo": {
+      "type": "object",
+      "properties": {
+        "full_name": { "$ref": "#/definitions/full_name" }
+      },
+      "required": ["full_name"],
+      "additionalProperties": false
+    },
+
+    "signup_email_1": {
+      "type": "object",
+      "properties": {
+        "email": { "$ref": "#/definitions/email" }
+      },
+      "required": ["email"],
+      "additionalProperties": false
+    },
+
+    "signup_email_2": {
+      "type": "object",
+      "properties": {
+        "confirm_token": { "$ref": "#/definitions/confirm_token" }
+      },
+      "required": ["confirm_token"],
+      "additionalProperties": false
+    },
+
+    "signup_email_3": {
+      "type": "object",
+      "properties": {
+        "full_name": { "$ref": "#/definitions/full_name" },
+        "password": { "$ref": "#/definitions/password" },
+        "password_confirmation": { "const": { "$data": "1/password" } },
+        "confirm_token": { "$ref": "#/definitions/confirm_token" }
+      },
+      "required": ["full_name", "password", "password_confirmation", "confirm_token"],
+      "additionalProperties": false
+    },
+
+    "user_get": {
+      "type": "object",
+      "properties": {
+        "uid": { "$ref": "#/definitions/uid" }
+      },
+      "required": ["uid"],
+      "additionalProperties": false
+    },
+
+    "user_update": {
+      "type": "object",
+      "properties": {
+        "uid": { "$ref": "#/definitions/uid" },
+        "profile": { "$ref": "#/definitions/user_profile" },
+        "settings": {
+          "type": "object"
+        }
+      },
+      "required": ["uid"],
+      "additionalProperties": false
+    },
+
+    "user_profile_get": {
+      "type": "object",
+      "properties": {
+        "uid": { "$ref": "#/definitions/uid" }
+      },
+      "required": ["uid"],
+      "additionalProperties": false
+    },
+
+    "user_tutorial_update": {
+      "type": "object",
+      "properties": {
+        "uid": { "$ref": "#/definitions/uid" },
+        "tutorial": {
+          "type": "object"
+        }
+      },
+      "required": ["uid"],
+      "additionalProperties": false
+    }
+  },
+
+
+
+  "type": "object",
+  "required": [],
+  "additionalProperties": false
+}

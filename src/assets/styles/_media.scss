@@ -1,0 +1,66 @@
+/**
+1. Paddings include border width
+*/
+
+:root {
+  --layout-width: 100%;
+  --layout-padding-inline: 0.5rem;
+  --font-size: 16px;
+  --smaller-font-size: 0.875rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --header-padding-block: 0.5rem;
+  --header-padding-inline: var(--content-padding-inline);
+  --main-padding-block: 0.75rem;
+  --content-padding-block: 0.5rem;
+  --content-padding-inline: 0.5rem;
+  --content-block-border-radius: 0.5rem;
+  --content-section-padding-block: 1.25rem;
+  --modal-content-border-radius: var(--content-block-border-radius);
+  --button-border-radius: 0.5rem;
+  --button-line-height: var(--line-height);
+  --button-compact-line-height: 1rem;
+  --input-border-radius: 0.375rem;
+  --input-padding-block: 0.5rem;  // 1
+  --input-padding-inline: 0.75rem; // 1
+  --menu-item-padding-block: var(--input-padding-block);
+  --menu-item-padding-inline: var(--input-padding-inline);
+  --menu-item-border-radius: var(--button-border-radius);
+  --dropdown-border-radius: var(--input-border-radius);
+  --select-border-radius: var(--input-border-radius);
+  --editor-toolbar-button-border-radius: var(--button-border-radius);
+  --editor-input-border-radius: var(--input-border-radius);
+  --editor-input-padding-block: var(--input-padding-block);
+  --editor-input-padding-inline: var(--input-padding-inline);
+  --editbar-button-padding-inline: 1rem;
+  --tabs-header-padding-block: 0.5rem;
+  --tab-header-border-radius: var(--button-border-radius);
+  --tab-header-padding-block: 0.5rem;
+  --tab-header-padding-inline: 0.5rem;
+}
+
+@mixin screen-xs { @media only screen and (max-width: 575.98px) { @content; } }
+@mixin screen-s { @media only screen and (min-width: 576px) { @content; } }
+@mixin screen-xs-s { @media only screen and (max-width: 767.98px) { @content; } }
+@mixin screen-m { @media only screen and (min-width: 768px) { @content; } }
+@mixin screen-xs-m { @media only screen and (max-width: 991.98px) { @content; } }
+@mixin screen-l { @media only screen and (min-width: 992px) { @content; } }
+@mixin screen-xs-l { @media only screen and (max-width: 1199.98px) { @content; } }
+@mixin screen-xl { @media only screen and (min-width: 1200px) { @content; } }
+
+:root {
+  @include screen-xs() {
+    --editbar-button-padding-inline: var(--input-padding-inline);
+  }
+
+  @include screen-xl() {
+    --layout-width: 65rem;
+    --layout-padding-inline: 1rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --main-padding-block: 1rem;
+    --content-padding-block: 1rem;
+    --content-padding-inline: 2rem;
+    --content-section-padding-block: 1.25rem;
+  }
+}

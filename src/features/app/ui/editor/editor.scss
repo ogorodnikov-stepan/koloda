@@ -1,0 +1,78 @@
+@use 'assets/styles/_index.scss' as *;
+
+.editor {
+  &[data-is-readonly="false"] &__label { margin-block-end: 0.25rem; }
+
+  &__toolbar {
+    margin-block-end: 0.5rem;
+
+    &-items { @include list-reset; }
+
+    &-button {
+      @include focus-outline;
+
+      padding: calc(0.5rem - var(--editor-toolbar-button-border-width));
+      border: var(--editor-toolbar-button-border);
+      border-radius: var(--editor-toolbar-button-border-radius);
+      background-color: var(--editor-toolbar-button-bg-color);
+      box-shadow: var(--editor-toolbar-button-shadow);
+
+      &:not(:last-child) { margin-inline-end: 0.5rem; }
+
+      &[data-is-active="true"] {
+        box-shadow: var(--editor-toolbar-button-active-shadow);
+        background-color: var(--editor-toolbar-button-active-bg-color);
+
+        &::before { background-color: var(--editor-toolbar-button-active-color); }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: var(--editor-toolbar-button-color);
+      }
+
+      &[data-format="bold"]::before { mask: url("assets/images/bold.svg") 0 0/1.5rem 1.5rem; }
+      &[data-format="italic"]::before { mask: url("assets/images/italic.svg") 0 0/1.5rem 1.5rem; }
+      &[data-format="underline"]::before { mask: url("assets/images/underline.svg") 0 0/1.5rem 1.5rem; }
+      &[data-format="ol"]::before { mask: url("assets/images/ol.svg") 0 0/1.5rem 1.5rem; }
+      &[data-format="ul"]::before { mask: url("assets/images/ul.svg") 0 0/1.5rem 1.5rem; }
+    }
+  }
+
+  &__input {
+    @include focus-border;
+
+    padding-block: calc(var(--editor-input-padding-block) - var(--editor-input-border-width));
+    padding-inline: calc(var(--editor-input-padding-inline) - var(--editor-input-border-width));
+    border: var(--editor-input-border-width) var(--editor-input-border-style) var(--editor-input-border-color);
+    border-radius: var(--editor-input-border-radius);
+    background-color: var(--editor-input-bg-color);
+    box-shadow: var(--editor-input-shadow);
+
+    &:not([contenteditable="true"]) {
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    & > p {
+      margin-block: 0;
+
+      &:not(:last-child) { margin-block-end: 0.75rem; }
+    }
+  }
+
+  &[data-is-readonly="true"] [data-slate-placeholder="true"] {
+    @include feature-empty-state;
+  }
+
+  &[data-is-readonly="false"] [data-slate-placeholder="true"] {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    color: var(--editor-input-placeholder-color);
+  }
+}

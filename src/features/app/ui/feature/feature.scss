@@ -1,0 +1,67 @@
+@use 'assets/styles/_index.scss' as *;
+
+.feature {
+  @include flex-col;
+  max-width: var(--layout-width);
+
+  &:only-child {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__header {
+    @include flex-row($align: center, $wrap: wrap);
+    padding-inline: var(--content-padding-inline);
+    font-size: var(--h2-font-size);
+  }
+
+  &__title, &__breadcrumb {
+    flex-grow: 1;
+    margin-block: var(--tabs-header-padding-block);
+    padding: var(--input-padding-block) var(--input-padding-inline);
+    line-height: var(--line-height);
+    font-size: inherit;
+    word-break: break-all;
+  }
+
+  &__tabs {
+    @include flex-col;
+    flex-grow: 1;
+
+    &-header {
+      padding-inline: calc(var(--input-padding-inline) - var(--tab-header-padding-inline));
+    }
+  }
+
+  &__content, &__tab-content {
+    @include flex-col;
+    flex-grow: 1;
+  }
+
+  &__section {
+    padding-block: var(--content-section-padding-block);
+
+    &-header,
+    &-content {
+      padding-inline: var(--content-padding-inline);
+    }
+  }
+
+
+  &__section-header {
+    @include flex-row($align: center);
+    margin-block-end: 1rem;
+    padding-inline: var(--content-padding-inline);
+
+    &-title {
+      flex-grow: 1;
+      margin-block: 0;
+      margin-inline: var(--input-padding-inline);
+    }
+  }
+
+  &__section-skeleton {
+    margin-inline: var(--content-padding-inline);
+    padding-block-start: 0.5rem;
+  }
+}

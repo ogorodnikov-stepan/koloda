@@ -1,0 +1,29 @@
+@use 'assets/styles/_index.scss' as *;
+
+.deck-about {
+  &__content {
+    @include flex-col($align: center);
+
+    gap: 1rem;
+  }
+
+  &__taxonomy,
+  &__timestamps,
+  &__eligibility,
+  &__title,
+  &__description,
+  &__category,
+  &__subject,
+  &__language {
+    width: 100%;
+  }
+
+  &__taxonomy {
+    @include screen-s {
+      @include flex-row;
+      gap: 1rem;
+    }
+  }
+
+  &[data-mode="view"] { .editor__label { display: none; } }
+}

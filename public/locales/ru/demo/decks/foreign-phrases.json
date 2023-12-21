@@ -1,0 +1,77 @@
+{
+  "title": "Общие фразы",
+  "description": [
+    {
+      "type": "p",
+      "children": [
+        {
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "reppingId": "foreign-words",
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 5,
+  "fields": [
+    {
+      "id": 1,
+      "title": "Оригинал",
+      "type": 1,
+      "role": 1
+    },
+    {
+      "id": 2,
+      "title": "Перевод",
+      "type": 1,
+      "role": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": {
+        "1": {
+          "text": "Доброе утро"
+        },
+        "2": {
+          "text": "Buenos dias"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "content": {
+        "1": {
+          "text": "Добрый день"
+        },
+        "2": {
+          "text": "Buenas tardes"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "content": {
+        "1": {
+          "text": "Добрый вечер"
+        },
+        "2": {
+          "text": "Buenas noches"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "content": {
+        "1": {
+          "text": "Как дела"
+        },
+        "2": {
+          "text": "Que tal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+@use 'assets/styles/_index.scss' as *;
+
+.dropdown {
+  position: relative;
+
+  &__toggle {
+    @include button-link;
+
+    display: flex;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.75rem;
+      height: 1.5rem;
+      mask: url("assets/images/chevron-thick.svg") -.25rem 0/1.5rem 1.5rem;
+      background-color: var(--button-link-color);
+    }
+
+    &:disabled::after { background-color: var(--button-link-disabled-color); }
+
+    &[data-is-open="true"] {
+      @include button-link-hover-styles;
+
+      &::after {
+        transform: scaleY(-1);
+        background-color: var(--button-link-hover-color);
+      }
+    }
+
+    &:not(:disabled):hover::after { background-color: var(--button-link-hover-color); }
+
+    &-value {
+      display: inline-block;
+      line-height: var(--line-height);
+    }
+  }
+
+  &__overlay[data-is-open="true"] {
+    position: fixed;
+    inset: 0;
+    background-color: var(--dropdown-overlay-bg-color);
+  }
+
+  &__content {
+    @include focus-outline;
+
+    position: absolute;
+    inset-block-start: calc(0.25rem + (var(--input-padding-block) * 2) + var(--line-height));
+    z-index: 10;
+    border-radius: var(--dropdown-border-radius);
+    background-color: var(--dropdown-bg-color);
+    box-shadow: var(--dropdown-shadow);
+
+    &[data-is-open="false"] { display: none; }
+  }
+}

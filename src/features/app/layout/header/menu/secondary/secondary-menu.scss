@@ -1,0 +1,82 @@
+@use 'assets/styles/_index.scss' as *;
+
+$user-padding: 0.5rem;
+$user-size: 1.75rem;
+
+.secondary-menu {
+  &__items { @include flex-row($align: center); }
+
+  .app-language-select__value { font-size: 0; }
+  .app-language-select__items {
+    inset-inline-end: 0;
+    width: 10rem;
+  }
+}
+
+.user-menu {
+  &__toggle {
+    --button-link-color: var(--link-alternative-color);
+
+    padding: $user-padding;
+    line-height: 0;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: $user-size;
+      width: $user-size;
+      mask: url("assets/images/person.svg") 0 0/1.75rem 1.75rem no-repeat;
+      background-color: var(--link-alternative-color);
+    }
+
+    &::after { display: none; }
+  }
+
+  &__overlay {
+    @include screen-m { display: none; }
+  }
+
+  &__content {
+    @include flex-col($gap: 0.25rem);
+    inset-inline-end: 0;
+    inset-block-start: calc(0.5rem + ($user-padding * 2) + $user-size);
+    min-width: 20rem;
+    padding: 0.5rem;
+
+    @include screen-xs {
+      width: calc(100% - var(--content-padding-inline) * 2);
+    }
+  }
+
+  &__user {
+    @include flex-row($align: center, $gap: 0.75rem);
+
+    padding: 0.75rem;
+
+    &-full-name { font-weight: 600; }
+  }
+
+  &__link {
+    @include button-link-icon;
+    @include flex-row($align: center, $gap: 0.5rem);
+
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  &__profile {
+    &::before {
+      height: 1.5rem;
+      width: 1.5rem;
+      mask: url("assets/images/person.svg") 0 0/1.5rem 1.5rem no-repeat;
+     }
+  }
+
+  &__logout {
+    &::before {
+      height: 1.5rem;
+      width: 1.5rem;
+      mask: url("assets/images/door-closed.svg") 0 0/1.5rem 1.5rem no-repeat;
+     }
+  }
+}

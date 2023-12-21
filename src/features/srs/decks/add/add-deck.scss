@@ -1,0 +1,17 @@
+@use 'assets/styles/_index.scss' as *;
+
+.add-deck {
+  text-align: center;
+
+  &__title {
+    margin-block-end: 1rem;
+
+    &-label { display: none; }
+  }
+
+
+  &__submit {
+    width: 100%;
+    line-height: var(--line-height);
+  }
+}

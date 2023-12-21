@@ -1,0 +1,88 @@
+{
+  "title": "Proverbs",
+  "description": [
+    {
+      "type": "p",
+      "children": [
+        {
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "reppingId": "foreign-sentences",
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 3,
+  "fields": [
+    {
+      "id": 1,
+      "title": "Source",
+      "type": 1,
+      "role": 1
+    },
+    {
+      "id": 2,
+      "title": "Translation",
+      "type": 1,
+      "role": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": {
+        "1": {
+          "text": "A bird in the hand is worth two in the bush"
+        },
+        "2": {
+          "text": "Mas vale pajaro en mano que cien volando"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "content": {
+        "1": {
+          "text": "To each their own"
+        },
+        "2": {
+          "text": "Cada loco con su tema"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "content": {
+        "1": {
+          "text": "The early bird catches the worm"
+        },
+        "2": {
+          "text": "Al que madruga, Dios lo ayuda"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "content": {
+        "1": {
+          "text": "Practice makes perfect"
+        },
+        "2": {
+          "text": "La practica hace al maestro"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "content": {
+        "1": {
+          "text": "Easier said than done"
+        },
+        "2": {
+          "text": "Del dicho al hecho, hay poco trecho"
+        }
+      }
+    }
+  ]
+}

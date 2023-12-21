@@ -1,0 +1,76 @@
+@use 'index' as *;
+
+/*
+  General
+*/
+
+:root {
+  --line-height: 1.5rem;
+  font-size: var(--font-size);
+}
+
+body {
+  font-family: Inter, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  letter-spacing: .01rem;
+  line-height: var(--line-height);
+}
+
+// wrap with body for +1 weight over normalize
+
+body {
+  /*
+    Text elements
+  */
+
+  h2 { font-size: var(--h2-font-size); }
+  h3 { font-size: var(--h3-font-size); }
+
+  a {
+    @include focus-outline;
+
+    border-radius: var(--input-border-radius);
+    color: var(--link-color);
+    text-decoration: none;
+
+    &:hover { color: var(--link-hover-color); }
+  }
+
+  nav ul { @include list-reset; }
+
+  /*
+    Tables
+  */
+
+  table {
+    thead th {
+      font-weight: 500;
+      text-transform: uppercase;
+      background: $grey-100;
+      color: var(--secondary-color);
+    }
+  }
+
+  /*
+    Forms
+  */
+
+  label { @include label; }
+
+  input,
+  textarea {
+    padding-block: calc(var(--input-padding-block) - var(--input-border-width));
+    padding-inline: calc(var(--input-padding-inline) - var(--input-border-width));
+    border: var(--input-border-width) var(--input-border-style) var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    background-color: var(--input-bg-color);
+    color: var(--input-color);
+    box-shadow: var(--input-shadow);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: var(--line-height);
+
+    &:not([readonly]) { @include focus-border; }
+    &[readonly]:focus { outline: 0; }
+    &::placeholder { color: var(--input-placeholder-color); }
+  }
+}

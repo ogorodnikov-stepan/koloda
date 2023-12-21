@@ -1,0 +1,102 @@
+@use 'assets/styles/_index.scss' as *;
+
+$max-width: 30rem;
+
+.divels {
+  &-skeleton {
+    max-width: 15rem;
+    margin-inline: var(--content-padding-inline);
+  }
+
+  &__empty { @include feature-empty-state; }
+
+  &-list {
+    @include list-reset;
+    max-width: $max-width;
+    margin-inline: var(--content-padding-inline);
+  }
+
+  &-list__item {
+    @include flex-row($align: center);
+
+    &[data-is-dragging="true"] {
+      background-color: var(--dragging-background-color);
+
+      .divels-list__item-title-value {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &-list__item:not(:last-child) { border-bottom: var(--content-subsection-border); }
+
+  &-list__item-link {
+    @include flex-row($align: center);
+    padding-block: calc(0.25rem + var(--input-padding-block));
+    padding-inline: 0.5rem;
+
+    &:hover { --button-link-color: var(--link-hover-color); }
+  }
+
+  &-list__item-index {
+    display: inline-block;
+    width: 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  &-list__item-title { flex-grow: 1; }
+
+  &-list__item-title-value { width: 100%; }
+
+  &-list__item-default {
+    @include inline-flex-row($align: center);
+    @include button-link-icon-before;
+
+    margin-inline-start: 1rem;
+
+    &::before {
+      content: "";
+      width: 1.25rem;
+      height: 1.25rem;
+      mask: url("assets/images/star.svg") 0 0/1.25rem 1.25rem no-repeat;
+    }
+  }
+
+  &-list__item-default-button {
+    @include inline-flex-row($align: center);
+    @include button-link-icon;
+
+    gap: 0.5rem;
+    padding: 0.5rem;
+    --button-link-color: var(--disabled-color);
+
+    &::before {
+      width: 1.5rem;
+      height: 1.5rem;
+      mask: url("assets/images/star.svg") 0 0/1.5rem 1.5rem no-repeat;
+    }
+
+    &[data-is-selected="true"] {
+      --button-link-color: var(--link-color);
+      pointer-events: none;
+    }
+  }
+
+
+  &__add {
+    width: calc(100% - var(--content-padding-inline) * 2);
+    max-width: $max-width;
+    margin-block-start: 0.5rem;
+    margin-inline: var(--content-padding-inline);
+    padding-block: 0.75rem;
+  }
+
+  &[data-mode="edit"] {
+    .divels-list__item-link { margin-inline-end: 0.25rem; }
+    .divels-list__item-index { width: 1ch; }
+    .divels-list__item-title-value:not(:focus) { border-color: transparent; }
+    .divels-list__item-default-button,
+    .divels-list__item-delete { margin-inline-start: 0.25rem; }
+  }
+}

@@ -1,0 +1,118 @@
+@use 'assets/styles/_index.scss' as *;
+
+$index-padding-inline: 0.75rem;
+
+.deck-cards__slider {
+  position: relative;
+
+  &-header {
+    position: relative;
+    border-block: var(--content-section-border);
+  }
+
+  &-list {
+    @include list-reset;
+    @include flex-row($align: center);
+
+    overflow-y: auto;
+    padding-inline: var(--content-padding-inline);
+
+    // &::before {
+    //   @include edge-fade;
+
+    //   width: var(--content-padding-inline);
+    //   height: 100%;
+    //   inset-block-start: 0;
+    //   inset-inline-start: 0;
+    //   background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 90%);
+    // }
+
+    // &::after {
+    //   @include edge-fade;
+
+    //   width: var(--content-padding-inline);
+    //   height: 100%;
+    //   inset-block-start: 0;
+    //   inset-inline-end: 0;
+    //   background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255, 1) 90%);
+    // }
+
+    &-item {
+      border-inline-end: var(--content-subsection-border);
+      text-align: center;
+
+      &:first-child { border-inline-start: var(--content-subsection-border); }
+
+      &-index {
+        @include button-link;
+        min-width: calc(2.5rem + ($index-padding-inline * 2));
+        padding-block: 1rem;
+        padding-inline: $index-padding-inline;
+        border-radius: 0;
+        font-size: var(--h3-font-size);
+        font-weight: 700;
+
+        &[data-is-selected="true"], &[data-is-selected="true"]:hover {
+          color: var(--primary-color);
+          background-color: var(--slider-selected-item-bg-color);
+        }
+      }
+    }
+  }
+
+  &-card-property-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &-drag.drag-handle {
+    padding-block: 0;
+    border-block-start: var(--content-subsection-border);
+    border-radius: 0;
+
+    &::before { transform: rotate(90deg); }
+  }
+
+  &-add {
+    width: 100%;
+    margin: 0.5rem;
+    padding: 1rem 0.75rem;
+  }
+
+  &-delete {
+    margin-block: 1rem;
+    margin-inline: auto;
+  }
+
+  &-card {
+    margin-block: 1rem;
+    margin-inline: var(--content-padding-inline);
+
+    &-title {
+      padding-inline: var(--input-padding-inline);
+      text-align: center;
+    }
+
+    &-property { &:not(:last-child) { margin-block-end: 1rem; } }
+
+    &-progress {
+      @include flex-row($align: center);
+
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      &-complete-button { @include button-grey-bg-green-text; }
+      &-reset-button { @include button-grey-bg-red-text; }
+    }
+
+    &-actions {
+      @include flex-row($align: center);
+
+      margin-block: 1rem;
+    }
+  }
+}
+
+.deck-cards[data-mode="edit"] {
+  .deck-cards__slider-list-item:last-child { border-inline-end: 0; }
+}

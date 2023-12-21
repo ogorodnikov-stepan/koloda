@@ -1,0 +1,7 @@
+@use 'assets/styles/_index.scss' as *;
+
+body > #app {
+  @include flex-col;
+  min-height: 100vh;
+  background-color: var(--bg-color-root);
+}

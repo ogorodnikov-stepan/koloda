@@ -1,0 +1,92 @@
+{
+  "titles": {
+    "app": "Koloda",
+    "delimiter": " - ",
+    "demo": "Демо",
+    "account": "Учётная запись",
+    "reppings": "Алгоритмы",
+    "decks": "Колоды",
+    "lesson": "Урок"
+  },
+  "layout": {
+    "header": {
+      "menu": {
+        "main": {
+          "home": "Домой",
+          "decks": "Колоды",
+          "reppings": "Алгоритмы",
+          "new": {
+            "text": "Добавить",
+            "items": {
+              "deck": "Колода",
+              "repping": "Алгоритм"
+            }
+          }
+        },
+        "secondary": {
+          "user": {
+            "profile": "Профиль",
+            "logout": "Выйти"
+          }
+        }
+      }
+    }
+  },
+  "ui": {
+    "feature": {
+      "many": {
+        "load": "Загрузить ещё",
+        "options": {
+          "title": "Сортировка и Фильтры",
+          "sorting": {
+            "label": "Сортировка"
+          },
+          "filters": {
+            "title": "Фильтры",
+            "clear": "Очистить"
+          }
+        }
+      }
+    },
+    "editbar": {
+      "click": {
+        "button": {
+          "edit": "Правка",
+          "view": "Просмотр",
+          "save": "Сохранить",
+          "saving": "Сохранение",
+          "discard": "Отмена"
+        }
+      }
+    },
+    "statusbar": {
+      "discard": "Discard",
+      "message": {
+        "initial": "",
+        "saving": "Сохранение",
+        "saved": "Сохранено",
+        "discarded": "",
+        "error": "Ошибка"
+      }
+    }
+  },
+  "pages": {
+    "error": {
+      "404": {
+        "title": "Не найдено",
+        "text": "Эта страница была удалена или никогда не существовала."
+      },
+      "unknown": "Произошла неизвестная ошибка.",
+      "500": "Что-то пошло не так.",
+      "502": "Сервер временно недоступен."
+    },
+    "demo": {
+      "title": "Настройка демо",
+      "language": {
+        "label": "Язык контента",
+        "message": "Initial data will be created in this language. You can still change interface language."
+      },
+      "submit": "Приступить"
+    }
+  }
+}

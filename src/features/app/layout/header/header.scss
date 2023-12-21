@@ -1,0 +1,41 @@
+@use 'assets/styles/_index.scss' as *;
+
+.app-header {
+  z-index: 2;
+  background-color: var(--header-bg-color);
+  box-shadow: var(--header-shadow);
+
+  &__content {
+    @include flex-row($align: center);
+    width: var(--layout-width);
+    margin: 0 auto;
+    padding: var(--header-padding-block) var(--header-padding-inline);
+  }
+
+  .app-logo {
+    order: 2;
+
+    @include screen-xs-s {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    &__link {
+      @include button-link;
+
+      padding: var(--input-padding-block) var(--input-padding-inline);
+      border-radius: var(--input-border-radius);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  }
+
+  .main-menu { order: 1; }
+  .secondary-menu { order: 3; }
+
+  @include screen-m {
+    .app-logo { order: 1; }
+    .main-menu { order: 2; }
+    .secondary-menu { order: 3; }
+  }
+}

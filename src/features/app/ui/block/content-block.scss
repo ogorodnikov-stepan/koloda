@@ -1,0 +1,7 @@
+@use 'assets/styles/_index.scss' as *;
+
+.content-block {
+  border-radius: var(--content-block-border-radius);
+  background: var(--content-bg-color);
+  box-shadow: var(--content-block-shadow);
+}

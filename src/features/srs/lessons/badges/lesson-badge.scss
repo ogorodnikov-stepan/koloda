@@ -1,0 +1,38 @@
+@use 'assets/styles/_index.scss' as *;
+
+$inactive-badge-color: $grey-500;
+
+.lesson__badge {
+  min-width: 4rem;
+  height: 2.5rem;
+  padding: var(--input-padding-block) var(--input-padding-inline);
+  border-radius: 1.25rem;
+  vertical-align: baseline;
+  text-align: center;
+  font-weight: 600;
+
+  &[data-lesson-type="new"] {
+    background-color: var(--lesson-badge-new-bg-color);
+    color: var(--lesson-badge-new-color);
+
+    &[data-is-active="true"]:hover {
+      background-color: var(--lesson-badge-new-hover-bg-color);
+      color: var(--lesson-badge-new-hover-color);
+    }
+  }
+
+  &[data-lesson-type="rep"] {
+    background-color: var(--lesson-badge-rep-bg-color);
+    color: var(--lesson-badge-rep-color);
+
+    &[data-is-active="true"]:hover {
+      background-color: var(--lesson-badge-rep-hover-bg-color);
+      color: var(--lesson-badge-rep-hover-color);
+    }
+  }
+
+  &[data-is-active="false"] {
+    background-color: var(--lesson-badge-inactive-bg-color);
+    color: var(--lesson-badge-inactive-color);
+  }
+}

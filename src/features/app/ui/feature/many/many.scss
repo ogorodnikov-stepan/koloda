@@ -1,0 +1,177 @@
+@use 'assets/styles/_index.scss' as *;
+
+.many {
+  @include flex-row;
+  flex-grow: 1;
+
+  @include screen-xs {
+    flex-direction: column;
+
+    &__empty,
+    &__content { order: 2; }
+    &__options { order: 1; }
+  }
+
+  &__content {
+    // overflowing backgroung fix
+    // can't use on parent cause it breaks position: sticky
+    flex-grow: 1;
+    overflow: hidden;
+    border-start-start-radius: var(--content-block-border-radius);
+    border-end-start-radius: var(--content-block-border-radius);
+  }
+
+  &__empty {
+    @include flex-col($align: center, $justify: center);
+    flex-grow: 1;
+
+    &-content { @include feature-empty-state; }
+  }
+
+  &__load {
+    @include button-link;
+
+    display: block;
+    margin: 1rem auto;
+    line-height: var(--line-height);
+  }
+
+  &__list {
+    @include list-reset;
+
+    &-item-link {
+      display: block;
+      padding: calc(var(--content-padding-block) / 2) var(--content-padding-inline);
+      border-block-end: var(--many-item-border);
+      border-radius: 0;
+      color: var(--link-alternative-color);
+
+      &:hover {
+        background-color: var(--many-item-hover-bg-color);
+        color: var(--link-alternative-color);
+        box-shadow: var(--input-shadow);
+      }
+
+      &:focus-visible { @include focus-outline-disable-rules; }
+      &:focus-visible &-content { @include focus-outline-enable-rules; }
+
+      &-content {
+        padding: calc(var(--content-padding-block) / 2) var(--input-padding-inline);
+        border-radius: var(--input-border-radius);
+      }
+    }
+  }
+
+  &__options {
+    padding: var(--content-padding-block) var(--content-padding-inline);
+
+    @include screen-xs {
+      border-block-end: var(--content-section-border);
+    }
+
+    @include screen-s {
+      width: 15rem;
+      border-inline-start: var(--content-section-border);
+    }
+
+    @include screen-m {
+      width: 18rem;
+    }
+
+    &-content {
+      @include flex-col($gap: 1rem);
+
+      position: sticky;
+      inset-block-start: var(--content-padding-block);
+
+      @include screen-xs {
+        &[data-is-open="false"] { display: none; }
+      }
+    }
+
+    &-toggle {
+      @include button-link;
+      @include flex-row($align: center);
+
+      margin-inline: auto;
+      font-weight: 500;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 0.75rem;
+        height: 1.5rem;
+        mask: url("assets/images/chevron-thick.svg") -.25rem 0/1.5rem 1.5rem;
+        background-color: var(--button-link-color);
+      }
+
+      &[data-is-open="true"] {
+        @include button-link-hover-styles;
+
+        &::after {
+          transform: scaleY(-1);
+          background-color: var(--button-link-hover-color);
+        }
+      }
+
+      @include screen-s { display: none; }
+    }
+  }
+
+  &__sorting-label, &__filters-title {
+    padding: var(--input-padding-block) var(--input-padding-inline);
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__filters {
+    &-header { @include flex-row($align: center, $gap: 0.5rem); }
+
+    &-title { flex-grow: 1; }
+
+    &-clear {
+      @include button-link;
+
+      line-height: var(--button-compact-line-height);
+      padding-inline: 0.5rem;
+    }
+
+    &-content { @include flex-col($gap: 1rem); }
+  }
+
+  &__filter {
+    &-toggle {
+      @include flex-row($align: center);
+
+      width: 100%;
+      padding-inline: var(--input-padding-inline);
+      text-align: start;
+      background-color: transparent;
+      color: var(--primary-color);
+
+      &:hover { color: var(--secondary-color); }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 0.75rem;
+        height: 0.75rem;
+        mask: url("assets/images/chevron.svg") 0 0/0.75rem 0.75rem;
+        background-color: var(--primary-color);
+      }
+
+      &:hover::after { background-color: var(--secondary-color); }
+
+      &[data-is-open="true"]::after { transform: scaleY(-1); }
+    }
+
+    &-title { flex-grow: 1; }
+
+    &-content {
+      @include flex-col($gap: 0.25rem);
+
+      &[data-is-open="false"] { display: none; }
+    }
+  }
+}

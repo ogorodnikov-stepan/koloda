@@ -1,0 +1,36 @@
+@use 'assets/styles/_index.scss' as *;
+
+.settings {
+  @include list-reset;
+
+  display: grid;
+  grid-auto-columns: 1fr 3fr;
+  grid-auto-flow: row;
+
+  &__item {
+    display: grid;
+    grid-column: 1 / span 2;
+
+    &-title {
+      @include label;
+
+      display: grid;
+      grid-column: 1;
+      padding-block: var(--input-padding-block);
+
+      @include screen-xs {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &-content {
+      display: grid;
+      grid-column: 2;
+      margin: 0;
+
+      @include screen-xs {
+        grid-column: 1 / span 2;
+      }
+    }
+  }
+}

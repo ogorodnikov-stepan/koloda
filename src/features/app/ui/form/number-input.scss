@@ -1,0 +1,68 @@
+@use 'assets/styles/_index.scss' as *;
+
+$button-height: 2.5rem;
+$button-width: 100%;
+$icon-width: 1.5rem;
+$icon-height: 1.5rem;
+
+.number-input {
+  position: relative;
+
+  &:focus-within &__increment,
+  &:focus-within &__decrement {
+    display: block;
+    border: 0;
+    box-shadow: var(--number-input-buttons-shadow);
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button { display: none; }
+
+  input {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    width: 100%;
+    text-align: inherit;
+  }
+
+  &__increment,
+  &__decrement {
+    display: none;
+    position: absolute;
+    z-index: 15;
+    height: $button-height;
+    width: $button-width;
+    inset-inline-start: 0;
+    padding-block: calc(($button-height - $icon-height) / 2);
+    padding-inline: calc(($button-width - $icon-width) / 2);
+    border: var(--input-border);
+    border-color: var(--input-border-color-focus);
+    border-radius: 0.5rem;
+    background-color: var(--content-bg-color);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: $icon-height;
+      width: $icon-width;
+      background-color: var(--link-color);
+    }
+  }
+
+  &__increment {
+    inset-block-start: calc(-0.5rem - $button-height);
+
+    &::before {
+      mask: url("assets/images/plus.svg") 0 0/#{$icon-height} #{$icon-width} no-repeat;
+    }
+  }
+
+  &__decrement {
+    inset-block-start: calc(0.5rem + var(--input-padding-block) * 2 + var(--line-height));
+
+    &::before {
+      mask: url("assets/images/dash.svg") 0 0/#{$icon-height} #{$icon-width} no-repeat;
+    }
+  }
+}

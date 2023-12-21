@@ -1,0 +1,25 @@
+@use 'assets/styles/_index.scss' as *;
+
+.app-language-select__language {
+  @include flex-row($align: center, $gap: 0.5rem);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+  }
+
+  &[data-language="en"]::before {
+    background-image: url("assets/images/languages/en.svg");
+  }
+
+  // &[data-language="es"]::before {
+  //   background-image: url("assets/images/languages/es.svg");
+  // }
+
+  &[data-language="ru"]::before {
+    background-image: url("assets/images/languages/ru.svg");
+  }
+}

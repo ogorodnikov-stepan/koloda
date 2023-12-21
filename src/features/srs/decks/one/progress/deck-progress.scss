@@ -1,0 +1,184 @@
+@use 'assets/styles/_index.scss' as *;
+
+.deck-progress {
+  @include flex-col;
+  flex-grow: 1;
+
+  &__content {
+    @include flex-col($align: center, $justify: center, $gap: 1rem);
+    flex-grow: 1;
+  }
+
+  &__requirements {
+    &-title { @include feature-empty-state-text; }
+
+    &-list {
+      @include list-reset;
+
+      &-item {
+        @include flex-row($gap: 0.5rem);
+
+        &:not(:last-child) { margin-block-end: 1rem; }
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        &[data-requirement-value="true"]::before {
+          mask: url("assets/images/check-circle.svg") 0 0/1.5rem 1.5rem;
+          background-color: var(--success-color);
+        }
+
+        &[data-requirement-value="false"]::before {
+          mask: url("assets/images/x-circle.svg") 0 0/1.5rem 1.5rem;
+          background-color: var(--error-color);
+        }
+      }
+    }
+  }
+
+  &__not-learning {
+    @include flex-col($align: center);
+
+    &-title {
+      @include feature-empty-state-text;
+      margin-inline: var(--input-padding-inline);
+    }
+  }
+
+  &__start {
+    @include flex-col($align: center, $gap: 1rem);
+
+    .label { display: none; }
+
+    &-repping { width: 20rem; }
+
+    &-button {
+      @include button-blue;
+      line-height: var(--line-height);
+      padding-block: var(--input-padding-block);
+      white-space: nowrap;
+    }
+  }
+
+  &__learning {
+    @include flex-col($gap: 1rem);
+
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__repping {
+    @include flex-row($gap: 0.5rem);
+
+    white-space: nowrap;
+  }
+
+  &__learning-settings {
+    padding-inline: var(--input-padding-inline);
+  }
+
+  &__actions {
+    @include flex-row($align: center, $justify: center);
+    width: 100%;
+  }
+
+  &__stop {
+    @include button-grey-bg-red-text;
+    line-height: var(--line-height);
+    padding-block: var(--input-padding-block);
+    white-space: nowrap;
+  }
+
+  &__stats {
+    @include flex-col;
+
+    padding-inline: var(--input-padding-inline);
+  }
+
+  &__types {
+    @include flex-col($align: center, $gap: 1rem);
+
+    @include screen-s {
+      @include flex-row($align: center, $gap: 2rem);
+    }
+  }
+
+  &__chart {
+    height: 18rem;
+    width: 18rem;
+
+    .ct-label {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .ct-series-a .ct-slice-donut { stroke: $blue-500; }
+    .ct-series-b .ct-slice-donut { stroke: $purple-500; }
+    .ct-series-c .ct-slice-donut { stroke: $green-500; }
+  }
+
+  &__legend {
+    @include list-reset;
+    @include flex-col($gap: 1rem);
+    margin-inline: var(--input-padding-inline);
+
+    &-item {
+      @include flex-row($align: center);
+
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 0.75rem;
+        width: 0.75rem;
+        margin-inline-end: 0.5rem;
+        border-radius: 0.75rem;
+      }
+
+      &[data-card-type="initial"]::before { background-color: $blue-500; }
+      &[data-card-type="learning"]::before { background-color: $purple-500; }
+      &[data-card-type="completed"]::before { background-color: $green-500; }
+    }
+
+    &-amount {
+      margin-inline-start: 0.5rem;
+      padding-inline: 0.5rem;
+      border-radius: calc(var(--line-height) / 2);
+      background-color: $grey-100;
+      font-weight: 500;
+    }
+  }
+}
+
+.learning-settings {
+  &__repping {
+    padding-block: var(--input-padding-block);
+  }
+
+  &__lesson-limits {
+    @include flex-row($align: center, $gap: 1.5rem);
+
+
+  }
+
+  &__lesson-limit {
+    @include flex-row($align: center, $gap: 0.25rem);
+
+    &[data-lesson-type="new"] { color: var(--lesson-badge-new-color); }
+    &[data-lesson-type="rep"] { color: var(--lesson-badge-rep-color); }
+
+    &-value, .number-input {
+      width: 3.5rem;
+      text-align: center;
+    }
+
+    &-value {
+      font-weight: 500;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+  }
+}

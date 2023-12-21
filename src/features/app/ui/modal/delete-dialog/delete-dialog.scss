@@ -1,0 +1,60 @@
+@use 'assets/styles/_index.scss' as *;
+
+.delete-dialog {
+  &__content {
+    @include flex-col($align: center);
+    gap: 1rem;
+
+    padding: 2rem;
+  }
+
+  &__message { font-weight: 600; }
+
+  &__status {
+    @include flex-row;
+
+    padding-inline-end: 1.5rem;
+    animation: fadeIn 0.6s forwards;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &[data-status="idle"] { display: none; }
+
+    &[data-status="loading"] { color: var(--loading-color); }
+
+    &[data-status="success"] {
+      color: var(--success-color);
+
+      &::before {
+        mask: url("assets/images/check.svg") 0 0/1.5rem 1.5rem;
+        background-color: var(--success-color);
+      }
+    }
+
+    &[data-status="error"] {
+      color: var(--error-color);
+
+      &::before {
+        mask: url("assets/images/error.svg") 0 0/1.5rem 1.5rem;
+        background-color: var(--error-color);
+      }
+    }
+  }
+
+  &__actions {
+    @include flex-row;
+    gap: 1rem;
+  }
+
+  &__confirm,
+  &__cancel { white-space: nowrap; }
+
+  &__confirm { @include button-grey-bg-red-text; }
+  &__cancel,
+  &__close { @include button-link; }
+}

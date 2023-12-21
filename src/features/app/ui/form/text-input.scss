@@ -1,0 +1,64 @@
+@use 'assets/styles/_index.scss' as *;
+
+.text-input {
+  position: relative;
+
+  &__value {
+    width: 100%;
+
+    &[data-is-readonly="true"] {
+      border: 0;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &[data-is-error="true"] {
+      border-color: var(--input-border-color-error);
+      background-color: var(--input-error-bg-color);
+    }
+  }
+
+  &__label[data-is-error="true"] { color: var(--label-color-error); }
+
+  &__errors-list {
+    @include list-reset(
+      $margin-inline: var(--input-padding-inline)
+    );
+
+    color: var(--input-errors-color);
+
+    &[data-is-dropdown="true"] {
+      z-index: 5;
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-start: calc(0.25rem + var(--line-height) + (var(--input-padding-block) * 2 ));
+      margin: 0;
+      padding: 0.5rem;
+      border-radius: var(--dropdown-border-radius);
+      background-color: var(--dropdown-bg-color);
+      box-shadow: var(--dropdown-shadow);
+
+      &[data-is-open="false"] { display: none; }
+    }
+  }
+
+  &__errors-toggle {
+    @include focus-outline;
+
+    position: absolute;
+    inset-inline-end: 0;
+    padding-block: var(--input-padding-block);
+    padding-inline: var(--input-padding-inline);
+    line-height: 0;
+    background-color: transparent;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      mask: url("assets/images/exclamation-circle.svg") 0 0/1.5rem 1.5rem;
+      background-color: $red-500;
+    }
+  }
+}

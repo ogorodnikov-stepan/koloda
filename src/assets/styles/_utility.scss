@@ -1,0 +1,40 @@
+@mixin flex-row($align: false, $justify: false, $wrap: false, $gap: false) {
+  display: flex;
+  flex-direction: row;
+  @if $align { align-items: $align; }
+  @if $justify { justify-content: $justify; }
+  @if $wrap { flex-wrap: $wrap; }
+  @if $gap { gap: $gap; }
+}
+
+@mixin inline-flex-row($align: false, $justify: false, $wrap: false, $gap: false) {
+  display: inline-flex;
+  flex-direction: row;
+  @if $align { align-items: $align; }
+  @if $justify { justify-content: $justify; }
+  @if $wrap { flex-wrap: $wrap; }
+  @if $gap { gap: $gap; }
+}
+
+@mixin flex-col($align: false, $justify: false, $gap: false) {
+  display: flex;
+  flex-direction: column;
+  @if $align { align-items: $align; }
+  @if $justify { justify-content: $justify; }
+  @if $gap { gap: $gap; }
+}
+
+@mixin inline-block($align: middle) {
+  display: inline-block;
+  vertical-align: $align;
+}
+
+@mixin list-reset(
+  $margin-block: 0, $margin-inline: 0, $padding-block: 0, $padding-inline: 0
+) {
+  margin-block: $margin-block;
+  margin-inline: $margin-inline;
+  padding-block: $padding-block;
+  padding-inline: $padding-inline;
+  list-style: none;
+}

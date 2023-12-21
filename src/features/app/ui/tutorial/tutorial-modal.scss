@@ -1,0 +1,17 @@
+@use 'assets/styles/_index.scss' as *;
+
+.tutorial-modal {
+  max-width: 30rem;
+  margin: 1.5rem;
+
+  &__actions {
+    @include flex-col($align: center, $gap: 0.5rem);
+
+    margin-top: 2rem;
+  }
+
+  &__disable { @include button-link; }
+
+  &__continue { @include button-blue; }
+
+}

@@ -1,0 +1,1552 @@
+{
+  "title": "Иностранный Язык: Предложения",
+  "description": [
+    {
+      "type": "p",
+      "children": [
+        {
+          "text": "Алгоритм с более короткиим интервалами для продвинутого изучения."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "children": [
+        {
+          "text": "Включает прямые и обратные тесты."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "children": [
+        {
+          "text": "Три уровня сложности."
+        }
+      ]
+    }
+  ],
+  "divels": [
+    {
+      "id": 1,
+      "title": "Легко",
+      "isDefault": false,
+      "phases": [
+        {
+          "id": 1,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 3,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Начало"
+        },
+        {
+          "id": 2,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 4,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-01"
+        },
+        {
+          "id": 3,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 1,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-02"
+        },
+        {
+          "id": 4,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 1,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 0
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-01"
+        },
+        {
+          "id": 5,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 2,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-03"
+        },
+        {
+          "id": 6,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 1,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-04"
+        },
+        {
+          "id": 7,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 1,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 0
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-02"
+        },
+        {
+          "id": 8,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 2,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-05"
+        },
+        {
+          "id": 9,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 2,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-06"
+        },
+        {
+          "id": 10,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 6,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 0
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-03"
+        },
+        {
+          "id": 11,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 0,
+                "years": 1
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-07"
+        },
+        {
+          "id": 12,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 0,
+                "years": 1
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-04"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Нормально",
+      "isDefault": true,
+      "phases": [
+        {
+          "id": 1,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 2,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Начало"
+        },
+        {
+          "id": 2,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 2,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-01"
+        },
+        {
+          "id": 3,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 5,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-02"
+        },
+        {
+          "id": 4,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 5,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 0
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-01"
+        },
+        {
+          "id": 5,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 1,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-03"
+        },
+        {
+          "id": 6,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 3,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-04"
+        },
+        {
+          "id": 7,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 3,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 0
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-02"
+        },
+        {
+          "id": 8,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 2,
+                "months": 1,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-05"
+        },
+        {
+          "id": 9,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 2,
+                "months": 1,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-06"
+        },
+        {
+          "id": 10,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 3,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 0
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-03"
+        },
+        {
+          "id": 11,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 9,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-07"
+        },
+        {
+          "id": 12,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 9,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-04"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Сложно",
+      "isDefault": false,
+      "phases": [
+        {
+          "id": 1,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 4,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Начало"
+        },
+        {
+          "id": 2,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-01"
+        },
+        {
+          "id": 3,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-02"
+        },
+        {
+          "id": 4,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 3,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-01"
+        },
+        {
+          "id": 5,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 4,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-03"
+        },
+        {
+          "id": 6,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 1,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-04"
+        },
+        {
+          "id": 7,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 2,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-02"
+        },
+        {
+          "id": 8,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 3,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-05"
+        },
+        {
+          "id": 9,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 3,
+                "months": 0,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-06"
+        },
+        {
+          "id": 10,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 2,
+                "months": 1,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-03"
+        },
+        {
+          "id": 11,
+          "actions": [
+            {
+              "type": 2,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 2,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 6,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Прямой-07"
+        },
+        {
+          "id": 12,
+          "actions": [
+            {
+              "type": 3,
+              "times": 1
+            }
+          ],
+          "actionsDraft": {
+            "type": 1,
+            "times": 1
+          },
+          "triggers": {
+            "0": {
+              "offset": {
+                "type": 1,
+                "value": 1
+              },
+              "delay": {
+                "hours": 0,
+                "days": 0,
+                "weeks": 0,
+                "months": 6,
+                "years": 0
+              }
+            },
+            "1": {
+              "offset": {
+                "type": 1,
+                "value": 2
+              },
+              "delay": {
+                "hours": 0,
+                "days": 1,
+                "weeks": 0,
+                "months": 0,
+                "years": 0
+              }
+            }
+          },
+          "title": "Обратный-04"
+        }
+      ]
+    }
+  ]
+}

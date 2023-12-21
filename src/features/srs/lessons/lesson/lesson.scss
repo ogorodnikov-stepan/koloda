@@ -1,0 +1,125 @@
+@use 'assets/styles/_index.scss' as *;
+
+.lesson {
+  &__controls { order: 2; }
+
+  &__status {
+    @include flex-col($align: center, $justify: center);
+    flex-grow: 1;
+  }
+
+  &__results {
+    &-upload-status {
+      &[data-status="loading"] { color: var(--secondary-color); }
+      &[data-status="success"] { color: var(--success-color); }
+      &[data-status="error"] { color: var(--error-color); }
+    }
+  }
+
+  &__empty-message { @include feature-empty-state; }
+
+  &__action {
+    @include flex-col($align: center, $justify: center);
+    flex-grow: 1;
+    gap: 2rem;
+
+    padding-block: var(--content-padding-block);
+    padding-inline: var(--content-padding-inline);
+
+    &-controls {
+      @include flex-col($align: center);
+
+      gap: 1rem;
+    }
+
+    &-submit { @include button-blue; }
+
+    &-mark-correct {
+      @include button-link;
+      @include focus-outline;
+    }
+
+    &-status {
+      @include flex-col($justify: center);
+      flex-grow: 1;
+      font-size: 2rem;
+      font-weight: 600;
+
+      &-message {
+        &[data-status="correct"] {
+          @include flex-row( $align: center);
+          color: var(--success-color);
+
+          &::before {
+            content: "";
+            display: inline-block;
+            height: 2.5rem;
+            width: 2.5rem;
+            mask: url("assets/images/check.svg") 0 0/2.5rem 2.5rem;
+            background-color: var(--success-color);
+          }
+        }
+      }
+    }
+  }
+
+  &__fields {
+    @include list-reset;
+    @include flex-col($justify: center);
+
+    gap: 2rem;
+
+    &-item {
+      @include flex-col($justify: center);
+
+      gap: 1rem;
+    }
+  }
+
+  &__field {
+    text-align: center;
+
+    &-value {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+
+      &[data-is-empty="true"] {
+        color: var(--placeholder-color);
+        user-select: none;
+      }
+
+      &[data-is-correct="true"] {
+        color: var(--success-color);
+      }
+
+      &[data-is-incorrect="true"] {
+        color: var(--error-color);
+      }
+    }
+  }
+
+  &__divels {
+    @include list-reset;
+    @include flex-row($align: center, $justify: center);
+
+    gap: 0.5rem;
+
+    &-item {
+      &-button {
+        @include flex-row($align: center);
+        @include button-link-styles;
+        @include focus-outline;
+
+        gap: 0.5rem;
+
+        border-radius: var(--menu-item-border-radius);
+
+        &[data-is-selected="true"] { @include button-link-hover-styles; }
+        &[data-is-selected="false"]:hover { @include button-link-hover-styles; }
+      }
+
+      &-number { font-weight: 700; }
+    }
+  }
+}

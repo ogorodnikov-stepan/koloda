@@ -1,0 +1,79 @@
+@use 'assets/styles/_index.scss' as *;
+
+.select {
+  &__content { position: relative; }
+
+  &__control {
+    @include focus-outline;
+    @include flex-row($align: center);
+
+    width: 100%;
+    padding-block: calc(var(--input-padding-block) - var(--input-border-width));
+    padding-inline: calc(var(--input-padding-inline) - var(--input-border-width));
+    border: var(--select-border);
+    border-radius: var(--select-border-radius);
+    background-color: var(--select-bg-color);
+    color: var(--primary-color);
+    box-shadow: var(--input-shadow);
+    text-align: initial;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
+      background: url("assets/images/chevron.svg") 50% no-repeat;
+    }
+  }
+
+  &[data-is-open="true"] &__control::after { transform: scaleY(-1); }
+
+  &__value {
+    flex-grow: 1;
+    line-height: var(--line-height);
+    white-space: nowrap;
+    // font-weight: 500;
+  }
+
+  &__items {
+    @include list-reset;
+    @include focus-outline;
+
+    position: absolute;
+    inset-block-start: calc(0.25rem + (var(--input-padding-block) * 2) + var(--line-height));
+    z-index: 10;
+    width: 100%;
+    border: 0;
+  }
+
+  &[data-is-open="false"] &__items { display: none; }
+
+  &[data-is-open="true"] &__items {
+    background-color: var(--select-items-bg-color);
+    border: var(--select-items-border);
+    border-radius: var(--select-border-radius);
+    box-shadow: var(--select-items-shadow);
+  }
+
+  &__item {
+    margin: 0.25rem;
+    padding: 0.5rem;
+    border-radius: var(--input-border-radius);
+    cursor: pointer;
+
+    &[data-is-selected="true"] {
+      background-color: var(--select-items-selected-bg-color);
+      font-weight: 700;
+    }
+
+    &:hover, &[data-is-highlighted="true"] {
+      background-color: var(--select-items-hover-bg-color);
+      box-shadow: var(--select-items-hover-shadow);
+    }
+  }
+
+  &[data-is-readonly="true"] {
+    background-color: transparent;
+  }
+}

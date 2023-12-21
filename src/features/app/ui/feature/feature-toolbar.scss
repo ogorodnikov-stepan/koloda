@@ -1,0 +1,30 @@
+@use 'assets/styles/_index.scss' as *;
+
+.feature__toolbar {
+  @include flex-row($align: center, $justify: flex-end);
+  position: relative;
+  gap: 1rem;
+  min-height: 3rem;
+  padding-inline: var(--content-padding-inline);
+  border-block-end: var(--content-section-border);
+
+  &-amount {
+    @include flex-row($align: center);
+    flex-grow: 1;
+    flex-wrap: nowrap;
+    margin-block: 1rem calc(1rem - 1px);
+    padding-inline: var(--input-padding-inline);
+    white-space: nowrap;
+
+    &-value {
+      margin-inline-end: var(--input-padding-inline);
+      font-size: var(--h3-font-size);
+      font-weight: 700;
+    }
+
+    &-caption {
+      font-size: var(--h3-font-size);
+      font-weight: 600;
+    }
+  }
+}

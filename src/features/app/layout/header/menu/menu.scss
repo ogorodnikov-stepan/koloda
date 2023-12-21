@@ -1,0 +1,27 @@
+@use 'assets/styles/_index.scss' as *;
+
+.menu {
+  &__item-link, .dropdown__toggle {
+    --button-link-color: var(--menu-item-color);
+    --button-link-hover-color: var(--menu-item-active-color);
+
+    padding: var(--menu-item-padding-block) var(--menu-item-padding-inline);
+    font-weight: 600;
+  }
+
+  &__item {
+    &-link {
+      @include button-link-styles;
+
+      display: inline-block;
+      position: relative;
+      border-radius: var(--menu-item-border-radius);
+
+      &:not(.active):hover { @include button-link-hover-styles; }
+    }
+  }
+
+  .dropdown__content {
+    inset-block-start: calc(0.5rem + (var(--menu-item-padding-block) * 2) + var(--line-height));
+  }
+}

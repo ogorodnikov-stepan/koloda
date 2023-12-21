@@ -1,0 +1,7 @@
+@use 'assets/styles/_index.scss' as *;
+
+.app-main {
+  @include flex-col($align: center);
+  flex-grow: 1;
+  padding: var(--main-padding-block) var(--layout-padding-inline);
+}

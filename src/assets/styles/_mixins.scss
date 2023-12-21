@@ -1,0 +1,223 @@
+@use './utility' as *;
+
+@mixin focus-border(
+  $selector: focus-visible,
+  $box-shadow: 0 0 0 1px var(--focus-visible-outline-color)
+) {
+  &:#{$selector} {
+    border-color: var(--focus-visible-outline-color);
+    box-shadow: $box-shadow;
+    outline: 0;
+    @content;
+  }
+}
+
+@mixin focus-outline() {
+  &:focus-visible { @include focus-outline-enable-rules; }
+  &:focus:not(:focus-visible) { @include focus-outline-disable-rules; }
+}
+
+@mixin focus-outline-enable-rules() {
+  outline: var(--input-border-width) solid var(--focus-visible-outline-color);
+  outline-offset: -1px;
+  box-shadow: 0 0 0 1px var(--focus-visible-outline-color);
+}
+
+@mixin focus-outline-disable-rules() {
+  outline: 0;
+  box-shadow: none;
+}
+
+@mixin label() {
+  font-weight: 500;
+  color: var(--label-color);
+}
+
+@mixin button-grey-bg() {
+  @include focus-outline;
+
+  border: var(--button-grey-border);
+  background-color: var(--button-grey-bg-color);
+  box-shadow: var(--button-grey-shadow);
+
+  &:not(:disabled):hover { background-color: var(--button-grey-hover-bg-color); }
+  &:disabled { background-color: var(--button-grey-disabled-bg-color); }
+}
+
+@mixin button-grey-bg-blue-text() {
+  @include button-grey-bg;
+
+  --button-color: var(--button-grey-blue-color);
+
+  &:not(:disabled):hover { --button-color: var(--button-grey-blue-hover-color); }
+  &:disabled { --button-color: var(--button-grey-blue-disabled-color); }
+
+  font-weight: 600;
+}
+
+@mixin button-grey-bg-red-text() {
+  @include button-grey-bg;
+
+  --button-color: var(--button-grey-red-color);
+
+  &:not(:disabled):hover { --button-color: var(--button-grey-red-hover-color); }
+  &:disabled { --button-color: var(--button-grey-red-disabled-color); }
+
+  font-weight: 600;
+}
+
+@mixin button-grey-bg-green-text() {
+  @include button-grey-bg;
+
+  --button-color: var(--button-grey-green-color);
+
+  &:not(:disabled):hover { --button-color: var(--button-grey-green-hover-color); }
+  &:disabled { --button-color: var(--button-grey-green-disabled-color); }
+
+  font-weight: 600;
+}
+
+@mixin button-blue() {
+  @include focus-border;
+
+  border: var(--button-blue-border);
+  background-color: var(--button-blue-bg-color);
+  color: var(--button-blue-color);
+  box-shadow: var(--button-blue-shadow);
+
+  &:not(:disabled):hover {
+    border: var(--button-blue-hover-border);
+    background-color: var(--button-blue-hover-bg-color);
+    color: var(--button-blue-hover-color);
+  }
+
+  &:disabled {
+    border: var(--button-blue-disabled-border);
+    background-color: var(--button-blue-disabled-bg-color);
+    color: var(--button-blue-disabled-color);
+  }
+
+  font-weight: 600;
+}
+
+@mixin button-add($border-width: 2px) {
+  @include button-inline();
+  border: $border-width dotted var(--add-button-border-color);
+
+  &:hover {
+    background: var(--add-button-bg-color-hover);
+    color: var(--button-color);
+  }
+}
+
+@mixin button-link() {
+  @include focus-outline;
+  @include button-link-hover;
+  @include button-link-disabled;
+  @include button-link-styles;
+}
+
+@mixin button-link-styles {
+  background-color: transparent;
+  color: var(--button-link-color);
+}
+
+@mixin button-link-hover {
+  &:not(:disabled):hover { @include button-link-hover-styles; }
+}
+
+@mixin button-link-hover-styles {
+  box-shadow: var(--button-link-inset-shadow);
+  background-color: var(--button-link-hover-bg-color);
+  color: var(--button-link-hover-color);
+}
+
+@mixin button-link-disabled {
+  &:disabled { @include button-link-disabled-styles; }
+}
+
+@mixin button-link-disabled-styles {
+  background-color: transparent;
+  color: var(--button-link-disabled-color);
+}
+
+@mixin button-link-icon {
+  @include button-link;
+  @include button-link-icon-before;
+  @include button-link-icon-hover-before;
+  @include button-link-icon-disabled-before;
+
+  line-height: 0;
+}
+
+@mixin button-link-icon-before {
+  &::before {
+    content: "";
+    display: inline-block;
+    background-color: var(--button-link-color);
+  }
+}
+
+@mixin button-link-icon-hover-before {
+  &:not(:disabled):hover::before { background-color: var(--button-link-hover-color); }
+}
+
+@mixin button-link-icon-disabled-before {
+  &:disabled::before { background-color: var(--button-link-disabled-color); }
+}
+
+@mixin button-compact {
+  line-height: var(--button-compact-line-height);
+}
+
+@mixin table-head-cell-formatting {
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+// @mixin sections-rows {
+//   section {
+//     padding-block: var(--content-section-padding-block);
+
+//     & + section { border-block-start: 1px solid var(--content-border-color); }
+
+//     & > h2 {
+//       margin-inline: var(--content-padding-inline);
+//       margin-block-start: 0;
+//     }
+//   }
+// }
+
+@mixin feature-view-mode {
+  textarea, input {
+    border-color: transparent;
+    color: var(--primary-color);
+  }
+  textarea:disabled {
+    resize: none;
+    background: transparent;
+  }
+  label { display: none; }
+}
+
+@mixin feature-empty-state {
+  @include flex-col($align: center, $justify: center);
+  @include feature-empty-state-text;
+
+  margin-block: 3rem;
+  margin-inline: var(--content-padding-inline);
+}
+
+@mixin feature-empty-state-text {
+  color: var(--placeholder-color);
+  font-size: var(--h2-font-size);
+  font-weight: 700;
+}
+
+@mixin edge-fade {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
