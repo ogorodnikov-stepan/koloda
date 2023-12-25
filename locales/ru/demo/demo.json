@@ -1,0 +1,17 @@
+{
+  "user": {
+    "full_name": "Демо Пользователь"
+  },
+  "reppings": [
+    "show",
+    "test",
+    "foreign-words",
+    "foreign-sentences"
+  ],
+  "decks": [
+    "foreign-numbers",
+    "foreign-phrases",
+    "foreign-family",
+    "foreign-proverbs"
+  ]
+}

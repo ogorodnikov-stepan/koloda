@@ -1,0 +1,510 @@
+{
+  "reppings": {
+    "add": {
+      "submit": "Create",
+      "properties": {
+        "title": {
+          "label": "",
+          "placeholder": "Algorithm title"
+        }
+      }
+    },
+    "many": {
+      "title": "Algorithms",
+      "empty": "No algorithms",
+      "list": {
+        "noDivels": "No levels"
+      },
+      "options": {
+        "sorting": {
+          "+title": "Title ↑",
+          "-title": "Title ↓",
+          "+created_at": "Created ↑",
+          "-created_at": "Created ↓",
+          "+updated_at": "Updated ↑",
+          "-updated_at": "Updated ↓"
+        },
+        "filters": {
+          "isEligible": {
+            "title": "Learning",
+            "true": "Eligible",
+            "false": "Not eligible"
+          }
+        }
+      }
+    },
+    "one": {
+      "tabs": {
+        "about": "About",
+        "divels": "Levels"
+      },
+      "about": {
+        "title": "About",
+        "empty": "No description",
+        "properties": {
+          "title": {
+            "label": "Title",
+            "placeholder": "Untitled",
+            "errors": {
+              "minLength": "Title can't be empty",
+              "maxLength": "Title is too long"
+            }
+          },
+          "description": {
+            "label": "Description",
+            "placeholder": "No description"
+          },
+          "createdAt": "Created on {{value, datetime}}",
+          "updatedAt": "Last updated on {{value, datetime}}",
+          "isEligible": {
+            "true": "Eligible for learning",
+            "false": "Not eligible for learning"
+          },
+          "requirements": {
+            "divels": "Algorithm has at least one level",
+            "phases": "Each level has at least one step"
+          }
+        },
+        "delete": {
+          "open": "Delete algorithm",
+          "message": "Are you sure you want to delete this algorithm?",
+          "status": {
+            "idle": "",
+            "loading": "Deleting...",
+            "success": "Deleted",
+            "error": "Something went wrong."
+          },
+          "confirm": "Delete algorithm",
+          "cancel": "Don't delete",
+          "close": "Close"
+        }
+      }
+    }
+  },
+  "divels": {
+    "many": {
+      "title": "Levels",
+      "empty": {
+        "message": "No levels"
+      },
+      "list": {
+        "properties": {
+          "title": {
+            "label": "Title",
+            "placeholder": "Untitled",
+            "errors": {
+              "minLength": "Title can't be empty",
+              "maxLength": "Title is too long"
+            }
+          },
+          "default": {
+            "active": "Default level",
+            "button": "Make default"
+          },
+          "description": {
+            "label": "Description",
+            "placeholder": "No description"
+          }
+        },
+        "add": "+ Add Level"
+      }
+    }
+  },
+  "phases": {
+    "many": {
+      "amount_one": "step total",
+      "amount_other": "steps total",
+      "empty": {
+        "message": "This level doesn't have any steps yet."
+      },
+      "add": "+ Add Step"
+    },
+    "one": {
+      "title": {
+        "placeholder": "Untitled"
+      },
+      "actions": {
+        "title": "Actions:",
+        "add": "+ Add action"
+      }
+    },
+    "actions": {
+      "types": {
+        "show": "Show",
+        "typeTest": "Direct type test",
+        "typeTestReverse": "Reverse type test"
+      },
+      "times": "x"
+    },
+    "offset": {
+      "types": {
+        "back": "back",
+        "forward": "forward",
+        "to": "to step",
+        "repeat": "repeat",
+        "complete": "complete"
+      },
+      "phases_one": "step",
+      "phases_other": "steps"
+    },
+    "triggers": {
+      "titles": {
+        "periods": "in",
+        "0": "Correct:",
+        "1": "Incorrect:"
+      }
+    },
+    "periods": {
+      "years_one": "year",
+      "years_other": "years",
+      "months_one": "month",
+      "months_other": "months",
+      "weeks_one": "week",
+      "weeks_other": "weeks",
+      "days_one": "day",
+      "days_other": "days",
+      "hours_one": "hour",
+      "hours_other": "hours"
+    }
+  },
+  "decks": {
+    "selects": {
+      "category": {
+        "label": "Category",
+        "items": {
+          "none": "Any"
+        }
+      },
+      "subject": {
+        "label": "Subject",
+        "items": {
+          "none": "Any"
+        }
+      },
+      "language": {
+        "label": "Language",
+        "items": {
+          "none": "Any"
+        }
+      }
+    },
+    "add": {
+      "submit": "Create",
+      "properties": {
+        "title": {
+          "label": "",
+          "placeholder": "Deck title"
+        }
+      }
+    },
+    "many": {
+      "title": "Decks",
+      "empty": "No decks",
+      "list": {
+        "cards_zero": "No cards",
+        "cards_one": "{{count}} card",
+        "cards_other": "{{count}} cards",
+        "fields_zero": "No fields",
+        "fields_one": "{{count}} field",
+        "fields_other": "{{count}} fields"
+      },
+      "options": {
+        "sorting": {
+          "+title": "Title ↑",
+          "-title": "Title ↓",
+          "+created_at": "Created ↑",
+          "-created_at": "Created ↓",
+          "+updated_at": "Updated ↑",
+          "-updated_at": "Updated ↓"
+        },
+        "filters": {
+          "isEligible": {
+            "title": "Eligibility",
+            "true": "Eligible",
+            "false": "Not eligible"
+          }
+        }
+      }
+    },
+    "one": {
+      "tabs": {
+        "progress": "Progress",
+        "about": "About",
+        "fields": "Fields",
+        "cards": "Cards"
+      },
+      "progress": {
+        "title": "Progress",
+        "requirements": {
+          "title": "Learning is not available",
+          "fields": "Deck has at least one field",
+          "cards": "Deck has at least one card",
+          "reppings": "User has eligible algorithms"
+        },
+        "notLearning": {
+          "title": "Not learning",
+          "start": {
+            "button": "Start learning"
+          }
+        },
+        "learning": {
+          "startedAt": "Learning since {{value, datetime}}",
+          "lastLearnedAt": "Last lesson {{value, datetime}}",
+          "settings": {
+            "title": "Learning settings",
+            "repping": "Algorithm",
+            "lessonLimits": {
+              "title": "Cards per lesson",
+              "new": "Learn",
+              "rep": "Repeat"
+            }
+          },
+          "stop": {
+            "open": "Stop learning",
+            "message": "The progress will be lost. Are you sure?",
+            "status": {
+              "idle": "",
+              "loading": "Loading...",
+              "success": "Done",
+              "error": "Something went wrong."
+            },
+            "confirm": "Stop learning",
+            "cancel": "Cancel",
+            "close": "Close"
+          },
+          "stats": {
+            "title": "Statistics",
+            "cards": {
+              "initial": "Not learning",
+              "learning": "Learning",
+              "completed": "Completed"
+            }
+          }
+        }
+      },
+      "about": {
+        "title": "About",
+        "properties": {
+          "title": {
+            "label": "Title",
+            "errors": {
+              "minLength": "Title can't be empty",
+              "maxLength": "Title is too long"
+            }
+          },
+          "description": {
+            "label": "Description",
+            "placeholder": "No description"
+          },
+          "createdAt": "Created on {{value, datetime}}",
+          "updatedAt": "Last updated on {{value, datetime}}",
+          "isEligible": {
+            "true": "Eligible for learning",
+            "false": "Not eligible for learning"
+          },
+          "requirements": {
+            "fields": "Deck has at least one field",
+            "cards": "Deck has at least one card"
+          }
+        },
+        "delete": {
+          "open": "Delete deck",
+          "message": "Are you sure you want to delete this deck?",
+          "status": {
+            "idle": "",
+            "loading": "Deleting...",
+            "success": "Deleted",
+            "error": "Something went wrong."
+          },
+          "confirm": "Delete deck",
+          "cancel": "Don't delete",
+          "close": "Close"
+        }
+      },
+      "fields": {
+        "types": {
+          "text": "Text"
+        },
+        "roles": {
+          "front": "Front",
+          "back": "Back",
+          "extra": "Other"
+        },
+        "many": {
+          "title": "Fields",
+          "empty": {
+            "message": "No fields"
+          },
+          "table": {
+            "properties": {
+              "index": {
+                "caption": "#"
+              },
+              "title": {
+                "caption": "Title",
+                "placeholder": "Title",
+                "default": "Field",
+                "errors": {
+                  "minLength": "Title can't be empty",
+                  "maxLength": "Title is too long"
+                }
+              },
+              "type": {
+                "caption": "Type"
+              },
+              "role": {
+                "caption": "Role"
+              },
+              "actions": {
+                "caption": ""
+              }
+            },
+            "add": "+ Add field"
+          }
+        }
+      },
+      "cards": {
+        "many": {
+          "title": "Cards",
+          "displayModes": {
+            "table": "Table",
+            "slider": "Slider"
+          },
+          "noFields": {
+            "message": "No fields"
+          },
+          "empty": {
+            "message": "No cards"
+          },
+          "properties": {
+            "index": {
+              "caption": "#"
+            },
+            "progress": {
+              "caption": "Progress",
+              "values": {
+                "initial": "Not learning",
+                "completed": "Completed",
+                "overdue": "Due to learn",
+                "dueAt": "In {{value}}"
+              },
+              "actions": {
+                "complete": "Mark as Completed",
+                "reset": "Reset Progress"
+              }
+            },
+            "progressActions": {
+              "caption": ""
+            },
+            "actions": {
+              "caption": ""
+            },
+            "value": {
+              "placeholder": "Empty"
+            }
+          },
+          "table": {
+            "add": "+ Add card"
+          },
+          "slider": {
+            "add": "+",
+            "titles": {
+              "content": "Content",
+              "progress": "Progress"
+            }
+          }
+        }
+      }
+    }
+  },
+  "learnings": {
+    "settings": {
+      "title": "Learning settings",
+      "lessonLimits": {
+        "title": "Cards per lesson",
+        "new": "Learn",
+        "rep": "Repeat"
+      }
+    },
+    "many": {
+      "empty": {
+        "message": "Nothing to learn at the moment"
+      },
+      "table": {
+        "captions": {
+          "title": "Deck",
+          "new": "Learn",
+          "rep": "Repeat"
+        }
+      },
+      "options": {
+        "sorting": {
+          "+title": "Title ↑",
+          "-title": "Title ↓",
+          "+last_learned_at": "Last learned ↑",
+          "-last_learned_at": "Last learned ↓"
+        }
+      }
+    }
+  },
+  "lessons": {
+    "ui": {
+      "close": {
+        "button": {
+          "text": "",
+          "tooltip": "Finish lesson"
+         },
+        "message": "The progress will be lost. Are you sure?",
+        "confirm": "Finish lesson",
+        "cancel": "Continue learning"
+      }
+    },
+    "queue": {
+      "captions": {
+        "title": "Deck",
+        "cards": "Cards",
+        "repping": "Algorithm"
+      }
+    },
+    "status": {
+      "loading": {
+        "message": "Loading lesson data"
+      },
+      "pending": {
+        "message": "Loading lesson data"
+      },
+      "paused": {
+        "message": "Lesson is paused"
+      },
+      "done": {
+        "title": "Learning session completed",
+        "status": {
+          "idle": "",
+          "loading": "Uploading results",
+          "success": "Uploaded",
+          "error": "Couldn't upload results"
+        }
+      },
+      "empty": {
+        "message": "Couldn't find cards that match given criteria."
+      }
+    },
+    "actions": {
+      "show": {
+        "submit": "Continue"
+      },
+      "typeTest": {
+        "check": "Submit",
+        "submit": "Continue",
+        "markCorrect": "It was a typo",
+        "correct": "Correct",
+        "incorrect": "Incorrect"
+      }
+    },
+    "fieldTypes": {
+      "text": {
+        "empty": "Empty"
+      }
+    }
+  }
+}

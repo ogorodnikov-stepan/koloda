@@ -1,0 +1,38 @@
+{
+  "data": [
+    { "id": 1,
+      "value": "Not selected",
+      "subjects": [
+        { "id": 1, "value": "Not selected" }
+      ]
+    },
+    {
+      "id": 2,
+      "value": "Other",
+      "subjects": [
+        { "id": 1, "value": "Other" }
+      ]
+    },
+    {
+      "id": 3,
+      "value": "Language learning",
+      "subjects": [
+        { "id": 1, "value": "Not selected" },
+        { "id": 2, "value": "Other" },
+        { "id": 3, "value": "English" },
+        { "id": 4, "value": "Spanish" },
+        { "id": 5, "value": "Russian" }
+      ]
+    },
+    {
+      "id": 4,
+      "value": "IT",
+      "subjects": [
+        { "id": 1, "value": "Not selected" },
+        { "id": 2, "value": "Other" },
+        { "id": 3, "value": "Javascript" },
+        { "id": 4, "value": "React" }
+      ]
+    }
+  ]
+}

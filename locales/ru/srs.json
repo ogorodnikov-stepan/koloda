@@ -1,0 +1,519 @@
+{
+  "reppings": {
+    "add": {
+      "submit": "Добавить",
+      "properties": {
+        "title": {
+          "label": "",
+          "placeholder": "Название алгоритма"
+        }
+      }
+    },
+    "many": {
+      "title": "Алгоритмы",
+      "empty": "Нет алгоритмов",
+      "list": {
+        "noDivels": "Нет уровней"
+      },
+      "options": {
+        "sorting": {
+          "+title": "Название ↑",
+          "-title": "Название ↓",
+          "+created_at": "Создан ↑",
+          "-created_at": "Создан ↓",
+          "+updated_at": "Обновлен ↑",
+          "-updated_at": "Обновлен ↓"
+        },
+        "filters": {
+          "isEligible": {
+            "title": "Использование",
+            "true": "Готов",
+            "false": "Не готов"
+          }
+        }
+      }
+    },
+    "one": {
+      "tabs": {
+        "about": "Инфо",
+        "divels": "Уровни"
+      },
+      "about": {
+        "title": "Информация",
+        "empty": "Нет описания",
+        "properties": {
+          "title": {
+            "label": "Название",
+            "placeholder": "Без названия",
+            "errors": {
+              "minLength": "Название не может быть пустым",
+              "maxLength": "Сликом длинное название"
+            }
+          },
+          "description": {
+            "label": "Описание",
+            "placeholder": "Нет описания"
+          },
+          "createdAt": "Создан {{value, datetime}}",
+          "updatedAt": "Обновлён {{value, datetime}}",
+          "isEligible": {
+            "true": "Готов к использованию",
+            "false": "Не готов к использованию"
+          },
+          "requirements": {
+            "divels": "Алгоритм имеет хотя бы один уровень",
+            "phases": "В каждом уровне есть хотя бы одна ступень"
+          }
+        },
+        "delete": {
+          "open": "Удалить алгоритм",
+          "message": "Вы уверены, что хотите удалить алгоритм?",
+          "status": {
+            "idle": "",
+            "loading": "Удаление...",
+            "success": "Удалено",
+            "error": "Что-то пошло не так."
+          },
+          "confirm": "Удалить алгоритм",
+          "cancel": "Не удалять",
+          "close": "Закрыть"
+        }
+      }
+    }
+  },
+  "divels": {
+    "many": {
+      "title": "Уровни",
+      "empty": {
+        "message": "Нет уровней"
+      },
+      "list": {
+        "properties": {
+          "title": {
+            "label": "Название",
+            "placeholder": "Без названия",
+            "errors": {
+              "minLength": "Название не может быть пустым",
+              "maxLength": "Сликом длинное название"
+            }
+          },
+          "default": {
+            "active": "Уровень по умолчанию",
+            "button": "Сделать по умолчанию"
+          },
+          "description": {
+            "label": "Описание",
+            "placeholder": "Нет описания"
+          }
+        },
+        "add": "+ Добавить уровень"
+      }
+    }
+  },
+  "phases": {
+    "many": {
+      "amount_one": "ступень всего",
+      "amount_few": "ступени всего",
+      "amount_many": "ступеней всего",
+      "empty": {
+        "message": "У этого уровня нет ступеней."
+      },
+      "add": "+ Добавить ступень"
+    },
+    "one": {
+      "title": {
+        "placeholder": "Без названия"
+      },
+      "actions": {
+        "title": "Действия:",
+        "add": "+ Добавить действие"
+      }
+    },
+    "actions": {
+      "types": {
+        "show": "Показ",
+        "typeTest": "Прямой тест",
+        "typeTestReverse": "Обратный тест"
+      },
+      "times": "x"
+    },
+    "offset": {
+      "types": {
+        "back": "вперёд",
+        "forward": "обратно",
+        "to": "на ступень",
+        "repeat": "повтор",
+        "complete": "завершение"
+      },
+      "phases_one": "ступень",
+      "phases_few": "ступени",
+      "phases_many": "ступеней"
+    },
+    "triggers": {
+      "titles": {
+        "periods": "через",
+        "0": "Верно:",
+        "1": "Неверно:"
+      }
+    },
+    "periods": {
+      "years_one": "год",
+      "years_few": "года",
+      "years_many": "лет",
+      "months_one": "месяц",
+      "months_few": "месяца",
+      "months_many": "месяцев",
+      "weeks_one": "неделю",
+      "weeks_few": "недели",
+      "weeks_many": "недель",
+      "days_one": "день",
+      "days_few": "дня",
+      "days_many": "дней",
+      "hours_one": "час",
+      "hours_few": "часа",
+      "hours_many": "часов"
+    }
+  },
+  "decks": {
+    "selects": {
+      "category": {
+        "label": "Категория",
+        "items": {
+          "none": "Любая"
+        }
+      },
+      "subject": {
+        "label": "Тема",
+        "items": {
+          "none": "Любой"
+        }
+      },
+      "language": {
+        "label": "Язык",
+        "items": {
+          "none": "Любой"
+        }
+      }
+    },
+    "add": {
+      "submit": "Добавить",
+      "properties": {
+        "title": {
+          "label": "",
+          "placeholder": "Название колоды"
+        }
+      }
+    },
+    "many": {
+      "title": "Колоды",
+      "empty": "Нет колод",
+      "list": {
+        "cards_zero": "Нет карт",
+        "cards_one": "{{count}} карта",
+        "cards_few": "{{count}} карты",
+        "cards_many": "{{count}} карт",
+        "fields_zero": "Нет полей",
+        "fields_one": "{{count}} поле",
+        "fields_few": "{{count}} поля",
+        "fields_many": "{{count}} полей"
+      },
+      "options": {
+        "sorting": {
+          "+title": "Назавние ↑",
+          "-title": "Назавние ↓",
+          "+created_at": "Создана ↑",
+          "-created_at": "Создана ↓",
+          "+updated_at": "Обновлена ↑",
+          "-updated_at": "Обновлена ↓"
+        },
+        "filters": {
+          "isEligible": {
+            "title": "Использование",
+            "true": "Готова",
+            "false": "Не готова"
+          }
+        }
+      }
+    },
+    "one": {
+      "tabs": {
+        "progress": "Прогресс",
+        "about": "Инфо",
+        "fields": "Поля",
+        "cards": "Карты"
+      },
+      "progress": {
+        "title": "Прогресс",
+        "requirements": {
+          "title": "Изучение не доступно",
+          "fields": "Колода должна иметь хотя бы одно поле",
+          "cards": "В колоде должны быть хотя бы одна карта",
+          "reppings": "Есть готовые к использованию алгоритмы"
+        },
+        "notLearning": {
+          "title": "Не изучается",
+          "start": {
+            "button": "Начать изучать"
+          }
+        },
+        "learning": {
+          "startedAt": "Изучается с {{value, datetime}}",
+          "lastLearnedAt": "Последний урок {{value, datetime}}",
+          "settings": {
+            "title": "Настройки обучения",
+            "repping": "Алгоритм",
+            "lessonLimits": {
+              "title": "Карт за урок",
+              "new": "Новые",
+              "rep": "Повтор"
+            }
+          },
+          "stop": {
+            "open": "Перестать учить",
+            "message": "Весь прогресс будет потерян. Вы уверены?",
+            "status": {
+              "idle": "",
+              "loading": "Обработка...",
+              "success": "Готово",
+              "error": "Что-то пошло не так."
+            },
+            "confirm": "Перестать учить",
+            "cancel": "Отмена",
+            "close": "Закрыть"
+          },
+          "stats": {
+            "title": "Статистика",
+            "cards": {
+              "initial": "Не учите",
+              "learning": "Учите",
+              "completed": "Завершено"
+            }
+          }
+        }
+      },
+      "about": {
+        "title": "Информация",
+        "properties": {
+          "title": {
+            "label": "Название",
+            "errors": {
+              "minLength": "Название не может быть пустым",
+              "maxLength": "Сликом длинное название"
+            }
+          },
+          "description": {
+            "label": "Описание",
+            "placeholder": "Нет описания"
+          },
+          "createdAt": "Создана {{value, datetime}}",
+          "updatedAt": "Обновлена {{value, datetime}}",
+          "isEligible": {
+            "true": "Готова к использованию",
+            "false": "Не готова к использованию"
+          },
+          "requirements": {
+            "fields": "Колода имеет хотя бы одно поле",
+            "cards": "В колоде есть хотя бы одна карта"
+          }
+        },
+        "delete": {
+          "open": "Удалить колоду",
+          "message": "Вы уверены что хотите удалить эту колоду?",
+          "status": {
+            "idle": "",
+            "loading": "Удаление...",
+            "success": "Удалено",
+            "error": "Что-то пошло не так."
+          },
+          "confirm": "Удалить колоду",
+          "cancel": "Не удалять",
+          "close": "Закрыть"
+        }
+      },
+      "fields": {
+        "types": {
+          "text": "Текстовое"
+        },
+        "roles": {
+          "front": "Перед",
+          "back": "Оборот",
+          "extra": "Другое"
+        },
+        "many": {
+          "title": "Поля",
+          "empty": {
+            "message": "Нет полей"
+          },
+          "table": {
+            "properties": {
+              "index": {
+                "caption": "#"
+              },
+              "title": {
+                "caption": "Название",
+                "placeholder": "Название",
+                "default": "Поле",
+                "errors": {
+                  "minLength": "Название не может быть пустым",
+                  "maxLength": "Сликом длинное название"
+                }
+              },
+              "type": {
+                "caption": "Тип"
+              },
+              "role": {
+                "caption": "Роль"
+              },
+              "actions": {
+                "caption": ""
+              }
+            },
+            "add": "+ Добавить поле"
+          }
+        }
+      },
+      "cards": {
+        "many": {
+          "title": "Карты",
+          "displayModes": {
+            "table": "Таблица",
+            "slider": "Карусель"
+          },
+          "noFields": {
+            "message": "Нет полей"
+          },
+          "empty": {
+            "message": "Нет карт"
+          },
+          "properties": {
+            "index": {
+              "caption": "#"
+            },
+            "progress": {
+              "caption": "Прогресс",
+              "values": {
+                "initial": "Не изучается",
+                "completed": "Завершена",
+                "overdue": "Пора учить",
+                "dueAt": "Через {{value}}"
+              },
+              "actions": {
+                "complete": "Отметить как завершённую",
+                "reset": "Очистить прогресс"
+              }
+            },
+            "progressActions": {
+              "caption": ""
+            },
+            "actions": {
+              "caption": ""
+            },
+            "value": {
+              "placeholder": "Пусто"
+            }
+          },
+          "table": {
+            "add": "+ Добавить карту"
+          },
+          "slider": {
+            "add": "+",
+            "titles": {
+              "content": "Содержимое",
+              "progress": "Прогресс"
+            }
+          }
+        }
+      }
+    }
+  },
+  "learnings": {
+    "settings": {
+      "title": "Настройки обучения",
+      "lessonLimits": {
+        "title": "Карт за урок",
+        "new": "Новые",
+        "rep": "Повтор"
+      }
+    },
+    "many": {
+      "empty": {
+        "message": "Нет материала, готового для изучения"
+      },
+      "table": {
+        "captions": {
+          "title": "Колода",
+          "new": "Новые",
+          "rep": "Повтор"
+        }
+      },
+      "options": {
+        "sorting": {
+          "+title": "Название ↑",
+          "-title": "Название ↓",
+          "+last_learned_at": "Последний урок ↑",
+          "-last_learned_at": "Последний урок ↓"
+        }
+      }
+    }
+  },
+  "lessons": {
+    "ui": {
+      "close": {
+        "button": {
+          "text": "",
+          "tooltip": "Завершить урок"
+         },
+        "message": "Прогресс не будет сохранён. Вы уверены?",
+        "confirm": "Завершить урок",
+        "cancel": "Продолжить изучение"
+      }
+    },
+    "queue": {
+      "captions": {
+        "title": "Колода",
+        "cards": "Карты",
+        "repping": "Алгоритм"
+      }
+    },
+    "status": {
+      "loading": {
+        "message": "Загружаем план урока"
+      },
+      "pending": {
+        "message": "Загрузка материала"
+      },
+      "paused": {
+        "message": "Пауза"
+      },
+      "done": {
+        "title": "Урок завершён",
+        "status": {
+          "idle": "",
+          "loading": "Загрузка результатов",
+          "success": "Загружено",
+          "error": "Не удалось загрузить результаты"
+        }
+      },
+      "empty": {
+        "message": "Материала, подходящего под заданные критерии не нашлось."
+      }
+    },
+    "actions": {
+      "show": {
+        "submit": "Продолжить"
+      },
+      "typeTest": {
+        "check": "Проверить",
+        "submit": "Продолжить",
+        "markCorrect": "Опечатка",
+        "correct": "Верно",
+        "incorrect": "Неверно"
+      }
+    },
+    "fieldTypes": {
+      "text": {
+        "empty": "Пусто"
+      }
+    }
+  }
+}
