@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MiniSVGDataURI = require('mini-svg-data-uri');
 const Dotenv = require('dotenv-webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => ({
   entry: './src/index.tsx',
@@ -73,6 +74,11 @@ module.exports = (env) => ({
     new MiniCssExtractPlugin(),
     new Dotenv({
       path: './.env',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public', to: './' },
+      ],
     }),
   ],
 });
