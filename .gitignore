@@ -93,5 +93,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,react
 
-dist
-.env
+build
+.env*
+!.env.example

@@ -8,8 +8,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = (env) => ({
   entry: './src/index.tsx',
   output: {
-    path: `${__dirname}/dist/`,
-    publicPath: '/',
+    path: `${__dirname}/build/`,
+    publicPath: 'auto',
     filename: 'bundle.js',
     hotUpdateChunkFilename: 'hot/hot-update.js',
     hotUpdateMainFilename: 'hot/hot-update.json',
@@ -54,12 +54,8 @@ module.exports = (env) => ({
     hot: true,
     static: [
       {
-        directory: `${__dirname}/dist/`,
+        directory: `${__dirname}/build/`,
         publicPath: '/',
-      },
-      {
-        directory: `${__dirname}/public/locales`,
-        publicPath: '/locales',
       },
     ],
   },
@@ -68,13 +64,14 @@ module.exports = (env) => ({
     errorDetails: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-    }),
-    new MiniCssExtractPlugin(),
     new Dotenv({
       path: './.env',
     }),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      base: env.production ? 'https://ogorodnikov-stepan.github.io/koloda/' : 'http://localhost/',
+    }),
+    new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [
         { from: 'public', to: './' },
