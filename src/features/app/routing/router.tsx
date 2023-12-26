@@ -2,7 +2,6 @@ import { Switch, Route, SwitchProps } from 'react-router-dom';
 import urls from 'features/app/routing/urls';
 import Front from 'features/app/pages/front/front';
 import Account from 'features/app/pages/account/account-page';
-// import SignupEmailStep3 from 'features/auth/signup-email-step-2';
 import Dashboard from 'features/app/pages/dashboard/dashboard';
 import Decks from 'features/app/pages/decks/decks-page';
 import Deck from 'features/app/pages/decks/deck-page';

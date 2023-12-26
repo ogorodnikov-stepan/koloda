@@ -4,10 +4,11 @@ export type RoutingURLParams = Record<string, any>;
 export type RoutingURL = (params: RoutingURLParams) => string;
 export type RoutingURLs = Record<string, RoutingURL>;
 
-const DEMO_PREFIX = '/try';
+const BASE = process.env.FRONT_URL || '';
+const DEMO_PREFIX = `${BASE}/try`;
 
 const url = ({ isDemo }: RoutingURLParams, value: string) => (
-  isDemo ? (DEMO_PREFIX + value) : value
+  isDemo ? (DEMO_PREFIX + value) : (BASE + value)
 );
 
 const urls: RoutingURLs = {
