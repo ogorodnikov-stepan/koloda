@@ -42,5 +42,6 @@
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
-  }
+  },
+  "plugins": ["jest"]
 }
