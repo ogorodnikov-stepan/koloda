@@ -65,7 +65,7 @@ module.exports = (env) => ({
   },
   plugins: [
     new Dotenv({
-      path: './.env',
+      path: env.production ? './.env.prod' : './.env.dev',
     }),
     new HtmlWebpackPlugin({
       template: 'index.html',
