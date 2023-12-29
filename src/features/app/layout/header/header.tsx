@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 import { BasicProps } from 'features/app/app-types';
 import './header.scss';
-import clsx from 'clsx';
 
 interface Props extends BasicProps {
   prefix?: string;

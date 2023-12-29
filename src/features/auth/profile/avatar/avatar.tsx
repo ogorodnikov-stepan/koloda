@@ -1,6 +1,6 @@
+import clsx from 'clsx';
 import { UserProfile } from 'features/auth/auth-types';
 import './avatar.scss';
-import clsx from 'clsx';
 
 interface Props {
   className?: string;
