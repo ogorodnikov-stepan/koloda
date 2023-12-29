@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import urls from 'features/app/routing/urls';
 import { isDemoSelector, useStore } from 'features/app/app-store';
-// import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { LESSON_INITIAL_TYPE, LESSON_LEARNING_TYPE } from 'features/srs/lessons/lessons-defaults';
 import { State } from 'features/srs/learnings/many/learnings-reducer';
 import LessonBadge from 'features/srs/lessons/badges/lesson-badge';
@@ -12,7 +11,6 @@ const PREFIX = 'srs:learnings.many.table';
 
 interface Props {
   state: State;
-  // dispatch: ReducerDispatch;
 }
 
 export default function LearningsTable({ state }: Props) {

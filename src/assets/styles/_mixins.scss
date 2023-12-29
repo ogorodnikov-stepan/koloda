@@ -176,19 +176,6 @@
   font-weight: 700;
 }
 
-// @mixin sections-rows {
-//   section {
-//     padding-block: var(--content-section-padding-block);
-
-//     & + section { border-block-start: 1px solid var(--content-border-color); }
-
-//     & > h2 {
-//       margin-inline: var(--content-padding-inline);
-//       margin-block-start: 0;
-//     }
-//   }
-// }
-
 @mixin feature-view-mode {
   textarea, input {
     border-color: transparent;

@@ -9,8 +9,6 @@ import TextInput from 'features/app/ui/form/text-input';
 import NumberInput from 'features/app/ui/form/number-input';
 import { State } from './account-reducer';
 
-// const PREFIX = 'auth:account';
-
 interface Props {
   state: State;
   dispatch: ReducerDispatch;

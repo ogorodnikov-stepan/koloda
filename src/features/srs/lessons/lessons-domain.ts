@@ -224,7 +224,6 @@ export function updateLessonCurrentMeta(draft: State) {
     action.fields = makeLessonFields(deck.fields, card, type);
     action.actionResetFlag = !action.actionResetFlag;
   }
-  // TODO: handle error case
 }
 
 /**

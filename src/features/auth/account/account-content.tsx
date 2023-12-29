@@ -1,4 +1,3 @@
-// import { useReducer, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import Feature from 'features/app/ui/feature/feature';

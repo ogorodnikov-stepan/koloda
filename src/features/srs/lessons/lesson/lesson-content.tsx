@@ -31,7 +31,6 @@ export default function LessonContent({ state, dispatch }: Props) {
         { isDone && isStarted && (
           <LessonStatusDone
             state={state}
-            // dispatch={dispatch}
           />
         )}
         { isDone && !isStarted && (

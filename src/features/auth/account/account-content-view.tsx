@@ -1,11 +1,9 @@
-// import { useReducer, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Feature from 'features/app/ui/feature/feature';
 import Settings from 'features/app/ui/settings/settings';
 import Avatar from 'features/auth/profile/avatar/avatar';
 import { State } from './account-reducer';
 
-// const PREFIX = 'auth:account';
 const TYPES = ['new', 'rep'] as const;
 
 interface Props {

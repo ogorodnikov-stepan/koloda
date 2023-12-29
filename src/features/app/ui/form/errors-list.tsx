@@ -1,4 +1,3 @@
-// import { useReducer } from 'react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from './button';
@@ -15,7 +14,6 @@ export default function ErrorsList(
   { className, isError, errors, errorsDropdown, errorPrefix }: Props,
 ) {
   const { t } = useTranslation();
-  // const [isOpen, toggle] = useReducer((s) => (!s), false);
   const [isOpen, setIsOpen] = useState(false);
 
   if (!isError) return null;
@@ -25,7 +23,6 @@ export default function ErrorsList(
       { (isError && errors && errorsDropdown) && (
         <Button
           className={`${className}__errors-toggle`}
-          // onClick={toggle}
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         />

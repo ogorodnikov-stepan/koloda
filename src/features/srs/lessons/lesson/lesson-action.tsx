@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 import { ComponentsList } from 'features/app/app-types';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/lessons/lesson/lesson-reducer';
