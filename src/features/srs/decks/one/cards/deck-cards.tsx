@@ -3,12 +3,12 @@ import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/decks/one/deck-reducer';
 import Feature from 'features/app/ui/feature/feature';
 import Editbar from 'features/app/ui/editbar/editbar';
+import DeckCardsDisplayModes from './deck-cards-display-modes';
 import DeckCardsNoFields from './deck-cards-no-fields';
 import DeckCardsSkeleton from './deck-cards-skeleton';
 import DeckCardsHandlers from './deck-cards-handlers';
 import DeckCardsContent from './deck-cards-content';
 import './deck-cards.scss';
-import DeckCardsDisplayModes from './deck-cards-display-modes';
 
 const PREFIX = 'srs:decks.one.cards.many';
 

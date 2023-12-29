@@ -1,10 +1,10 @@
 import { useReducer, useRef, ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useClickAway } from 'react-use';
+import clsx from 'clsx';
 import { BasicProps } from 'features/app/app-types';
 import Button from 'features/app/ui/form/button';
 import './dropdown.scss';
-import clsx from 'clsx';
 
 interface Props extends BasicProps {
   className?: string;
