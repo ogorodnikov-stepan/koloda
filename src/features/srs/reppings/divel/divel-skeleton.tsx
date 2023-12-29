@@ -1,4 +1,3 @@
-// import SkeletonElement from 'features/app/ui/skeleton/skeleton-element';
 import SkeletonLine from 'features/app/ui/skeleton/skeleton-line';
 import SkeletonList from 'features/app/ui/skeleton/skeleton-list';
 import SkeletonTitle from 'features/app/ui/skeleton/skeleton-title';

@@ -71,22 +71,4 @@ export function onKeyDown(event: KeyboardEvent, editor: CustomEditor) {
       toggleMark(editor, mark);
     }
   });
-
-  // if (event.key === 'Backspace') {}
 }
-
-// export function decorate(editor: CustomEditor, node: Node, path: Path) {
-//   if (editor.selection != null) {
-//     if (
-//       !Editor.isEditor(node)
-//       && Editor.string(editor, [path[0]]) === ''
-//       && Range.includes(editor.selection, path)
-//       && Range.isCollapsed(editor.selection)
-//       && Element.isElement(node)
-//       && node.type === 'p'
-//     ) {
-//       return [{ ...editor.selection, placeholder: true }];
-//     }
-//   }
-//   return [];
-// }

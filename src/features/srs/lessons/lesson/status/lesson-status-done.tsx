@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { isDemoSelector, useStore } from 'features/app/app-store';
-// import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/lessons/lesson/lesson-reducer';
 import { useLessonResultsMutation } from 'features/srs/lessons/lessons-queries';
 
@@ -9,7 +8,6 @@ const PREFIX = 'srs:lessons.status.done';
 
 interface Props {
   state: State;
-  // dispatch: ReducerDispatch;
 }
 
 export default function LessonStatusDone({ state }: Props) {

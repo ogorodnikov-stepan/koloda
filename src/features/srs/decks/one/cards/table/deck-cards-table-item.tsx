@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-// import { useTranslation } from 'react-i18next';
 import { DraggableProvidedDragHandleProps } from 'react-beautiful-dnd';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/decks/one/deck-reducer';
@@ -8,8 +7,6 @@ import Button from 'features/app/ui/form/button';
 import DeckCardsProperty from 'features/srs/decks/one/cards/field-types/card-content-property';
 import DeckCardsTableItemProgress from './deck-cards-table-item-progress';
 import DeckCardsTableItemProgressActions from './deck-cards-table-item-progress-actions';
-
-// const PREFIX = 'srs:decks.one.cards.many.properties';
 
 interface Props {
   drag?: DraggableProvidedDragHandleProps | undefined;
@@ -23,7 +20,6 @@ interface Props {
 export default function DeckCardsTableItem(
   { drag, index, card, fields, state, dispatch }: Props,
 ) {
-  // const { t } = useTranslation();
   const isLearning = state.learning.data?.repping;
   const { status: { display: { showProgress } = {}, editbar: { mode } } } = state.cards;
 

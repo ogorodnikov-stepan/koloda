@@ -41,14 +41,6 @@
     }
   }
 
-  // &__options {
-  //   @include flex-row($justify: center);
-  //   gap: 1.5rem;
-  //   margin-block: 0.75rem;
-  //   margin-inline: var(--content-padding-inline);
-  //   padding-inline: var(--input-padding-inline);
-  // }
-
   &__progress {
     @include flex-row($align: center);
 

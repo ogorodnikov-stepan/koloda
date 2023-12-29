@@ -38,7 +38,6 @@ export default function Editor(
 
   useEffect(() => {
     if (readOnly) {
-      // TODO: proper way of discard changes for editors
       editor.children = value;
       Transforms.deselect(editor);
     }

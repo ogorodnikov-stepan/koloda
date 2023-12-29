@@ -1,10 +1,8 @@
-// import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import SkeletonLine from 'features/app/ui/skeleton/skeleton-line';
 import { State } from './lesson-reducer';
 
 interface Props {
   state: State;
-  // dispatch: ReducerDispatch;
 }
 
 export default function LessonLoader({ state }: Props) {

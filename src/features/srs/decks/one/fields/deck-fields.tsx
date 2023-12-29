@@ -3,7 +3,6 @@ import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/decks/one/deck-reducer';
 import Feature from 'features/app/ui/feature/feature';
 import Editbar from 'features/app/ui/editbar/editbar';
-// import DeckFieldsToolbar from './deck-fields-toolbar';
 import DeckFieldsSkeleton from './deck-fields-skeleton';
 import DeckFieldsTable from './deck-fields-table';
 import DeckFieldsHandlers from './deck-fields-handlers';

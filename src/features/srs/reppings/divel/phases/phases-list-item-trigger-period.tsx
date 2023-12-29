@@ -6,7 +6,6 @@ import { PhaseTrigger, PhasePeriod } from 'features/srs/srs-types';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { EditbarMode } from 'features/app/ui/editbar/editbar';
 import NumberInput from 'features/app/ui/form/number-input';
-// import Input from 'features/app/ui/form/text-input';
 
 const PREFIX = 'srs:phases';
 

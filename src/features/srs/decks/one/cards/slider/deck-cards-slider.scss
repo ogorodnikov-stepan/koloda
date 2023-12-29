@@ -17,26 +17,6 @@ $index-padding-inline: 0.75rem;
     overflow-y: auto;
     padding-inline: var(--content-padding-inline);
 
-    // &::before {
-    //   @include edge-fade;
-
-    //   width: var(--content-padding-inline);
-    //   height: 100%;
-    //   inset-block-start: 0;
-    //   inset-inline-start: 0;
-    //   background-image: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255, 1) 90%);
-    // }
-
-    // &::after {
-    //   @include edge-fade;
-
-    //   width: var(--content-padding-inline);
-    //   height: 100%;
-    //   inset-block-start: 0;
-    //   inset-inline-end: 0;
-    //   background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255, 1) 90%);
-    // }
-
     &-item {
       border-inline-end: var(--content-subsection-border);
       text-align: center;

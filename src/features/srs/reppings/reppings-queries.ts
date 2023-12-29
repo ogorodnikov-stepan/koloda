@@ -97,24 +97,8 @@ export function useUpdateDivelsMutation(extra: RequestExtra) {
   );
 }
 
-// export function useAddDivelMutation({ isDemo }: RequestExtra) {
-//   return useMutation<any, ErrorInstance, any>(
-//     async (params: any) => (
-//       isDemo ? true : handle('srs', 'divel_add', [201], params)
-//     ),
-//   );
-// }
-
 export function useUpdateDivelMutation(extra: RequestExtra) {
   return useMutation<any, ErrorInstance, any>(
     async (params: any) => handle('srs', 'divel_update', [204], params, extra),
   );
 }
-
-// export function useDeleteDivelMutation({ isDemo }: RequestExtra) {
-//   return useMutation<any, ErrorInstance, any>(
-//     async (params: any) => (
-//       isDemo ? true : handle('srs', 'divel_delete', [204], params)
-//     ),
-//   );
-// }

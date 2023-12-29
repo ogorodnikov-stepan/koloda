@@ -1,7 +1,5 @@
 import { useCallback } from 'react';
 import clsx from 'clsx';
-// import Plus from 'assets/images/plus';
-// import Minus from 'assets/images/minus';
 import Label from './label';
 import Button from './button';
 import './number-input.scss';

@@ -2,8 +2,6 @@ import { Requests, get, post, put, del, qs } from 'features/app/api/request';
 
 const srs = process.env.BACKEND_SRS_URL;
 const locales = process.env.LOCALES_URL;
-// const base = 'http://localhost/api/srs';
-// const front = 'http://localhost';
 
 const requests = <Requests>{
   subjects_get: (p, e = {}) => get(`${locales}/${p.language}/srs-subjects.json`, e),
@@ -34,7 +32,6 @@ const requests = <Requests>{
   lesson_deck_get: (p, e = {}) => get(`${srs}/lessons/${p.type}/decks/${p.id}${qs(p, ['limit'])}`, e),
   lesson_repping_get: (p, e = {}) => get(`${srs}/reppings/${p.id}`, e),
   lesson_results_set: (p, e = {}) => put(`${srs}/results`, p, e),
-  // learnings_meta_get: (_, e = {}) => get(`${srs}/meta/learnings`, e),
 };
 
 export default requests;

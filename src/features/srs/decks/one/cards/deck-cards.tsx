@@ -1,11 +1,9 @@
-// import { useReducer, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/decks/one/deck-reducer';
 import Feature from 'features/app/ui/feature/feature';
 import Editbar from 'features/app/ui/editbar/editbar';
 import DeckCardsNoFields from './deck-cards-no-fields';
-// import DeckCardsToolbar from './deck-cards-toolbar';
 import DeckCardsSkeleton from './deck-cards-skeleton';
 import DeckCardsHandlers from './deck-cards-handlers';
 import DeckCardsContent from './deck-cards-content';

@@ -1,4 +1,3 @@
-// This example is for an Editor with `ReactEditor` and `HistoryEditor`
 import { BaseEditor, Text, Descendant } from 'slate';
 import { ReactEditor } from 'slate-react';
 import { HistoryEditor } from 'slate-history';
@@ -29,12 +28,6 @@ export type ListItemElement = {
   type: 'li';
   children: CustomText[];
 };
-
-// export type HeadingElement = {
-//   type: 'heading';
-//   level: 1 | 2 | 3 | 4 | 5 | 6;
-//   children: CustomText[];
-// };
 
 export type CustomElement = ParagraphElement | ListElement | ListItemElement;
 
@@ -76,7 +69,3 @@ export function serializeElement(node: CustomElement, children: string) {
       return children;
   }
 }
-
-// export function deserialize(source: string) {
-
-// }

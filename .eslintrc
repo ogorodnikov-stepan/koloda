@@ -37,7 +37,6 @@
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks"
-    // "airbnb/whitespace"
   ],
   "globals": {
     "Atomics": "readonly",

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { EditbarMode } from 'features/app/ui/editbar/editbar';
 import { PhaseAction } from 'features/srs/srs-types';
-// import { int } from 'features/app/misc/misc';
 import { PHASE_ACTIONS_TIMES_MAX, PHASE_ACTIONS_TIMES_MIN } from 'features/srs/reppings/reppings-defaults';
 import {
   PHASE_ACTION_TYPES, getPhaseActionTypeObjectById, getPhaseActionTypeValueById,
