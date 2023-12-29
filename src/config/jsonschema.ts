@@ -1,8 +1,9 @@
+import app from 'features/app/app-schema.json';
 import auth from 'features/auth/auth-schema.json';
 import srs from 'features/srs/srs-schema.json';
 
 const domains = {
-  app: {},
+  app,
   auth,
   srs,
 };
