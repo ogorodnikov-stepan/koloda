@@ -58,7 +58,7 @@ export function demoInit({ language }: InitPayload) {
 }
 
 const actions: ReducerActions = {
-  dataUpdated,
+  languageUpdated,
   dataSubmitted,
   dataReceived,
   dataCleared,
@@ -74,7 +74,7 @@ interface DataUpdatedPayload {
   value: any;
 }
 
-function dataUpdated(draft: State, { value }: DataUpdatedPayload) {
+function languageUpdated(draft: State, { value }: DataUpdatedPayload) {
   if (!draft.meta.isSubmitted) draft.language = value;
 }
 

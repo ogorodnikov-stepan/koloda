@@ -16,8 +16,8 @@ interface Props {
 export default function DemoForm({ state, dispatch }: Props) {
   const { t } = useTranslation('app');
 
-  const handleChange = useCallback(({ target: { name, value } }) => {
-    dispatch(['dataUpdated', { name, value }]);
+  const handleChange = useCallback(({ target: { value } }) => {
+    dispatch(['languageUpdated', { value }]);
   }, []);
 
   const handleSubmit = useCallback(() => {

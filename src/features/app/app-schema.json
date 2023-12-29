@@ -7,6 +7,11 @@
     "language": {
       "$id": "#language",
       "enum": ["en", "ru"]
+    },
+
+    "demo_filename": {
+      "$id": "#demo_filename",
+      "type": "string"
     }
   },
 
@@ -15,10 +20,15 @@
   "properties": {
     "languages_get": {
       "type": "object",
-      "properties": {
-        "language": { "$ref": "#/definitions/language" }
-      },
-      "required": ["language"],
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+
+    "demo_clear": {
+      "type": "object",
+      "properties": {},
+      "required": [],
       "additionalProperties": false
     },
 
@@ -26,6 +36,26 @@
       "type": "object",
       "properties": {
         "language": { "$ref": "#/definitions/language" }
+      },
+      "required": ["language"],
+      "additionalProperties": false
+    },
+
+    "demo_repping_get": {
+      "type": "object",
+      "properties": {
+        "language": { "$ref": "#/definitions/language" },
+        "name": { "$ref": "#/definitions/demo_filename" }
+      },
+      "required": ["language"],
+      "additionalProperties": false
+    },
+
+    "demo_deck_get": {
+      "type": "object",
+      "properties": {
+        "language": { "$ref": "#/definitions/language" },
+        "name": { "$ref": "#/definitions/demo_filename" }
       },
       "required": ["language"],
       "additionalProperties": false
