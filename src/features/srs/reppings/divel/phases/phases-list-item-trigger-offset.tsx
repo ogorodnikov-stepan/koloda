@@ -72,7 +72,7 @@ export default function PhasesListItemTriggerOffset(
             />
           )}
           { [1, 2].includes(trigger.offset.type) && (
-            <span className="phase-offset__value-label label">
+            <span className="phase-offset__value-label">
               {t(`${PREFIX}.phases`, { count: int(trigger.offset.value) })}
             </span>
           )}
