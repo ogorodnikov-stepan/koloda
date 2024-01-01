@@ -150,6 +150,7 @@
     "triggers": {
       "titles": {
         "periods": "in",
+        "emptyDelay": "right away",
         "0": "Correct:",
         "1": "Incorrect:"
       }

@@ -34,20 +34,28 @@ export default function PhasesListItemTrigger(
         dispatch={dispatch}
       />
       <div className="phase-periods">
-        <span className="phase-periods__label label">
-          {t(`${PREFIX}.triggers.titles.periods`)}
-        </span>
-        {PHASE_PERIODS.map((period) => (
-          <PhasesListItemTriggerPeriod
-            key={period}
-            mode={mode}
-            phaseIndex={phaseIndex}
-            incorrectTotal={incorrectTotal}
-            period={period}
-            trigger={trigger}
-            dispatch={dispatch}
-          />
-        ))}
+        { trigger.isDelayEmpty && mode === 'view' ? (
+          <span className="phase-periods__label">
+            {t(`${PREFIX}.triggers.titles.emptyDelay`)}
+          </span>
+        ) : (
+          <>
+            <span className="phase-periods__label">
+              {t(`${PREFIX}.triggers.titles.periods`)}
+            </span>
+            {PHASE_PERIODS.map((period) => (
+              <PhasesListItemTriggerPeriod
+                key={period}
+                mode={mode}
+                phaseIndex={phaseIndex}
+                incorrectTotal={incorrectTotal}
+                period={period}
+                trigger={trigger}
+                dispatch={dispatch}
+              />
+            ))}
+          </>
+        )}
       </div>
     </li>
   );
