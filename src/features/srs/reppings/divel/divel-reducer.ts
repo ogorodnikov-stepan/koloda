@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import produce from 'immer';
+import cloneDeep from 'lodash.clonedeep';
 import { getNextNumericId, int, minMax } from 'features/app/misc/misc';
 import { ReducerEntity, ReducerState, ReducerActions } from 'features/app/reducer/reducer-types';
 import {
@@ -7,8 +8,12 @@ import {
   validationCompleted, validationFailed, savingInitiated, savingFailed,
   onSavingCompleted,
 } from 'features/app/reducer/reducer-helpers';
-import { Repping, Divel, Phase, PhasePeriod, PhaseTrigger, PhaseAction } from 'features/srs/srs-types';
-import { PHASE_DEFAULT, PHASE_ACTIONS_DRAFT, PHASE_PERIODS_DEFAULT } from 'features/srs/reppings/reppings-defaults';
+import {
+  Repping, Divel, Phase, PhasePeriod, PhaseTrigger, PhaseAction,
+} from 'features/srs/srs-types';
+import {
+  PHASE_DEFAULT, PHASE_ACTIONS_DRAFT, PHASE_PERIODS_DEFAULT, PHASE_PERIODS, PHASE_TRIGGERS,
+} from 'features/srs/reppings/reppings-defaults';
 import { getPhaseOffsetTypeValueById } from './divels-domain';
 
 export interface State extends ReducerState {
@@ -65,8 +70,19 @@ function reppingReceived(draft: State, payload: { data: Repping }) {
 }
 
 function divelReceived(draft: State, payload: { data: Divel }) {
-  draft.phases.data = payload.data.phases;
+  draft.phases.data = cloneDeep(payload.data.phases);
   draft.meta.divel.title = payload.data.title;
+  // add isDelayEmpty meta to every trigger of every phase
+  if (draft.phases.data) {
+    draft.phases.data.forEach((phase) => {
+      PHASE_TRIGGERS.forEach((total) => {
+        const trigger = phase.triggers[total];
+        if (trigger) {
+          trigger.isDelayEmpty = updateIsDelayEmptyStatus(trigger);
+        }
+      });
+    });
+  }
   draft.phases.status.isLoaded = true;
 }
 
@@ -203,12 +219,14 @@ interface SetDelayPayload {
 
 function delayUpdated(draft: State, payload: SetDelayPayload) {
   const { phaseIndex, incorrectTotal, period, shift } = payload;
-  const phase = draft.phases.data?.[phaseIndex];
-  if (phase) {
+  // const phase = draft.phases.data?.[phaseIndex];
+  const trigger = draft.phases.data?.[phaseIndex]?.triggers?.[incorrectTotal];
+  if (trigger) {
     const value = shift
-      ? phase.triggers[incorrectTotal].delay[period] + shift
+      ? trigger.delay[period] + shift
       : int(payload.value);
-    phase.triggers[incorrectTotal].delay[period] = getDelayValue({ ...payload, value });
+    trigger.delay[period] = getDelayValue({ ...payload, value });
+    trigger.isDelayEmpty = updateIsDelayEmptyStatus(trigger);
     entityUpdated(draft.phases.status);
   }
 }
@@ -217,6 +235,13 @@ function getDelayValue(payload: SetDelayPayload) {
   const { period, value } = payload;
   const { min, max } = PHASE_PERIODS_DEFAULT[period];
   return minMax(value, min, max, true);
+}
+
+function updateIsDelayEmptyStatus(trigger: PhaseTrigger) {
+  const total = PHASE_PERIODS.reduce((acc, x) => (
+    acc + (trigger.delay[x] || 0)
+  ), 0);
+  return total === 0;
 }
 
 function delayDecremented(draft: State, payload: SetDelayPayload) {

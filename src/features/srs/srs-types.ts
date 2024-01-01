@@ -95,6 +95,7 @@ export interface PhaseTrigger {
   delay: {
     [key in PhasePeriod]: number;
   }
+  isDelayEmpty?: boolean;
 }
 
 export type PhasePeriod = typeof PHASE_PERIODS[number];
