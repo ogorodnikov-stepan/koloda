@@ -47,7 +47,7 @@ export default function PhasesListItemActionsItem(
 
   return (
     <li className="phase-action">
-      <span className="phase-action__index label">
+      <span className="phase-action__index">
         {actionIndex + 1}
       </span>
       { (mode === 'view') && (
@@ -65,11 +65,11 @@ export default function PhasesListItemActionsItem(
           onChange={handleChange}
         />
       )}
-      <span className="phase-action__times-label label">
+      <span className="phase-action__times-label">
         {t(`${PREFIX}.times`)}
       </span>
       { (mode === 'view') && (
-        <span className="phase-action__times">
+        <span className="phase-action__times-value">
           {action.times}
         </span>
       )}

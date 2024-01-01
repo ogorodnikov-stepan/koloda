@@ -31,13 +31,23 @@ export default function PhasesListItemHeader({ mode, phaseIndex, phase, dispatch
       <span className="phase__index">
         {phaseIndex + 1}
       </span>
-      <TextInput
-        className="phase__title"
-        placeholder={t(`${PREFIX}.title.placeholder`)}
-        value={phase.title || ''}
-        onChange={handleTitleChange}
-        disabled={mode !== 'edit'}
-      />
+      { mode === 'view' ? (
+        <span
+          className="phase__title"
+          data-readonly
+          data-is-placeholder={!phase.title}
+        >
+          {phase.title || t(`${PREFIX}.title.placeholder`)}
+        </span>
+      ) : (
+        <TextInput
+          className="phase__title"
+          placeholder={t(`${PREFIX}.title.placeholder`)}
+          value={phase.title || ''}
+          onChange={handleTitleChange}
+          disabled={mode !== 'edit'}
+        />
+      )}
       { (mode === 'edit') && (
         <Button
           className="phase__delete delete-inline-button"
