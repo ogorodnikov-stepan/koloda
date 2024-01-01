@@ -1,6 +1,7 @@
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { Phase } from 'features/srs/srs-types';
 import { EditbarMode } from 'features/app/ui/editbar/editbar';
+import { PHASE_TRIGGERS } from 'features/srs/reppings/reppings-defaults';
 import PhasesListItemHeader from './phases-list-item-header';
 import PhasesListItemTrigger from './phases-list-item-trigger';
 import PhasesListItemActions from './phases-list-item-actions';
@@ -23,20 +24,16 @@ export default function PhasesListItem({ mode, phase, index, dispatch }: Props) 
       />
       <div className="phase__content">
         <ul className="phase-triggers">
-          <PhasesListItemTrigger
-            mode={mode}
-            incorrectTotal={0}
-            phaseIndex={index}
-            trigger={phase.triggers[0]}
-            dispatch={dispatch}
-          />
-          <PhasesListItemTrigger
-            mode={mode}
-            incorrectTotal={1}
-            phaseIndex={index}
-            trigger={phase.triggers[1]}
-            dispatch={dispatch}
-          />
+          { PHASE_TRIGGERS.map((total) => (
+            <PhasesListItemTrigger
+              key={total}
+              mode={mode}
+              incorrectTotal={total}
+              phaseIndex={index}
+              trigger={phase.triggers[total]}
+              dispatch={dispatch}
+            />
+          ))}
         </ul>
         <PhasesListItemActions
           mode={mode}

@@ -70,6 +70,8 @@ export const PHASE_DEFAULT = {
   },
 };
 
+export const PHASE_TRIGGERS = [0, 1] as const;
+
 export const PHASE_PERIODS = [
   'years',
   'months',
