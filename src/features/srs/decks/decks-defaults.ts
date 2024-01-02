@@ -1,7 +1,7 @@
 import { INITIAL_VALUE } from 'features/app/ui/editor/editor-utility';
+import { FieldSettings, LessonCard } from 'features/srs/srs-types';
 import { LESSON_CARD_META } from 'features/srs/lessons/lessons-defaults';
 import { getFieldTypeIdByValue, getFieldRoleIdByValue } from './one/fields/deck-fields-domain';
-import { LessonCard } from '../srs-types';
 
 export const DECK_FIELDS_MAX = 9;
 
@@ -19,10 +19,23 @@ export const DECK_DEFAULT = {
   isLearning: false,
 };
 
+const FIELD_DEFAULT_SETTINGS: FieldSettings = {
+  actions: {
+    show: {
+      isLabelVisible: false,
+    },
+    typeTest: {
+      isLabelVisible: false,
+      processings: [],
+    },
+  },
+};
+
 export const FIELD_DEFAULT = {
   title: '',
   type: getFieldTypeIdByValue('show'),
   role: getFieldRoleIdByValue('extra'),
+  settings: { ...FIELD_DEFAULT_SETTINGS },
 };
 
 export const CARD_DEFAULT: LessonCard = {
