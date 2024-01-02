@@ -27,6 +27,7 @@ export interface Field extends Record<string, any> {
   title: string;
   type: FieldType;
   role: FieldRole;
+  settings: FieldSettings;
 }
 
 export enum FieldType {
@@ -37,6 +38,18 @@ export enum FieldRole {
   Other = 1,
   Front = 2,
   Back = 3,
+}
+
+export interface FieldSettings {
+  actions?: {
+    show?: {
+      isLabelVisible?: boolean;
+    }
+    typeTest?: {
+      isLabelVisible?: boolean;
+      processings: string[];
+    }
+  }
 }
 
 export interface Card {
@@ -182,6 +195,7 @@ export interface LessonField {
   id: Field['id'];
   type: Field['type'];
   role: Field['role'];
+  settings: FieldSettings;
   content: CardFieldContent;
   value?: string;
   isTested?: boolean;
