@@ -12,6 +12,7 @@ import {
   getFieldTypeObjectById, getFieldRoleObjectById,
   getFieldTypeValueById, getFieldRoleValueById,
 } from './deck-fields-domain';
+import DeckFieldsTableItemSettings from './deck-fields-table-item-settings';
 
 const PREFIX = 'srs:decks.one.fields.many.table';
 const T_PREFIX = 'srs:decks.one.fields';
@@ -107,7 +108,7 @@ export default function DeckFieldsTableItem({ drag, index, field, state, dispatc
       >
         { (mode === 'edit') ? (
           <Select
-            className="fields-table__role"
+            className="deck-fields-table__role"
             name="role"
             items={FIELD_ROLES}
             selectedItem={getFieldRoleObjectById(field.role)}
@@ -120,6 +121,12 @@ export default function DeckFieldsTableItem({ drag, index, field, state, dispatc
           </span>
         )}
       </td>
+      <DeckFieldsTableItemSettings
+        index={index}
+        field={field}
+        state={state}
+        dispatch={dispatch}
+      />
       { (mode === 'edit') && (
         <td
           className="deck-fields__table-cell"

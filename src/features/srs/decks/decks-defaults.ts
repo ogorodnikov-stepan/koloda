@@ -26,7 +26,7 @@ const FIELD_DEFAULT_SETTINGS: FieldSettings = {
     },
     typeTest: {
       isLabelVisible: false,
-      processings: [],
+      processings: {},
     },
   },
 };

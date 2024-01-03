@@ -5,6 +5,7 @@ $border-width: 0.1px;
 
 .deck-fields {
   @include flex-col;
+
   flex: 1;
 
   &__content {
@@ -37,10 +38,13 @@ $border-width: 0.1px;
         white-space: no-wrap;
       }
 
+      &[data-cell-column="settings"] { position: relative; }
+
+      &[data-cell-column="actions"] { @include flex-row; }
+
       &-value {
         display: block;
-        padding-block: var(--input-padding-block);
-        padding-inline: var(--input-padding-inline);
+        padding: var(--input-padding-block) var(--input-padding-inline);
       }
     }
 
@@ -50,7 +54,59 @@ $border-width: 0.1px;
 
     &-head { font-weight: 700; }
 
-    &-delete, &-drag { display: inline-block; }
+    &-settings {
+      @include button-link-icon;
+
+      padding: 0.5rem;
+    }
+  }
+
+  &__field-settings {
+    &__actions {
+      @include list-reset;
+      @include flex-col($gap: 1rem);
+    }
+
+    &__toggle {
+      @include flex-row($gap: 0.25rem);
+
+      padding: 0.5rem;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 1.5rem;
+        width: 1.5rem;
+        mask: url("assets/images/gear.svg") 0 0/1.5rem 1.5rem no-repeat;
+        background-color: var(--link-color);
+      }
+    }
+
+    &__content {
+      inset-inline-end: 0;
+      min-width: 20rem;
+      padding: var(--content-padding-block) var(--content-padding-inline);
+    }
+
+    &__title { margin: 0; }
+
+    &__item-input:disabled {
+      background-color: transparent;
+      border-color: transparent;
+
+      &::after {
+        background-color: var(--success-color);
+      }
+
+      &:not(:checked)::after {
+        content: "";
+        display: inline-block;
+        height: 1.25rem;
+        width: 1.25rem;
+        background-color: var(--error-color);
+        mask: url("assets/images/x.svg");
+      }
+    }
   }
 
   &__add {
