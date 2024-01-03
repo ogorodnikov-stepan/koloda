@@ -3,6 +3,7 @@ import produce from 'immer';
 import { ReducerState, ReducerActions } from 'features/app/reducer/reducer-types';
 import { LessonField } from 'features/srs/srs-types';
 import { int } from 'features/app/misc/misc';
+import { isTypeTestResultCorrect } from 'features/srs/lessons/lesson/action-types/lesson-action-typetest-domain';
 
 export interface State extends ReducerState {
   result: boolean;
@@ -52,16 +53,12 @@ function actionSubmitted(draft: State) {
   } else {
     meta.isSubmited = true;
     fields.forEach((field, index) => {
-      if (field.isTested) fields[index].isCorrect = testField(field);
+      if (field.isTested) fields[index].isCorrect = isTypeTestResultCorrect(field);
     });
     const isCorrect = fields.findIndex((field) => (field.isTested && !field.isCorrect)) === -1;
     meta.isDone = isCorrect;
     draft.result = draft.result && isCorrect;
   }
-}
-
-function testField(field: LessonField) {
-  return ((field?.content?.text || '') === field.value);
 }
 
 export const typeTestReducer = produce((draft: State, [type, payload]) => {
