@@ -170,6 +170,49 @@
       "minimum": 0
     },
 
+    "field_settings": {
+      "$id": "#field_settings",
+      "type": "object",
+      "properties": {
+        "actions": {
+          "type": "object",
+          "properties": {
+            "show": {
+              "type": "object",
+              "properties": {
+                "is_label_visible": { "type": "boolean" }
+              },
+              "required": [],
+              "additionalProperties": false
+            },
+            "type_test": {
+              "type": "object",
+              "properties": {
+                "is_label_visible": { "type": "boolean" },
+                "processings": {
+                  "type": "object",
+                  "properties": {
+                    "trim_spaces": { "type": "boolean" },
+                    "ignore_case": { "type": "boolean" },
+                    "ignore_punctuation": { "type": "boolean" },
+                    "ignore_accents": { "type": "boolean" }
+                  },
+                  "required": [],
+                  "additionalProperties": false
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+
     "deck_fields": {
       "$id": "#deck_fields",
       "type": "array",
@@ -179,7 +222,8 @@
           "id": { "$ref": "#/definitions/field_id" },
           "title": { "$ref": "#/definitions/field_title" },
           "type": { "$ref": "#/definitions/field_type" },
-          "role": { "$ref": "#/definitions/field_role" }
+          "role": { "$ref": "#/definitions/field_role" },
+          "settings": { "$ref": "#/definitions/field_settings" }
         },
         "required": ["id", "title", "type", "role"],
         "additionalProperties": false
