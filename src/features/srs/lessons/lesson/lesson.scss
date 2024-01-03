@@ -19,18 +19,13 @@
   &__empty-message { @include feature-empty-state; }
 
   &__action {
-    @include flex-col($align: center, $justify: center);
-    flex-grow: 1;
-    gap: 2rem;
+    @include flex-col($align: center, $justify: center, $gap: 2rem);
 
+    flex-grow: 1;
     padding-block: var(--content-padding-block);
     padding-inline: var(--content-padding-inline);
 
-    &-controls {
-      @include flex-col($align: center);
-
-      gap: 1rem;
-    }
+    &-controls { @include flex-col($align: center, $gap: 1rem); }
 
     &-submit { @include button-blue; }
 
@@ -41,6 +36,7 @@
 
     &-status {
       @include flex-col($justify: center);
+
       flex-grow: 1;
       font-size: 2rem;
       font-weight: 600;
@@ -65,19 +61,17 @@
 
   &__fields {
     @include list-reset;
-    @include flex-col($justify: center);
+    @include flex-col($justify: center, $gap: 2rem);
 
-    gap: 2rem;
-
-    &-item {
-      @include flex-col($justify: center);
-
-      gap: 1rem;
-    }
+    &-item { @include flex-col($justify: center, $gap: 1rem); }
   }
 
   &__field {
+    @include flex-col($gap: 0.5rem);
+
     text-align: center;
+
+    &-label { @include label; }
 
     &-value {
       text-align: center;
@@ -89,13 +83,9 @@
         user-select: none;
       }
 
-      &[data-is-correct="true"] {
-        color: var(--success-color);
-      }
+      &[data-is-correct="true"] { color: var(--success-color); }
 
-      &[data-is-incorrect="true"] {
-        color: var(--error-color);
-      }
+      &[data-is-incorrect="true"] { color: var(--error-color); }
     }
   }
 
@@ -107,11 +97,9 @@
 
     &-item {
       &-button {
-        @include flex-row($align: center);
+        @include flex-row($align: center, $gap: 0.5rem);
         @include button-link-styles;
         @include focus-outline;
-
-        gap: 0.5rem;
 
         border-radius: var(--menu-item-border-radius);
 

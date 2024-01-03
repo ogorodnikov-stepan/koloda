@@ -4,11 +4,20 @@ import { t } from 'i18next';
 
 const PREFIX = 'srs:lessons.fieldTypes.text';
 
-export default function LessonFieldText({ field, value, readonly, isError, onChange }: Props) {
+export default function LessonFieldText(
+  { type, field, value, readonly, isError, onChange }: Props,
+) {
+  const label = field?.settings?.actions?.[type]?.isLabelVisible && field.title;
+
   return (
     <li className="lesson__fields-item">
       { (readonly || isError) ? (
         <div className="lesson__field">
+          { label && (
+            <span className="lesson__field-label">
+              {label}
+            </span>
+          )}
           <span
             className="lesson__field-value"
             data-is-empty={!(isError ? value : field.content?.text)}
@@ -20,6 +29,7 @@ export default function LessonFieldText({ field, value, readonly, isError, onCha
       ) : (
         <TextInput
           className="lesson__field"
+          label={label}
           name={`${field.id}`}
           value={value}
           placeholder={isError ? field.content.text : ''}

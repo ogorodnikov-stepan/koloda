@@ -30,6 +30,7 @@ export default function LessonActionShow({ state, dispatch }: Props) {
         { fields.map((field) => (
           <LessonActionField
             key={field.id}
+            type="show"
             field={field}
             readonly
           />
