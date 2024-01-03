@@ -57,6 +57,7 @@ export default function LessonActionTypeTest({ state, dispatch }: Props) {
             { fields.map((field) => (
               <LessonActionField
                 key={field.id}
+                type="typeTest"
                 field={field}
                 value={field.value}
                 readonly={!field.isTested}
