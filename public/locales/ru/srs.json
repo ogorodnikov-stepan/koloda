@@ -340,6 +340,19 @@
           "back": "Оборот",
           "extra": "Другое"
         },
+        "settings": {
+          "actions": {
+            "show": "Показ",
+            "typeTest": "Тест"
+          },
+          "values": {
+            "isLabelVisible": "Отображать название",
+            "trimSpaces": "Игнорировать пробелы",
+            "ignoreCase": "Игнорировать регистр",
+            "ignorePunctuation": "Игнорировать пунктуацию",
+            "ignoreAccents": "Игнорировать ударения в буквах"
+          }
+        },
         "many": {
           "title": "Поля",
           "empty": {
@@ -364,6 +377,9 @@
               },
               "role": {
                 "caption": "Роль"
+              },
+              "settings": {
+                "caption": ""
               },
               "actions": {
                 "caption": ""
