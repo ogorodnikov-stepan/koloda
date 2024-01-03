@@ -14,6 +14,7 @@ const COLUMNS = [
   'title',
   'type',
   'role',
+  'settings',
   'actions',
 ];
 

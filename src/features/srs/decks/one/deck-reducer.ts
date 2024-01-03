@@ -108,6 +108,7 @@ const actions: ReducerActions = {
   learningDeleted,
   fieldAdded,
   fieldUpdated,
+  fieldSettingUpdated,
   fieldDeleted,
   fieldMoved,
   cardAdded,
@@ -252,6 +253,23 @@ function fieldUpdated(draft: State, payload: FieldUpdatedPayload) {
   const { fields } = data || {};
   if (fields) {
     fields[index][property] = value;
+    entityUpdated(status);
+    updateTabsStatus(draft);
+  }
+}
+
+interface FieldSettingUpdatedPayload {
+  index: number;
+  path: string;
+  value: boolean;
+}
+
+function fieldSettingUpdated(draft: State, payload: FieldSettingUpdatedPayload) {
+  const { index, path, value } = payload;
+  const { data, status } = draft.fields;
+  const { fields } = data || {};
+  if (fields) {
+    set(fields[index], path, value);
     entityUpdated(status);
     updateTabsStatus(draft);
   }

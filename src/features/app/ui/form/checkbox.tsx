@@ -19,6 +19,7 @@ export default function Checkbox(
         type="checkbox"
         id={id}
         checked={!!checked}
+        disabled={disabled}
         {...props}
       />
       <Label

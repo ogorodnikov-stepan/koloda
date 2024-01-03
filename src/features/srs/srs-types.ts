@@ -47,7 +47,7 @@ export interface FieldSettings {
     }
     typeTest?: {
       isLabelVisible?: boolean;
-      processings: string[];
+      processings: Record<string, boolean>;
     }
   }
 }
@@ -126,6 +126,8 @@ export interface LearningSettings {
 
 export type LessonType = 'new' | 'rep';
 
+export type LessonActionType = 'show' | 'typeTest';
+
 export type LessonPlan = LessonPlanItem[];
 
 interface LessonPlanItem {
@@ -193,6 +195,7 @@ export type LessonResults = LessonDeckResult[];
 
 export interface LessonField {
   id: Field['id'];
+  title: Field['title'];
   type: Field['type'];
   role: Field['role'];
   settings: FieldSettings;
