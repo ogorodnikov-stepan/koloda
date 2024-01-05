@@ -274,6 +274,7 @@
     },
 
     "lesson_type": {
+      "$id": "#lesson_type",
       "type": "string",
       "enum": ["new", "rep"]
     },
