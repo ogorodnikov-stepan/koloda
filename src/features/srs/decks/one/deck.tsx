@@ -10,6 +10,7 @@ import Error404 from 'features/app/pages/error/error-404';
 import { Tabs, TabsHeader, TabHeader, TabContent } from 'features/app/ui/tabs/tabs';
 import Feature from 'features/app/ui/feature/feature';
 import { deckReducer, deckDefault } from './deck-reducer';
+import DeckExport from './deck-export';
 import DeckProgress from './progress/deck-progress';
 import DeckAbout from './about/deck-about';
 import DeckFields from './fields/deck-fields';
@@ -62,6 +63,9 @@ export default function OneDeck({ id, isDemo }: Props) {
           <Feature.Title isLoading={isLoading}>
             {title}
           </Feature.Title>
+          { process.env.NODE_ENV === 'development' && isDemo && (
+            <DeckExport id={id} />
+          )}
           <TabsHeader className="feature__tabs-header">
             { state.meta.tabs.headers.map((tab: string) => (
               <TabHeader
