@@ -232,7 +232,17 @@
 
     "card_content": {
       "$id": "#card_content",
-      "type": "object"
+      "type": "object",
+      "propertyNames": { "pattern": "^[1-9][0-9]*" },
+      "patternProperties": {
+        "": {
+          "type": "object",
+          "properties": {
+            "text": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      }
     },
 
     "card_progress": {
