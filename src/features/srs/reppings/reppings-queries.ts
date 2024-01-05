@@ -79,6 +79,12 @@ export function useImportReppingMutation(extra: RequestExtra) {
   );
 }
 
+export function useExportReppingMutation(extra: RequestExtra) {
+  return useMutation<any, ErrorInstance, any>(
+    async (params: any) => handle('srs', 'repping_export', [200], params, extra),
+  );
+}
+
 export function useUpdateReppingMutation(extra: RequestExtra) {
   return useMutation<any, ErrorInstance, any>(
     async (params: any) => handle('srs', 'repping_update', [200], params, extra),
