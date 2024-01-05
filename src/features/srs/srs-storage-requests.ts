@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { v4 as uuid } from 'uuid';
+import pick from 'lodash.pick';
 import isFuture from 'date-fns/isFuture';
 import { db } from 'config/db';
 import { formatDateTime } from 'features/app/date/date';
@@ -21,6 +22,7 @@ const requests = <Requests>{
   reppings_get,
   repping_add,
   repping_import,
+  repping_export,
   repping_get,
   repping_update,
   repping_delete,
@@ -31,6 +33,7 @@ const requests = <Requests>{
   deck_add,
   deck_import,
   deck_get,
+  deck_export,
   deck_update,
   deck_delete,
   fields_get,
@@ -55,6 +58,19 @@ async function reppings_get(params: ManyParams) {
     ok: true,
     status: 200,
     json: () => ({ data, meta }),
+  });
+}
+
+async function repping_export({ id }: HTTPParams) {
+  const repping = await db.reppings.get(id);
+  if (!repping) return Promise.resolve({ ok: false, status: 404 });
+  const properties = [
+    'title', 'description', 'divels',
+  ];
+  return Promise.resolve({
+    ok: true,
+    status: 200,
+    json: () => (pick(repping, properties)),
   });
 }
 
@@ -165,18 +181,6 @@ async function decks_get(params: ManyParams) {
   });
 }
 
-async function deck_add(params: HTTPParams) {
-  const createdAt = formatDateTime(new Date());
-  const updatedAt = createdAt;
-  const data = { ...DECK_DEFAULT, id: uuid(), createdAt, updatedAt, ...params };
-  const id = await db.decks.add(data);
-  return Promise.resolve({
-    ok: true,
-    status: 201,
-    json: () => ({ data: { id } }),
-  });
-}
-
 async function deck_import(params: HTTPParams) {
   const createdAt = formatDateTime(new Date());
   const updatedAt = createdAt;
@@ -200,6 +204,33 @@ async function deck_import(params: HTTPParams) {
   const { isEligible, requirements } = getDeckEligibilityStatus(data);
   const id = await db.decks.add({ ...data, isEligible, requirements });
   await cards_set({ deckId: id, cards: params.cards });
+  return Promise.resolve({
+    ok: true,
+    status: 201,
+    json: () => ({ data: { id } }),
+  });
+}
+
+async function deck_export({ id }: HTTPParams) {
+  const deck = await db.decks.get(id);
+  if (!deck) return Promise.resolve({ ok: false, status: 404 });
+  const cards = await db.cards.where({ deckId: id }).sortBy('index');
+  deck.cards = cards.map((card) => (pick(card, ['id', 'content'])));
+  const properties = [
+    'title', 'description', 'categoryId', 'subjectId', 'languageId', 'fields', 'cards',
+  ];
+  return Promise.resolve({
+    ok: true,
+    status: 200,
+    json: () => (pick(deck, properties)),
+  });
+}
+
+async function deck_add(params: HTTPParams) {
+  const createdAt = formatDateTime(new Date());
+  const updatedAt = createdAt;
+  const data = { ...DECK_DEFAULT, id: uuid(), createdAt, updatedAt, ...params };
+  const id = await db.decks.add(data);
   return Promise.resolve({
     ok: true,
     status: 201,

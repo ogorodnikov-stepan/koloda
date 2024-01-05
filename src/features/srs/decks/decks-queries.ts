@@ -36,15 +36,21 @@ export function useDecksPaginatedQuery(params: State['params'], extra: RequestEx
   );
 }
 
-export function useAddDeckMutation(extra: RequestExtra) {
-  return useMutation<any, ErrorInstance, any>(
-    async (params: any) => handle('srs', 'deck_add', [201], params, extra),
-  );
-}
-
 export function useImportDeckMutation(extra: RequestExtra) {
   return useMutation<any, ErrorInstance, any>(
     async (params: any) => handle('srs', 'deck_import', [201], params, extra),
+  );
+}
+
+export function useExportDeckMutation(extra: RequestExtra) {
+  return useMutation<any, ErrorInstance, any>(
+    async (params: any) => handle('srs', 'deck_export', [200], params, extra),
+  );
+}
+
+export function useAddDeckMutation(extra: RequestExtra) {
+  return useMutation<any, ErrorInstance, any>(
+    async (params: any) => handle('srs', 'deck_add', [201], params, extra),
   );
 }
 
