@@ -46,6 +46,12 @@
             "clear": "Clear"
           }
         }
+      },
+      "one": {
+        "export": {
+          "copy": "Copy",
+          "download": "Download"
+        }
       }
     },
     "editbar": {
