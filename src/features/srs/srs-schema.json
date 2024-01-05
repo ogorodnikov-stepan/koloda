@@ -9,12 +9,6 @@
       "enum": ["en", "ru"]
     },
 
-    "position": {
-      "$id": "#position",
-      "type": "integer",
-      "minimum": 0
-    },
-
     "is_eligible": {
       "$id": "#is_eligible",
       "type": "boolean"
@@ -273,12 +267,6 @@
       "format": "date-time"
     },
 
-    "first_learned_at": {
-      "$id": "#first_learned_at",
-      "type": "string",
-      "format": "date-time"
-    },
-
     "last_learned_at": {
       "$id": "#last_learned_at",
       "type": "string",
@@ -429,15 +417,6 @@
       "additionalProperties": false
     },
 
-    "divels_get": {
-      "type": "object",
-      "properties": {
-        "repping_id": { "$ref": "#/definitions/repping_id" }
-      },
-      "required": ["repping_id"],
-      "additionalProperties": false
-    },
-
     "divels_update": {
       "type": "object",
       "properties": {
@@ -445,17 +424,6 @@
         "divels": { "$ref": "#/definitions/repping_divels" }
       },
       "required": ["repping_id"],
-      "additionalProperties": false
-    },
-
-    "divel_add": {
-      "type": "object",
-      "properties": {
-        "repping_id": { "$ref": "#/definitions/repping_id" },
-        "title": { "$ref": "#/definitions/divel_title" },
-        "phases": { "$ref": "#/definitions/divel_phases" }
-      },
-      "required": ["repping_id", "title"],
       "additionalProperties": false
     },
 
@@ -472,27 +440,6 @@
     },
 
     "divel_get": {
-      "type": "object",
-      "properties": {
-        "repping_id": { "$ref": "#/definitions/repping_id" },
-        "id": { "$ref": "#/definitions/divel_id" }
-      },
-      "required": ["repping_id", "id"],
-      "additionalProperties": false
-    },
-
-    "divel_move": {
-      "type": "object",
-      "properties": {
-        "repping_id": { "$ref": "#/definitions/repping_id" },
-        "id": { "$ref": "#/definitions/divel_id" },
-        "position": { "$ref": "#/definitions/position" }
-      },
-      "required": ["repping_id", "id", "position"],
-      "additionalProperties": false
-    },
-
-    "divel_delete": {
       "type": "object",
       "properties": {
         "repping_id": { "$ref": "#/definitions/repping_id" },
@@ -637,48 +584,6 @@
       "additionalProperties": false
     },
 
-    "card_add": {
-      "type": "object",
-      "properties": {
-        "deck_id": { "$ref": "#/definitions/deck_id" },
-        "content": { "$ref": "#/definitions/card_content" }
-      },
-      "required": ["deck_id", "content"],
-      "additionalProperties": false
-    },
-
-    "card_update": {
-      "type": "object",
-      "properties": {
-        "deck_id": { "$ref": "#/definitions/deck_id" },
-        "id": { "$ref": "#/definitions/card_id" },
-        "content": { "$ref": "#/definitions/card_content" }
-      },
-      "required": ["deck_id", "id", "content"],
-      "additionalProperties": false
-    },
-
-    "card_move": {
-      "type": "object",
-      "properties": {
-        "deck_id": { "$ref": "#/definitions/deck_id" },
-        "id": { "$ref": "#/definitions/card_id" },
-        "position": { "$ref": "#/definitions/position" }
-      },
-      "required": ["deck_id", "id", "position"],
-      "additionalProperties": false
-    },
-
-    "card_delete": {
-      "type": "object",
-      "properties": {
-        "deck_id": { "$ref": "#/definitions/deck_id" },
-        "id": { "$ref": "#/definitions/card_id" }
-      },
-      "required": ["deck_id", "id"],
-      "additionalProperties": false
-    },
-
     "learnings_get": {
       "type": "object",
       "properties": {
@@ -813,16 +718,6 @@
         }
       },
       "required": ["data"],
-      "additionalProperties": false
-    },
-
-    "lesson_action_component_data": {
-      "type": "object",
-      "properties": {
-        "fields": { "$ref": "#/definitions/deck_fields" },
-        "content": { "$ref": "#/definitions/card_content" }
-      },
-      "required": ["type", "deck_id"],
       "additionalProperties": false
     }
   },
