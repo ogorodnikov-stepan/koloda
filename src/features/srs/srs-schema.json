@@ -391,6 +391,15 @@
       "additionalProperties": false
     },
 
+    "repping_export": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+
     "repping_get": {
       "type": "object",
       "properties": {
@@ -524,15 +533,6 @@
       "additionalProperties": false
     },
 
-    "deck_add": {
-      "type": "object",
-      "properties": {
-        "title": { "$ref": "#/definitions/deck_title" }
-      },
-      "required": ["title"],
-      "additionalProperties": false
-    },
-
     "deck_import": {
       "type": "object",
       "properties": {
@@ -546,6 +546,24 @@
         "repping_id": { "$ref": "#/definitions/repping_id" }
       },
       "required": ["title", "category_id", "subject_id", "language_id", "fields", "cards"],
+      "additionalProperties": false
+    },
+
+    "deck_export": {
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/deck_id" }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+
+    "deck_add": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/deck_title" }
+      },
+      "required": ["title"],
       "additionalProperties": false
     },
 
