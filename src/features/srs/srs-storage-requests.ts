@@ -20,9 +20,9 @@ const requests = <Requests>{
   subjects_get: (p, e = {}) => get(`${locales}/${p.language}/srs-subjects.json`, e),
   languages_get: (p, e = {}) => get(`${locales}/${p.language}/srs-languages.json`, e),
   reppings_get,
-  repping_add,
   repping_import,
   repping_export,
+  repping_add,
   repping_get,
   repping_update,
   repping_delete,
@@ -30,10 +30,10 @@ const requests = <Requests>{
   divel_get,
   divel_update,
   decks_get,
-  deck_add,
   deck_import,
-  deck_get,
   deck_export,
+  deck_add,
+  deck_get,
   deck_update,
   deck_delete,
   fields_get,
@@ -61,6 +61,19 @@ async function reppings_get(params: ManyParams) {
   });
 }
 
+async function repping_import(params: HTTPParams) {
+  const createdAt = formatDateTime(new Date());
+  const updatedAt = createdAt;
+  const data = { ...REPPING_DEFAULT, id: uuid(), createdAt, updatedAt, ...params };
+  const { isEligible, requirements } = getReppingEligibilityStatus(data);
+  const id = await db.reppings.add({ ...data, isEligible, requirements });
+  return Promise.resolve({
+    ok: true,
+    status: 201,
+    json: () => ({ data: { id } }),
+  });
+}
+
 async function repping_export({ id }: HTTPParams) {
   const repping = await db.reppings.get(id);
   if (!repping) return Promise.resolve({ ok: false, status: 404 });
@@ -79,19 +92,6 @@ async function repping_add(params: HTTPParams) {
   const updatedAt = createdAt;
   const data = { ...REPPING_DEFAULT, id: uuid(), createdAt, updatedAt, ...params };
   const id = await db.reppings.add(data);
-  return Promise.resolve({
-    ok: true,
-    status: 201,
-    json: () => ({ data: { id } }),
-  });
-}
-
-async function repping_import(params: HTTPParams) {
-  const createdAt = formatDateTime(new Date());
-  const updatedAt = createdAt;
-  const data = { ...REPPING_DEFAULT, id: uuid(), createdAt, updatedAt, ...params };
-  const { isEligible, requirements } = getReppingEligibilityStatus(data);
-  const id = await db.reppings.add({ ...data, isEligible, requirements });
   return Promise.resolve({
     ok: true,
     status: 201,
@@ -128,16 +128,6 @@ async function repping_delete({ id }: HTTPParams) {
   return Promise.resolve({ ok: true, status: 204, json: () => {} });
 }
 
-async function divel_get({ reppingId, id }: HTTPParams) {
-  const repping = await db.reppings.get(reppingId);
-  const data = repping?.divels.find((x: Divel) => (x.id === id));
-  return Promise.resolve(
-    data
-      ? { ok: true, status: 200, json: () => ({ data }) }
-      : { ok: false, status: 404 },
-  );
-}
-
 async function divels_update({ reppingId, divels }: HTTPParams) {
   const repping = await db.reppings.get(reppingId);
   if (!repping) return Promise.resolve({ ok: false, status: 404 });
@@ -155,6 +145,16 @@ async function divels_update({ reppingId, divels }: HTTPParams) {
     status: 200,
     json: () => ({ ...repping, divels: data, isEligible, requirements, updatedAt }),
   });
+}
+
+async function divel_get({ reppingId, id }: HTTPParams) {
+  const repping = await db.reppings.get(reppingId);
+  const data = repping?.divels.find((x: Divel) => (x.id === id));
+  return Promise.resolve(
+    data
+      ? { ok: true, status: 200, json: () => ({ data }) }
+      : { ok: false, status: 404 },
+  );
 }
 
 async function divel_update({ reppingId, id, ...data }: HTTPParams) {

@@ -360,15 +360,6 @@
       "additionalProperties": false
     },
 
-    "repping_add": {
-      "type": "object",
-      "properties": {
-        "title": { "$ref": "#/definitions/repping_title" }
-      },
-      "required": ["title"],
-      "additionalProperties": false
-    },
-
     "repping_import": {
       "type": "object",
       "properties": {
@@ -386,6 +377,15 @@
         "id": { "$ref": "#/definitions/repping_id" }
       },
       "required": ["id"],
+      "additionalProperties": false
+    },
+
+    "repping_add": {
+      "type": "object",
+      "properties": {
+        "title": { "$ref": "#/definitions/repping_title" }
+      },
+      "required": ["title"],
       "additionalProperties": false
     },
 
@@ -428,6 +428,16 @@
       "additionalProperties": false
     },
 
+    "divel_get": {
+      "type": "object",
+      "properties": {
+        "repping_id": { "$ref": "#/definitions/repping_id" },
+        "id": { "$ref": "#/definitions/divel_id" }
+      },
+      "required": ["repping_id", "id"],
+      "additionalProperties": false
+    },
+
     "divel_update": {
       "type": "object",
       "properties": {
@@ -435,16 +445,6 @@
         "id": { "$ref": "#/definitions/divel_id" },
         "title": { "$ref": "#/definitions/divel_title" },
         "phases": { "$ref": "#/definitions/divel_phases" }
-      },
-      "required": ["repping_id", "id"],
-      "additionalProperties": false
-    },
-
-    "divel_get": {
-      "type": "object",
-      "properties": {
-        "repping_id": { "$ref": "#/definitions/repping_id" },
-        "id": { "$ref": "#/definitions/divel_id" }
       },
       "required": ["repping_id", "id"],
       "additionalProperties": false
@@ -615,20 +615,20 @@
       "additionalProperties": false
     },
 
-    "learning_get": {
-      "type": "object",
-      "properties": {
-        "deck_id": { "$ref": "#/definitions/deck_id" }
-      },
-      "required": ["deck_id"],
-      "additionalProperties": false
-    },
-
     "learning_add": {
       "type": "object",
       "properties": {
         "deck_id": { "$ref": "#/definitions/deck_id" },
         "repping_id": { "$ref": "#/definitions/repping_id" }
+      },
+      "required": ["deck_id"],
+      "additionalProperties": false
+    },
+
+    "learning_get": {
+      "type": "object",
+      "properties": {
+        "deck_id": { "$ref": "#/definitions/deck_id" }
       },
       "required": ["deck_id"],
       "additionalProperties": false
