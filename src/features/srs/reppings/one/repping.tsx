@@ -8,6 +8,7 @@ import Error404 from 'features/app/pages/error/error-404';
 import { Tabs, TabsHeader, TabHeader, TabContent } from 'features/app/ui/tabs/tabs';
 import Feature from 'features/app/ui/feature/feature';
 import { reppingReducer, reppingDefault } from './repping-reducer';
+import ReppingExport from './repping-export';
 import ReppingAbout from './about/repping-about';
 import ReppingDivels from './divels/repping-divels';
 
@@ -44,6 +45,9 @@ export default function OneRepping({ id, isDemo }: Props) {
           <Feature.Title isLoading={isLoading}>
             {title}
           </Feature.Title>
+          { process.env.NODE_ENV === 'development' && isDemo && (
+            <ReppingExport id={id} />
+          )}
           <TabsHeader className="feature__tabs-header">
             { state.meta.tabs.headers.map((tab: string) => (
               <TabHeader
