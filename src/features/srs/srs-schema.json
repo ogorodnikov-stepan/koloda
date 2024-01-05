@@ -4,8 +4,8 @@
 
 
   "definitions": {
-    "language": {
-      "$id": "#language",
+    "app_language": {
+      "$id": "#app_language",
       "enum": ["en", "ru"]
     },
 
@@ -318,7 +318,7 @@
     "subjects_get": {
       "type": "object",
       "properties": {
-        "language": { "$ref": "#/definitions/language" }
+        "language": { "$ref": "#/definitions/app_language" }
       },
       "required": ["language"],
       "additionalProperties": false
@@ -327,7 +327,7 @@
     "languages_get": {
       "type": "object",
       "properties": {
-        "language": { "$ref": "#/definitions/language" }
+        "language": { "$ref": "#/definitions/app_language" }
       },
       "required": ["language"],
       "additionalProperties": false
