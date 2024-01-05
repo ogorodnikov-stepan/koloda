@@ -33,6 +33,29 @@
     }
   }
 
+  &__export {
+    @include flex-row();
+
+    &-copy.button,
+    &-download.button {
+      @include button-link-icon;
+
+      padding: 0.25rem 0.5rem;
+    }
+
+    &-copy::before {
+      width: 1.25rem;
+      height: 1.25rem;
+      mask: url("assets/images/copy.svg") 0 0/1.25rem 1.25rem no-repeat;
+    }
+
+    &-download::before {
+      width: 1.5rem;
+      height: 1.5rem;
+      mask: url("assets/images/cloud-arrow-down.svg") 0 0/1.5rem 1.5rem no-repeat;
+    }
+  }
+
   &__content, &__tab-content {
     @include flex-col;
     flex-grow: 1;
