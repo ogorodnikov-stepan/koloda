@@ -1,6 +1,6 @@
 import { EditbarMode } from 'features/app/ui/editbar/editbar';
 import TextInput from 'features/app/ui/form/text-input';
-import { Field, CardFieldContent } from 'features/srs/srs-types';
+import { CardFieldValue } from 'features/srs/srs-types';
 import { useTranslation } from 'react-i18next';
 
 const PREFIX = 'srs:decks.one.cards.many.properties.value';
@@ -8,9 +8,9 @@ const PREFIX = 'srs:decks.one.cards.many.properties.value';
 interface Props {
   className?: string;
   label?: React.ReactNode;
-  name: Field['id'];
+  name: string;
   mode: EditbarMode;
-  value: CardFieldContent;
+  value: CardFieldValue;
   onChange: (value: any) => void;
 }
 
@@ -23,7 +23,7 @@ export default function CardContentPropertyText(
     <TextInput
       className={className}
       label={label}
-      name={`${name}`}
+      name={name}
       placeholder={t(`${PREFIX}.placeholder`)}
       readOnly={mode === 'view'}
       data-field-type="text"

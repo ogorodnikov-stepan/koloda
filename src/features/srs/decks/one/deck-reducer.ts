@@ -322,16 +322,14 @@ function cardAdded(draft: State) {
 
 interface CardUpdatedPayload {
   index: number;
-  property: Field['id'];
+  path: string;
   value: any;
 }
 
-function cardUpdated(draft: State, { index, property, value }: CardUpdatedPayload) {
-  const { data, status } = draft.cards;
-  const { cards } = data || {};
-  if (cards && property) {
-    if (!cards[index].content[property]) cards[index].content[property] = { text: '' };
-    cards[index].content[property].text = value;
+function cardUpdated(draft: State, { index, path, value }: CardUpdatedPayload) {
+  const { data: { cards } = {}, status } = draft.cards;
+  if (cards?.[index] && path) {
+    set(cards[index], path, value);
     entityUpdated(status);
     updateTabsStatus(draft);
   }
