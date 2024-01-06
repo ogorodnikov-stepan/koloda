@@ -329,11 +329,16 @@
       "propertyNames": { "pattern": "^[1-9][0-9]*" },
       "patternProperties": {
         "": {
-          "type": "object",
-          "properties": {
-            "text": { "type": "string" }
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": { "type": "string" }
+            },
+            "additionalProperties": false
           },
-          "additionalProperties": false
+          "minItems": 1,
+          "maxItems": 10
         }
       }
     },

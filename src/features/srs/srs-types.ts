@@ -54,7 +54,7 @@ export interface FieldSettings {
 
 export interface Card {
   id: number;
-  content: Record<string, CardFieldContent>;
+  content: Record<string, CardFieldValue[]>;
   meta?: {
     status: 'initial' | 'learning' | 'completed';
     divel?: {
@@ -72,7 +72,7 @@ interface CardProgress {
   dueAt?: string;
 }
 
-export interface CardFieldContent {
+export interface CardFieldValue {
   text: string;
 }
 
@@ -199,7 +199,7 @@ export interface LessonField {
   type: Field['type'];
   role: Field['role'];
   settings: FieldSettings;
-  content: CardFieldContent;
+  content: CardFieldValue[];
   value?: string;
   isTested?: boolean;
   isCorrect?: boolean;
