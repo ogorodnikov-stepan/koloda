@@ -45,8 +45,8 @@ export const getFieldRoleIdByValue = (value: string) => (
 export function getFieldDefaultContent(field: Field) {
   switch (getFieldTypeValueById(field.type)) {
     case 'text':
-      return { text: '' };
+      return [{ text: '' }];
     default:
-      return {};
+      return [{ text: '' }];
   }
 }
