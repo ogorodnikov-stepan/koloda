@@ -11,7 +11,7 @@ interface Props {
   className?: string;
   label?: React.ReactNode;
   type: Field['type'];
-  name: Field['id'];
+  name: string;
   mode: EditbarMode;
   value: any;
   onChange: (value: any) => void;

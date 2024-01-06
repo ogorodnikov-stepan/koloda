@@ -24,7 +24,7 @@ export default function DeckCardsTableItem(
   const { status: { display: { showProgress } = {}, editbar: { mode } } } = state.cards;
 
   const handleChange = useCallback(({ target: { name, value } }) => {
-    dispatch(['cardUpdated', { index, property: name, value }]);
+    dispatch(['cardUpdated', { index, path: name, value }]);
   }, [index]);
 
   const handleDeleteClick = useCallback(() => {
@@ -51,10 +51,10 @@ export default function DeckCardsTableItem(
         >
           <DeckCardsProperty
             className="deck-cards__table-item-property"
-            name={field.id}
+            name={`content.${field.id}.[0].text`}
             type={field.type}
             mode={mode}
-            value={card.content[field.id || 0] || {}}
+            value={card?.content?.[field.id]?.[0] || {}}
             onChange={handleChange}
           />
         </td>
