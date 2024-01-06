@@ -34,7 +34,7 @@ export const typeTestProcessings: Record<string, TypeTestProcessing> = {
  */
 export function isTypeTestResultCorrect(field: LessonField) {
   const inputValue = field.value || '';
-  const actualValue = field?.content?.text || '';
+  const actualValue = field?.content?.[0]?.text || '';
   // compare values without processing first
   if (inputValue === actualValue) return true;
   // go through processing pipeline and compare

@@ -8,6 +8,7 @@ export default function LessonFieldText(
   { type, field, value, readonly, isError, onChange }: Props,
 ) {
   const label = field?.settings?.actions?.[type]?.isLabelVisible && field.title;
+  const content = field?.content?.[0]?.text;
 
   return (
     <li className="lesson__fields-item">
@@ -20,10 +21,10 @@ export default function LessonFieldText(
           )}
           <span
             className="lesson__field-value"
-            data-is-empty={!(isError ? value : field.content?.text)}
+            data-is-empty={!(isError ? value : content)}
             data-is-incorrect={isError}
           >
-            {(isError ? value : field.content?.text) || t(`${PREFIX}.empty`)}
+            {(isError ? value : content) || t(`${PREFIX}.empty`)}
           </span>
         </div>
       ) : (
@@ -32,7 +33,7 @@ export default function LessonFieldText(
           label={label}
           name={`${field.id}`}
           value={value}
-          placeholder={isError ? field.content.text : ''}
+          placeholder={isError ? content : ''}
           readOnly={readonly}
           autoFocus={field.isFocused}
           data-is-correct={field.isCorrect === true}
@@ -43,10 +44,10 @@ export default function LessonFieldText(
         <div className="lesson__field">
           <span
             className="lesson__field-value"
-            data-is-empty={!field.content?.text}
+            data-is-empty={!content}
             data-is-correct="true"
           >
-            {field.content?.text || t(`${PREFIX}.empty`)}
+            {content || t(`${PREFIX}.empty`)}
           </span>
         </div>
       )}

@@ -240,7 +240,7 @@ function makeLessonFields(fields: Field[], card: LessonCard, type: PhaseAction['
   const lessonFields = card && fields.map((field) => (
     {
       ...field,
-      content: card.content[`${field.id}`] || getFieldDefaultContent(field),
+      content: card?.content?.[`${field.id}`] || getFieldDefaultContent(field),
       isTested: (testedRole === getFieldRoleValueById(field.role)),
     }
   ));
