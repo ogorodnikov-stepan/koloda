@@ -70,20 +70,113 @@
     "divel_phases": {
       "$id": "#divel_phases",
       "type": "array",
-      "items": {
-        "type": "object"
-      }
+      "items": { "$ref": "#/definitions/phase" }
     },
 
     "phase": {
-      "$id": "#phase_content",
-      "type": "object"
+      "$id": "#phase",
+      "type": "object",
+      "properties": {
+        "id": { "$ref": "#/definitions/phase_id" },
+        "title": { "$ref": "#/definitions/phase_title" },
+        "actions": { "$ref": "#/definitions/phase_actions" },
+        "triggers": { "$ref": "#/definitions/phase_triggers" },
+        "is_default": { "type": "boolean" }
+      },
+      "required": ["id", "actions", "triggers"],
+      "additionalProperties": false
     },
 
     "phase_id": {
       "$id": "#phase_id",
       "type": "integer",
       "minimum": 0
+    },
+
+    "phase_title": {
+      "$id": "#phase_title",
+      "type": "string",
+      "pattern": "^[\\s|\\S]*$",
+      "minLength": 1,
+      "maxLength": 128
+    },
+
+    "phase_actions": {
+      "$id": "#phase_actions",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "enum": [1, 2, 3] },
+          "times": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          }
+        }
+      }
+    },
+
+    "phase_triggers": {
+      "$id": "#phase_triggers",
+      "type": "object",
+      "properties": {
+        "0": { "$ref": "#/definitions/phase_trigger" },
+        "1": { "$ref": "#/definitions/phase_trigger" }
+      },
+      "required": ["0", "1"],
+      "additionalProperties": false
+    },
+
+    "phase_trigger": {
+      "$id": "#phase_trigger",
+      "type": "object",
+      "properties": {
+        "offset": {
+          "type": "object",
+          "properties": {
+            "type": { "enum": [1, 2, 3, 4, 5] },
+            "value": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "delay": {
+          "type": "object",
+          "properties": {
+            "years": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "months": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 11
+            },
+            "weeks": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4
+            },
+            "days": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 30
+            },
+            "hours": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 23
+            }
+          },
+          "required": ["years", "months", "weeks", "days", "hours"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["offset", "delay"],
+      "additionalProperties": false
     },
 
     "deck_id": {
