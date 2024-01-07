@@ -43,37 +43,37 @@ export default function PhasesListItemTriggerOffset(
     <div className="phase-offset">
       { mode === 'view' && (
         <span className="phase-offset__type">
-          {getType(getPhaseOffsetTypeObjectById(trigger.offset.type))}
+          {getType(getPhaseOffsetTypeObjectById(trigger.offset[0]))}
         </span>
       )}
       { mode === 'edit' && (
         <Select
           className="phase-offset__type"
-          name="type"
+          name="0"
           items={PHASE_OFFSET_TYPES}
-          selectedItem={getPhaseOffsetTypeObjectById(trigger.offset.type)}
+          selectedItem={getPhaseOffsetTypeObjectById(trigger.offset[0])}
           getValue={getType}
           onChange={handleChange}
         />
       )}
-      { [1, 2, 3].includes(trigger.offset.type) && (
+      { [1, 2, 3].includes(trigger.offset[0]) && (
         <>
           { mode === 'view' && (
             <span className="phase-offset__value">
-              {trigger.offset.value}
+              {trigger.offset[1]}
             </span>
           )}
           { mode === 'edit' && (
             <NumberInput
               className="phase-offset__value"
               name="value"
-              value={`${trigger.offset.value}`}
+              value={`${trigger.offset[1]}`}
               onChange={handleChange}
             />
           )}
-          { [1, 2].includes(trigger.offset.type) && (
+          { [1, 2].includes(trigger.offset[0]) && (
             <span className="phase-offset__value-label">
-              {t(`${PREFIX}.phases`, { count: int(trigger.offset.value) })}
+              {t(`${PREFIX}.phases`, { count: int(trigger.offset[1]) })}
             </span>
           )}
         </>
