@@ -93,21 +93,14 @@ export interface Phase extends Record<string, any> {
   title?: string;
   actions: PhaseAction[];
   triggers: Record<number, PhaseTrigger>;
+  actionDraft?: PhaseAction;
 }
 
-export interface PhaseAction {
-  type: number;
-  times: number;
-}
+export type PhaseAction = [number, number];
 
 export interface PhaseTrigger {
-  offset: {
-    type: number;
-    value: Phase['id'] | number;
-  };
-  delay: {
-    [key in PhasePeriod]: number;
-  }
+  offset: [number, number];
+  delay: [number, number, number, number, number];
   isDelayEmpty?: boolean;
 }
 
