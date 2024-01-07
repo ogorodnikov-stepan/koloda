@@ -14,11 +14,11 @@ export const PHASE_OFFSET_TYPES = [
   { id: 5, value: 'complete' },
 ];
 
-export const PHASE_DEFAULT_ACTIONS = [
-  {
-    type: getPhaseActionTypeIdByValue('show')!,
-    times: 1,
-  },
+export const PHASE_DEFAULT_ACTIONS: PhaseAction[] = [
+  [
+    getPhaseActionTypeIdByValue('show')!,
+    1,
+  ],
 ];
 
 /**
@@ -72,7 +72,7 @@ export function getPhaseActions(phase: Phase) {
   return phase ? phase.actions : null;
 }
 
-export function getPhaseActionTestedRole(type: PhaseAction['type']) {
+export function getPhaseActionTestedRole(type: PhaseAction[1]) {
   return PHASE_ACTION_TYPES.find((x) => (x.id === type))?.roleTested;
 }
 

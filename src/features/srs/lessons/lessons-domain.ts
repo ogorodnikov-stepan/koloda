@@ -205,7 +205,7 @@ export function updateLessonCurrentMeta(draft: State) {
   const repping = reppingId ? reppings[reppingId] : undefined;
   const card = deck && deck.cards[current.index.card];
   const { actions = [], currentActionIndex = 0 } = card?.lesson || {};
-  const { type } = actions[currentActionIndex];
+  const type = actions[currentActionIndex][0];
 
   if (deck && card && repping && type) {
     draft.meta.isStarted = true;
@@ -235,7 +235,7 @@ export function updateLessonCurrentMeta(draft: State) {
  * @param type Phase action type
  * @returns Fields array
  */
-function makeLessonFields(fields: Field[], card: LessonCard, type: PhaseAction['type']) {
+function makeLessonFields(fields: Field[], card: LessonCard, type: PhaseAction[0]) {
   const testedRole = getPhaseActionTestedRole(type);
   const lessonFields = card && fields.map((field) => (
     {
@@ -304,7 +304,7 @@ function getLessonCardResult(card: LessonCard, repping: Repping) {
  */
 function getNextPhase(trigger: PhaseTrigger, divel: Divel, phaseId: Phase['id']) {
   if (!trigger) return false;
-  const { type, value = 0 } = trigger.offset;
+  const [type, value = 0] = trigger.offset;
 
   switch (getPhaseOffsetTypeValueById(type)) {
     case 'back': {
@@ -340,8 +340,14 @@ function getNextPhase(trigger: PhaseTrigger, divel: Divel, phaseId: Phase['id'])
  * @returns Delayed DateTime object
  */
 function calculatePhaseDelay(delay: PhaseTrigger['delay'], time = new Date()) {
-  const { hours = 0, days = 0, weeks = 0, months = 0, years = 0 } = delay;
-  return addDateTime(time, { hours, days, weeks, months, years });
+  const shift = {
+    years: delay[0],
+    months: delay[0],
+    weeks: delay[0],
+    days: delay[0],
+    hours: delay[0],
+  };
+  return addDateTime(time, shift);
 }
 
 /**

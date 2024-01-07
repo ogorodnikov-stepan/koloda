@@ -9,10 +9,10 @@ import {
   onSavingCompleted,
 } from 'features/app/reducer/reducer-helpers';
 import {
-  Repping, Divel, Phase, PhasePeriod, PhaseTrigger, PhaseAction,
+  Repping, Divel, Phase, PhaseTrigger, PhaseAction,
 } from 'features/srs/srs-types';
 import {
-  PHASE_DEFAULT, PHASE_ACTIONS_DRAFT, PHASE_PERIODS_DEFAULT, PHASE_PERIODS, PHASE_TRIGGERS,
+  PHASE_DEFAULT, PHASE_ACTIONS_DRAFT, PHASE_PERIODS_RANGES, PHASE_PERIODS, PHASE_TRIGGERS,
 } from 'features/srs/reppings/reppings-defaults';
 import { getPhaseOffsetTypeValueById } from './divels-domain';
 
@@ -138,7 +138,7 @@ function actionAdded(draft: State, payload: ActionAddedPayload) {
   const { phaseIndex } = payload;
   const phase = draft.phases.data?.[phaseIndex];
   if (phase) {
-    phase.actions.push({ ...PHASE_ACTIONS_DRAFT });
+    phase.actions.push([...PHASE_ACTIONS_DRAFT]);
     entityUpdated(draft.phases.status);
   }
 }
@@ -154,7 +154,7 @@ function actionUpdated(draft: State, payload: ActionUpdatedPayload) {
   const { phaseIndex, actionIndex, property, value } = payload;
   const action = draft.phases.data?.[phaseIndex]?.actions[actionIndex];
   if (action) {
-    action[property] = int(value);
+    action[int(property)] = int(value);
     entityUpdated(draft.phases.status);
   }
 }
@@ -176,7 +176,7 @@ function actionDeleted(draft: State, payload: ActionDeletedPayload) {
 interface OffsetUpdatedPayload {
   phaseIndex: number;
   incorrectTotal: number;
-  property: keyof PhaseTrigger['offset'];
+  property: number;
   value: any;
 }
 
@@ -191,14 +191,14 @@ function offsetUpdated(draft: State, payload: OffsetUpdatedPayload) {
 function updateOffset(data: Phase[], payload: OffsetUpdatedPayload) {
   const { phaseIndex, incorrectTotal, property, value } = payload;
   const { offset } = data[phaseIndex].triggers[incorrectTotal];
-  if (property === 'value') {
-    const type = getPhaseOffsetTypeValueById(offset.type);
-    offset.value = updateOffsetValue(type, value, phaseIndex, data.length);
+  if (int(property) === 1) {
+    const type = getPhaseOffsetTypeValueById(offset[0]);
+    offset[1] = updateOffsetValue(type, value, phaseIndex, data.length);
   }
-  if (property === 'type') {
+  if (int(property) === 0) {
     const type = getPhaseOffsetTypeValueById(value);
-    offset.type = value;
-    offset.value = updateOffsetValue(type, offset.value, phaseIndex, data.length);
+    offset[0] = value;
+    offset[1] = updateOffsetValue(type, offset[1], phaseIndex, data.length);
   }
 }
 
@@ -212,14 +212,13 @@ function updateOffsetValue(type: any, value: any, phaseIndex: number, phasesTota
 interface SetDelayPayload {
   phaseIndex: number;
   incorrectTotal: number;
-  period: PhasePeriod;
+  period: number;
   value?: any;
   shift?: -1 | 1;
 }
 
 function delayUpdated(draft: State, payload: SetDelayPayload) {
   const { phaseIndex, incorrectTotal, period, shift } = payload;
-  // const phase = draft.phases.data?.[phaseIndex];
   const trigger = draft.phases.data?.[phaseIndex]?.triggers?.[incorrectTotal];
   if (trigger) {
     const value = shift
@@ -233,13 +232,13 @@ function delayUpdated(draft: State, payload: SetDelayPayload) {
 
 function getDelayValue(payload: SetDelayPayload) {
   const { period, value } = payload;
-  const { min, max } = PHASE_PERIODS_DEFAULT[period];
+  const { min, max } = PHASE_PERIODS_RANGES[PHASE_PERIODS[period]];
   return minMax(value, min, max, true);
 }
 
 function updateIsDelayEmptyStatus(trigger: PhaseTrigger) {
-  const total = PHASE_PERIODS.reduce((acc, x) => (
-    acc + (trigger.delay[x] || 0)
+  const total = PHASE_PERIODS.reduce((acc, _, i) => (
+    acc + (trigger.delay[i] || 0)
   ), 0);
   return total === 0;
 }

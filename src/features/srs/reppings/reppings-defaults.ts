@@ -2,6 +2,7 @@ import { INITIAL_VALUE } from 'features/app/ui/editor/editor-utility';
 import {
   getPhaseActionTypeIdByValue, getPhaseOffsetTypeIdByValue,
 } from 'features/srs/reppings/divel/divels-domain';
+import { Phase, PhaseAction } from 'features/srs/srs-types';
 
 export const REPPING_DEFAULT = {
   description: INITIAL_VALUE,
@@ -26,46 +27,25 @@ export const PHASE_ACTIONS_TIMES_MAX = 99;
 export const PHASE_TRIGGER_OFFSET_MIN = 1;
 export const PHASE_TRIGGER_OFFSET_MAX = 99;
 
-export const PHASE_ACTIONS_DRAFT = {
-  type: getPhaseActionTypeIdByValue('show') || 0,
-  times: 1,
-};
+export const PHASE_ACTIONS_DRAFT: PhaseAction = [
+  getPhaseActionTypeIdByValue('show') || 0,
+  1,
+];
 
-export const PHASE_DEFAULT = {
+export const PHASE_DEFAULT: Phase = {
   id: 1,
   actions: [
-    {
-      type: getPhaseActionTypeIdByValue('show') || 0,
-      times: 1,
-    },
+    [getPhaseActionTypeIdByValue('show') || 0, 1],
   ],
   actionsDraft: PHASE_ACTIONS_DRAFT,
   triggers: {
     0: {
-      offset: {
-        type: getPhaseOffsetTypeIdByValue('forward') || 0,
-        value: 0,
-      },
-      delay: {
-        hours: 23,
-        days: 0,
-        weeks: 0,
-        months: 0,
-        years: 0,
-      },
+      offset: [getPhaseOffsetTypeIdByValue('forward') || 0, 0],
+      delay: [0, 0, 0, 0, 23],
     },
     1: {
-      offset: {
-        type: getPhaseOffsetTypeIdByValue('back') || 0,
-        value: 0,
-      },
-      delay: {
-        hours: 23,
-        days: 0,
-        weeks: 0,
-        months: 0,
-        years: 0,
-      },
+      offset: [getPhaseOffsetTypeIdByValue('back') || 0, 0],
+      delay: [0, 0, 0, 0, 23],
     },
   },
 };
@@ -80,25 +60,25 @@ export const PHASE_PERIODS = [
   'hours',
 ] as const;
 
-export const PHASE_PERIODS_DEFAULT = {
-  hours: {
+export const PHASE_PERIODS_RANGES = {
+  years: {
     min: 0,
-    max: 23,
-  },
-  days: {
-    min: 0,
-    max: 30,
-  },
-  weeks: {
-    min: 0,
-    max: 4,
+    max: 10,
   },
   months: {
     min: 0,
     max: 11,
   },
-  years: {
+  weeks: {
     min: 0,
-    max: 10,
+    max: 4,
+  },
+  days: {
+    min: 0,
+    max: 30,
+  },
+  hours: {
+    min: 0,
+    max: 23,
   },
 };
