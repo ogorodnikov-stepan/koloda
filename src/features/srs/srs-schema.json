@@ -80,8 +80,7 @@
         "id": { "$ref": "#/definitions/phase_id" },
         "title": { "$ref": "#/definitions/phase_title" },
         "actions": { "$ref": "#/definitions/phase_actions" },
-        "triggers": { "$ref": "#/definitions/phase_triggers" },
-        "is_default": { "type": "boolean" }
+        "triggers": { "$ref": "#/definitions/phase_triggers" }
       },
       "required": ["id", "actions", "triggers"],
       "additionalProperties": false
@@ -105,15 +104,21 @@
       "$id": "#phase_actions",
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "type": { "enum": [1, 2, 3] },
-          "times": {
+        "type": "array",
+        "items": [
+          {
+            "enum": [1, 2, 3],
+            "$comment": "action type"
+          },
+          {
             "type": "integer",
             "minimum": 1,
-            "maximum": 99
+            "maximum": 99,
+            "$comment": "action times"
           }
-        }
+        ],
+        "minItems": 2,
+        "maxItems": 2
       }
     },
 
@@ -133,46 +138,57 @@
       "type": "object",
       "properties": {
         "offset": {
-          "type": "object",
-          "properties": {
-            "type": { "enum": [1, 2, 3, 4, 5] },
-            "value": {
+          "type": "array",
+          "items": [
+            {
+              "enum": [1, 2, 3, 4, 5],
+              "$comment": "offset type"
+            },
+            {
               "type": "integer",
-              "minimum": 0
+              "minimum": 0,
+              "$comment": "offset value"
             }
-          }
+          ],
+          "minItems": 2,
+          "maxItems": 2
         },
         "delay": {
-          "type": "object",
-          "properties": {
-            "years": {
+          "type": "array",
+          "items": [
+            {
               "type": "integer",
               "minimum": 0,
-              "maximum": 10
+              "maximum": 10,
+              "$comment": "years"
             },
-            "months": {
+            {
               "type": "integer",
               "minimum": 0,
-              "maximum": 11
+              "maximum": 11,
+              "$comment": "months"
             },
-            "weeks": {
+            {
               "type": "integer",
               "minimum": 0,
-              "maximum": 4
+              "maximum": 4,
+              "$comment": "weeks"
             },
-            "days": {
+            {
               "type": "integer",
               "minimum": 0,
-              "maximum": 30
+              "maximum": 30,
+              "$comment": "days"
             },
-            "hours": {
+            {
               "type": "integer",
               "minimum": 0,
-              "maximum": 23
+              "maximum": 23,
+              "$comment": "hours"
             }
-          },
-          "required": ["years", "months", "weeks", "days", "hours"],
-          "additionalProperties": false
+          ],
+          "minItems": 5,
+          "maxItems": 5
         }
       },
       "required": ["offset", "delay"],
