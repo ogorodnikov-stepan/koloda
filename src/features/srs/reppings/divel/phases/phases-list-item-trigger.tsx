@@ -43,13 +43,13 @@ export default function PhasesListItemTrigger(
             <span className="phase-periods__label">
               {t(`${PREFIX}.triggers.titles.periods`)}
             </span>
-            {PHASE_PERIODS.map((period) => (
+            {PHASE_PERIODS.map((period, i) => (
               <PhasesListItemTriggerPeriod
                 key={period}
                 mode={mode}
                 phaseIndex={phaseIndex}
                 incorrectTotal={incorrectTotal}
-                period={period}
+                period={i}
                 trigger={trigger}
                 dispatch={dispatch}
               />

@@ -52,15 +52,15 @@ export default function PhasesListItemActionsItem(
       </span>
       { (mode === 'view') && (
         <span className="phase-action__type">
-          {getType(getPhaseActionTypeObjectById(action.type))}
+          {getType(getPhaseActionTypeObjectById(action[0]))}
         </span>
       )}
       { (mode === 'edit') && (
         <Select
           className="phase-action__type"
-          name="type"
+          name="0"
           items={PHASE_ACTION_TYPES}
-          selectedItem={getPhaseActionTypeObjectById(action.type)}
+          selectedItem={getPhaseActionTypeObjectById(action[0])}
           getValue={getType}
           onChange={handleChange}
         />
@@ -70,16 +70,16 @@ export default function PhasesListItemActionsItem(
       </span>
       { (mode === 'view') && (
         <span className="phase-action__times-value">
-          {action.times}
+          {action[1]}
         </span>
       )}
       { (mode === 'edit') && (
         <NumberInput
           className="phase-action__times"
-          name="times"
+          name="1"
           min={PHASE_ACTIONS_TIMES_MIN}
           max={PHASE_ACTIONS_TIMES_MAX}
-          value={`${action.times}`}
+          value={`${action[1]}`}
           onChange={handleChange}
         />
       )}
