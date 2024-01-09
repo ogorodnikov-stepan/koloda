@@ -96,8 +96,15 @@ function dataReceived(draft: State, payload: DataReceivedPayload) {
 }
 
 function dataCleared(draft: State) {
+  const { reppings, decks } = draft;
   draft.meta.isCleared = true;
-  draft.reppings.load = draft.reppings.data[draft.reppings.index];
+  if (reppings.data.length) {
+    reppings.load = reppings.data[reppings.index];
+  } else if (decks.data.length) {
+    decks.load = decks.data[decks.index];
+  } else {
+    draft.user.add = draft.user.data;
+  }
 }
 
 function reppingReceived(draft: State, payload: Repping) {
