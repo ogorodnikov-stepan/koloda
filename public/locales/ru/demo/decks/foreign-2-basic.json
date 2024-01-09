@@ -1,0 +1,144 @@
+{
+  "reppingId": "foreign-words",
+  "title": "Испанский: Базовое",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 5,
+  "fields": [
+    {
+      "title": "Испанский",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "Русский",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": { "1": [{ "text": "¡Hola!" }], "2": [{ "text": "Привет" }] }
+    },
+    {
+      "id": 2,
+      "content": {
+        "1": [{ "text": "¡Buenos días!" }],
+        "2": [{ "text": "Доброе утро" }]
+      }
+    },
+    {
+      "id": 3,
+      "content": {
+        "1": [{ "text": "¡Buenas tardes!" }],
+        "2": [{ "text": "Добрый день" }]
+      }
+    },
+    {
+      "id": 4,
+      "content": {
+        "1": [{ "text": "¡Buenas noches!" }],
+        "2": [{ "text": "Добрый вечер" }]
+      }
+    },
+    {
+      "id": 5,
+      "content": { "1": [{ "text": "¡Adiós!" }], "2": [{ "text": "Пока" }] }
+    },
+    {
+      "id": 6,
+      "content": {
+        "1": [{ "text": "¡Gracias!" }],
+        "2": [{ "text": "Спасибо" }]
+      }
+    },
+    {
+      "id": 7,
+      "content": {
+        "1": [{ "text": "¡Por favor!" }],
+        "2": [{ "text": "Пожалуйста" }]
+      }
+    },
+    {
+      "id": 8,
+      "content": {
+        "1": [{ "text": "¡Lo siento!" }],
+        "2": [{ "text": "Извините" }]
+      }
+    },
+    {
+      "id": 9,
+      "content": {
+        "1": [{ "text": "¡Mucho gusto!" }],
+        "2": [{ "text": "Приятно познакомиться" }]
+      }
+    },
+    {
+      "id": 10,
+      "content": {
+        "1": [{ "text": "¿Qué tal?" }],
+        "2": [{ "text": "Как дела?" }]
+      }
+    },
+    {
+      "id": 11,
+      "content": {
+        "1": [{ "text": "Muy bien" }],
+        "2": [{ "text": "Очень хорошо" }]
+      }
+    },
+    {
+      "id": 12,
+      "content": {
+        "1": [{ "text": "Más o menos" }],
+        "2": [{ "text": "Так себе" }]
+      }
+    },
+    {
+      "id": 13,
+      "content": {
+        "1": [{ "text": "¿De verdad?" }],
+        "2": [{ "text": "Правда?" }]
+      }
+    },
+    {
+      "id": 14,
+      "content": {
+        "1": [{ "text": " ¡Buena suerte!" }],
+        "2": [{ "text": "Удачи" }]
+      }
+    }
+  ]
+}

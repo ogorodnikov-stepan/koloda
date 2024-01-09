@@ -1,0 +1,73 @@
+{
+  "reppingId": "questions",
+  "title": "JavaScript Types",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 4,
+  "subjectId": 3,
+  "languageId": 3,
+  "fields": [
+    {
+      "title": "Question",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": { "isLabelVisible": false, "processings": {} }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "Answer",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": { "trimSpaces": true }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": {
+        "1": [{ "text": "typeof null" }],
+        "2": [{ "text": "object" }]
+      }
+    },
+    {
+      "id": 2,
+      "content": {
+        "1": [{ "text": "typeof NaN" }],
+        "2": [{ "text": "number" }]
+      }
+    },
+    {
+      "id": 3,
+      "content": { "1": [{ "text": "[] + []" }], "2": [{ "text": "\"\"" }] }
+    },
+    {
+      "id": 4,
+      "content": { "1": [{ "text": "{} + []" }], "2": [{ "text": "0" }] }
+    },
+    {
+      "id": 5,
+      "content": { "1": [{ "text": "[] == ![]" }], "2": [{ "text": "true" }] }
+    },
+    {
+      "id": 6,
+      "content": { "1": [{ "text": "9 + \"1\"" }], "2": [{ "text": "\"91\"" }] }
+    },
+    {
+      "id": 7,
+      "content": { "1": [{ "text": "9 - \"1\"" }], "2": [{ "text": "8" }] }
+    }
+  ]
+}

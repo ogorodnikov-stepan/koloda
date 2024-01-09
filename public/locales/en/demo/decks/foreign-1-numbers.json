@@ -1,0 +1,303 @@
+{
+  "reppingId": "foreign-words",
+  "title": "Spanish Numbers",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 3,
+  "fields": [
+    {
+      "title": "Spanish",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "English",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": { "1": [{ "text": "Uno" }], "2": [{ "text": "One" }] }
+    },
+    {
+      "id": 2,
+      "content": { "1": [{ "text": "Dos" }], "2": [{ "text": "Two" }] }
+    },
+    {
+      "id": 3,
+      "content": { "1": [{ "text": "Tres" }], "2": [{ "text": "Three" }] }
+    },
+    {
+      "id": 4,
+      "content": { "1": [{ "text": "Cuatro" }], "2": [{ "text": "Four" }] }
+    },
+    {
+      "id": 5,
+      "content": { "1": [{ "text": "Cinco" }], "2": [{ "text": "Five" }] }
+    },
+    {
+      "id": 6,
+      "content": { "1": [{ "text": "Seis" }], "2": [{ "text": "Six" }] }
+    },
+    {
+      "id": 7,
+      "content": { "1": [{ "text": "Siete" }], "2": [{ "text": "Seven" }] }
+    },
+    {
+      "id": 8,
+      "content": { "1": [{ "text": "Ocho" }], "2": [{ "text": "Eight" }] }
+    },
+    {
+      "id": 9,
+      "content": { "1": [{ "text": "Nueve" }], "2": [{ "text": "Nine" }] }
+    },
+    {
+      "id": 10,
+      "content": { "1": [{ "text": "Diez" }], "2": [{ "text": "Ten" }] }
+    },
+    {
+      "id": 11,
+      "content": { "1": [{ "text": "Once" }], "2": [{ "text": "Eleven" }] }
+    },
+    {
+      "id": 12,
+      "content": { "1": [{ "text": "Doce" }], "2": [{ "text": "Twelve" }] }
+    },
+    {
+      "id": 13,
+      "content": { "1": [{ "text": "Trece" }], "2": [{ "text": "Thirteen" }] }
+    },
+    {
+      "id": 14,
+      "content": { "1": [{ "text": "Catorce" }], "2": [{ "text": "Fourteen" }] }
+    },
+    {
+      "id": 15,
+      "content": { "1": [{ "text": "Quince" }], "2": [{ "text": "Fifteen" }] }
+    },
+    {
+      "id": 16,
+      "content": {
+        "1": [{ "text": "Dieciséis" }],
+        "2": [{ "text": "Sixteen" }]
+      }
+    },
+    {
+      "id": 17,
+      "content": {
+        "1": [{ "text": "Diecisiete" }],
+        "2": [{ "text": "Seventeen" }]
+      }
+    },
+    {
+      "id": 18,
+      "content": {
+        "1": [{ "text": "Dieciocho" }],
+        "2": [{ "text": "Eighteen" }]
+      }
+    },
+    {
+      "id": 19,
+      "content": {
+        "1": [{ "text": "Diecinueve" }],
+        "2": [{ "text": "Nineteen" }]
+      }
+    },
+    {
+      "id": 20,
+      "content": { "1": [{ "text": "Veinte" }], "2": [{ "text": "Twenty" }] }
+    },
+    {
+      "id": 21,
+      "content": {
+        "1": [{ "text": "Veintiuno" }],
+        "2": [{ "text": "Twenty one" }]
+      }
+    },
+    {
+      "id": 22,
+      "content": {
+        "1": [{ "text": "Veintidós" }],
+        "2": [{ "text": "Twenty two" }]
+      }
+    },
+    {
+      "id": 23,
+      "content": {
+        "1": [{ "text": "Veintitrés" }],
+        "2": [{ "text": "Twenty three" }]
+      }
+    },
+    {
+      "id": 24,
+      "content": {
+        "1": [{ "text": "Veinticuatro" }],
+        "2": [{ "text": "Twenty four" }]
+      }
+    },
+    {
+      "id": 25,
+      "content": {
+        "1": [{ "text": "Veinticinco" }],
+        "2": [{ "text": "Twenty five" }]
+      }
+    },
+    {
+      "id": 26,
+      "content": {
+        "1": [{ "text": "Veintiséis" }],
+        "2": [{ "text": "Twenty six" }]
+      }
+    },
+    {
+      "id": 27,
+      "content": {
+        "1": [{ "text": "Veintisiete" }],
+        "2": [{ "text": "Twenty seven" }]
+      }
+    },
+    {
+      "id": 28,
+      "content": {
+        "1": [{ "text": "Ventiocho" }],
+        "2": [{ "text": "Twenty eight" }]
+      }
+    },
+    {
+      "id": 29,
+      "content": {
+        "1": [{ "text": "Veintinueve" }],
+        "2": [{ "text": "Twenty nine" }]
+      }
+    },
+    {
+      "id": 30,
+      "content": { "1": [{ "text": "Treinta" }], "2": [{ "text": "Thrity" }] }
+    },
+    {
+      "id": 31,
+      "content": { "1": [{ "text": "Cuarenta" }], "2": [{ "text": "Fourty" }] }
+    },
+    {
+      "id": 32,
+      "content": { "1": [{ "text": "Cincuenta" }], "2": [{ "text": "Fifty" }] }
+    },
+    {
+      "id": 33,
+      "content": { "1": [{ "text": "Sesenta" }], "2": [{ "text": "Sixty" }] }
+    },
+    {
+      "id": 34,
+      "content": { "1": [{ "text": "Setenta" }], "2": [{ "text": "Seventy" }] }
+    },
+    {
+      "id": 35,
+      "content": { "1": [{ "text": "Ochenta" }], "2": [{ "text": "Eighty" }] }
+    },
+    {
+      "id": 36,
+      "content": { "1": [{ "text": "Noventa" }], "2": [{ "text": "Ninety" }] }
+    },
+    {
+      "id": 37,
+      "content": { "1": [{ "text": "Cien" }], "2": [{ "text": "Hundred" }] }
+    },
+    {
+      "id": 38,
+      "content": {
+        "1": [{ "text": "Doscientos" }],
+        "2": [{ "text": "Two hundred" }]
+      }
+    },
+    {
+      "id": 39,
+      "content": {
+        "1": [{ "text": "Trescientos" }],
+        "2": [{ "text": "Three hundred" }]
+      }
+    },
+    {
+      "id": 40,
+      "content": {
+        "1": [{ "text": "Cuatrocientos" }],
+        "2": [{ "text": "Four hundred" }]
+      }
+    },
+    {
+      "id": 41,
+      "content": {
+        "1": [{ "text": "Quinientos" }],
+        "2": [{ "text": "Five hundred" }]
+      }
+    },
+    {
+      "id": 42,
+      "content": {
+        "1": [{ "text": "Seiscientos" }],
+        "2": [{ "text": "Six hundred" }]
+      }
+    },
+    {
+      "id": 43,
+      "content": {
+        "1": [{ "text": "Setecientos" }],
+        "2": [{ "text": "Seven hundred" }]
+      }
+    },
+    {
+      "id": 44,
+      "content": {
+        "1": [{ "text": "Ochocientos" }],
+        "2": [{ "text": "Eight hundren" }]
+      }
+    },
+    {
+      "id": 45,
+      "content": {
+        "1": [{ "text": "Novecientos" }],
+        "2": [{ "text": "Nine hundred" }]
+      }
+    },
+    {
+      "id": 46,
+      "content": { "1": [{ "text": "Mil" }], "2": [{ "text": "Thousand" }] }
+    },
+    {
+      "id": 47,
+      "content": { "1": [{ "text": "Millón" }], "2": [{ "text": "Million" }] }
+    }
+  ]
+}

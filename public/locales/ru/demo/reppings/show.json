@@ -1,136 +1,65 @@
 {
   "title": "Показ",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
   "divels": [
     {
-      "id": 1,
       "title": "Каждый день",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 1, "times": 1 }],
+          "actions": [[1, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 1 },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [0, 0, 0, 1, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 0, 0, 1, 0] }
           }
         }
       ],
+      "id": 1,
       "isDefault": true
     },
     {
-      "id": 2,
       "title": "Каждую неделю",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 1, "times": 1 }],
+          "actions": [[1, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [0, 0, 1, 0, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 0, 1, 0, 0] }
           }
         }
       ],
+      "id": 2,
       "isDefault": false
     },
     {
-      "id": 3,
       "title": "Каждый месяц",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 1, "times": 1 }],
+          "actions": [[1, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 1,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 1,
-                "years": 0
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [0, 1, 0, 0, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 1, 0, 0, 0] }
           }
         }
       ],
+      "id": 3,
       "isDefault": false
     },
     {
-      "id": 4,
       "title": "Каждый год",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 1, "times": 1 }],
+          "actions": [[1, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 0,
-                "years": 1
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 0,
-                "years": 1
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [1, 0, 0, 0, 0] },
+            "1": { "offset": [4, 0], "delay": [1, 0, 0, 0, 0] }
           }
         }
       ],
+      "id": 4,
       "isDefault": false
     }
   ]

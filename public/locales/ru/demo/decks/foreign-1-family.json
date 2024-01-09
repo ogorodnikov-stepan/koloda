@@ -1,0 +1,131 @@
+{
+  "reppingId": "foreign-words",
+  "title": "Английский: Семья",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 3,
+  "languageId": 5,
+  "fields": [
+    {
+      "title": "Английский",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    },
+    {
+      "title": "Русский",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 1
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": { "1": [{ "text": "Отец" }], "2": [{ "text": "Father" }] }
+    },
+    {
+      "id": 2,
+      "content": { "1": [{ "text": "Мать" }], "2": [{ "text": "Mother" }] }
+    },
+    {
+      "id": 3,
+      "content": { "1": [{ "text": "Брат" }], "2": [{ "text": "Brother" }] }
+    },
+    {
+      "id": 4,
+      "content": { "1": [{ "text": "Сестра" }], "2": [{ "text": "Sister" }] }
+    },
+    {
+      "id": 5,
+      "content": { "1": [{ "text": "Сын" }], "2": [{ "text": "Son" }] }
+    },
+    {
+      "id": 6,
+      "content": { "1": [{ "text": "Дочь" }], "2": [{ "text": "Daughter" }] }
+    },
+    {
+      "id": 7,
+      "content": {
+        "1": [{ "text": "Дедушка" }],
+        "2": [{ "text": "Grandfather" }]
+      }
+    },
+    {
+      "id": 8,
+      "content": {
+        "1": [{ "text": "Бабушка" }],
+        "2": [{ "text": "Grandmother" }]
+      }
+    },
+    {
+      "id": 9,
+      "content": { "1": [{ "text": "Внук" }], "2": [{ "text": "Grandson" }] }
+    },
+    {
+      "id": 10,
+      "content": {
+        "1": [{ "text": "Внучка" }],
+        "2": [{ "text": "Granddaughter" }]
+      }
+    },
+    {
+      "id": 11,
+      "content": {
+        "1": [{ "text": "Двоюродная сестра" }],
+        "2": [{ "text": "Female cousin" }]
+      }
+    },
+    {
+      "id": 12,
+      "content": {
+        "1": [{ "text": "Двоюродный брат" }],
+        "2": [{ "text": "Male cousin" }]
+      }
+    },
+    {
+      "id": 13,
+      "content": { "1": [{ "text": "Дядя" }], "2": [{ "text": "Uncle" }] }
+    },
+    {
+      "id": 14,
+      "content": { "1": [{ "text": "Тётя" }], "2": [{ "text": "Aunt" }] }
+    },
+    {
+      "id": 15,
+      "content": { "1": [{ "text": "Племянник" }], "2": [{ "text": "Nephew" }] }
+    },
+    {
+      "id": 16,
+      "content": { "1": [{ "text": "Племянница" }], "2": [{ "text": "Niece" }] }
+    }
+  ]
+}

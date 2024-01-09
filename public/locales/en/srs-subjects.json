@@ -30,8 +30,7 @@
       "subjects": [
         { "id": 1, "value": "Not selected" },
         { "id": 2, "value": "Other" },
-        { "id": 3, "value": "Javascript" },
-        { "id": 4, "value": "React" }
+        { "id": 3, "value": "JavaScript" }
       ]
     }
   ]

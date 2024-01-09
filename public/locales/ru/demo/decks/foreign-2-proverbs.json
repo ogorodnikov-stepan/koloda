@@ -1,0 +1,143 @@
+{
+  "reppingId": "foreign-sentences",
+  "title": "Испанский: Пословицы",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 3,
+  "fields": [
+    {
+      "title": "Испанский",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignoreAccents": true,
+              "ignorePunctuation": true
+            }
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "Английский",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": {
+        "1": [{ "text": "Más vale pájaro en mano que cien volando" }],
+        "2": [{ "text": "Лучше синица в руках, чем журавль в небе" }]
+      }
+    },
+    {
+      "id": 2,
+      "content": {
+        "1": [{ "text": "Cada loco con su tema" }],
+        "2": [{ "text": "Каждому своё" }]
+      }
+    },
+    {
+      "id": 3,
+      "content": {
+        "1": [{ "text": "A quien madruga, Dios le ayuda" }],
+        "2": [{ "text": "Кто рано встаёт, тому Бог подаёт" }]
+      }
+    },
+    {
+      "id": 4,
+      "content": {
+        "1": [{ "text": "A caballo regalado, no le mires el diente" }],
+        "2": [{ "text": "Дарёному коню в зубы не смотрят" }]
+      }
+    },
+    {
+      "id": 5,
+      "content": {
+        "1": [{ "text": "El mundo es un pañuelo" }],
+        "2": [{ "text": "Мир тесен" }]
+      }
+    },
+    {
+      "id": 6,
+      "content": {
+        "1": [{ "text": "El que ríe último, ríe mejor" }],
+        "2": [{ "text": "Хорошо смеётся тот, кто смеётся последний" }]
+      }
+    },
+    {
+      "id": 7,
+      "content": {
+        "1": [{ "text": "En las malas se conoce a los amigos" }],
+        "2": [{ "text": "Друг познаётся в беде" }]
+      }
+    },
+    {
+      "id": 8,
+      "content": {
+        "1": [{ "text": "No juzgues un libro por su portada" }],
+        "2": [{ "text": "Не суди о книге по обложке" }]
+      }
+    },
+    {
+      "id": 9,
+      "content": {
+        "1": [{ "text": "El tiempo lo cura todo" }],
+        "2": [{ "text": "Время лечит" }]
+      }
+    },
+    {
+      "id": 10,
+      "content": {
+        "1": [{ "text": "Dime con quién andas y te diré quién eres" }],
+        "2": [{ "text": "Скажи мне, кто твой друг, и я скажу тебе, кто ты" }]
+      }
+    },
+    {
+      "id": 11,
+      "content": {
+        "1": [{ "text": "No todo lo que brilla es oro" }],
+        "2": [{ "text": "Не всё то золото, что блестит" }]
+      }
+    },
+    {
+      "id": 12,
+      "content": {
+        "1": [{ "text": "Las desgracias nunca vienen solas" }],
+        "2": [{ "text": "Беда не приходит одна" }]
+      }
+    },
+    {
+      "id": 13,
+      "content": {
+        "1": [{ "text": "Más vale tarde que nunca" }],
+        "2": [{ "text": "Лучше поздно, чем никогда" }]
+      }
+    }
+  ]
+}
