@@ -5,13 +5,19 @@
   "reppings": [
     "show",
     "test",
+    "questions",
     "foreign-words",
     "foreign-sentences"
   ],
   "decks": [
-    "foreign-numbers",
-    "foreign-phrases",
-    "foreign-family",
-    "foreign-proverbs"
+    "foreign-1-basic",
+    "foreign-1-numbers",
+    "foreign-1-family",
+    "foreign-1-proverbs",
+    "foreign-2-basic",
+    "foreign-2-numbers",
+    "foreign-2-family",
+    "foreign-2-proverbs",
+    "it-js-types"
   ]
 }

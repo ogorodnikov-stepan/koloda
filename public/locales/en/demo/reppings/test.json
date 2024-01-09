@@ -1,136 +1,65 @@
 {
-  "title": "Type test",
+  "title": "Test",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
   "divels": [
     {
-      "id": 1,
       "title": "Every day",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 2, "times": 1 }],
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [0, 0, 0, 1, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 0, 0, 1, 0] }
           }
         }
       ],
+      "id": 1,
       "isDefault": true
     },
     {
-      "id": 2,
       "title": "Every week",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 2, "times": 1 }],
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [0, 0, 1, 0, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 0, 1, 0, 0] }
           }
         }
       ],
+      "id": 2,
       "isDefault": false
     },
     {
-      "id": 3,
       "title": "Every month",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 2, "times": 1 }],
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 1,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 1,
-                "years": 0
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [0, 1, 0, 0, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 1, 0, 0, 0] }
           }
         }
       ],
+      "id": 3,
       "isDefault": false
     },
     {
-      "id": 4,
       "title": "Every year",
       "phases": [
         {
           "id": 1,
-          "actions": [{ "type": 2, "times": 1 }],
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 0,
-                "years": 1
-              }
-            },
-            "1": {
-              "offset": { "type": 4, "value": 0 },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 0,
-                "years": 1
-              }
-            }
+            "0": { "offset": [4, 0], "delay": [1, 0, 0, 0, 0] },
+            "1": { "offset": [4, 0], "delay": [1, 0, 0, 0, 0] }
           }
         }
       ],
+      "id": 4,
       "isDefault": false
     }
   ]

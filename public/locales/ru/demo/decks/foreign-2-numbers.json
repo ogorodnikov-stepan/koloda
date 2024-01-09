@@ -1,0 +1,324 @@
+{
+  "reppingId": "foreign-words",
+  "title": "Испанский: Числа",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 5,
+  "fields": [
+    {
+      "title": "Испанский",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "Русский",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": { "1": [{ "text": "Uno" }], "2": [{ "text": "Один" }] }
+    },
+    {
+      "id": 2,
+      "content": { "1": [{ "text": "Dos" }], "2": [{ "text": "Два" }] }
+    },
+    {
+      "id": 3,
+      "content": { "1": [{ "text": "Tres" }], "2": [{ "text": "Три" }] }
+    },
+    {
+      "id": 4,
+      "content": { "1": [{ "text": "Cuatro" }], "2": [{ "text": "Четыре" }] }
+    },
+    {
+      "id": 5,
+      "content": { "1": [{ "text": "Cinco" }], "2": [{ "text": "Пять" }] }
+    },
+    {
+      "id": 6,
+      "content": { "1": [{ "text": "Seis" }], "2": [{ "text": "Шесть" }] }
+    },
+    {
+      "id": 7,
+      "content": { "1": [{ "text": "Siete" }], "2": [{ "text": "Семь" }] }
+    },
+    {
+      "id": 8,
+      "content": { "1": [{ "text": "Ocho" }], "2": [{ "text": "Восемь" }] }
+    },
+    {
+      "id": 9,
+      "content": { "1": [{ "text": "Nueve" }], "2": [{ "text": "Девять" }] }
+    },
+    {
+      "id": 10,
+      "content": { "1": [{ "text": "Diez" }], "2": [{ "text": "Десять" }] }
+    },
+    {
+      "id": 11,
+      "content": { "1": [{ "text": "Once" }], "2": [{ "text": "Одиннадцать" }] }
+    },
+    {
+      "id": 12,
+      "content": { "1": [{ "text": "Doce" }], "2": [{ "text": "Двенадцать" }] }
+    },
+    {
+      "id": 13,
+      "content": { "1": [{ "text": "Trece" }], "2": [{ "text": "Тринадцать" }] }
+    },
+    {
+      "id": 14,
+      "content": {
+        "1": [{ "text": "Catorce" }],
+        "2": [{ "text": "Четырнадцать" }]
+      }
+    },
+    {
+      "id": 15,
+      "content": {
+        "1": [{ "text": "Quince" }],
+        "2": [{ "text": "Пятнадцать" }]
+      }
+    },
+    {
+      "id": 16,
+      "content": {
+        "1": [{ "text": "Dieciséis" }],
+        "2": [{ "text": "Шестнадцать" }]
+      }
+    },
+    {
+      "id": 17,
+      "content": {
+        "1": [{ "text": "Diecisiete" }],
+        "2": [{ "text": "Семнадцать" }]
+      }
+    },
+    {
+      "id": 18,
+      "content": {
+        "1": [{ "text": "Dieciocho" }],
+        "2": [{ "text": "Восемнадцать" }]
+      }
+    },
+    {
+      "id": 19,
+      "content": {
+        "1": [{ "text": "Diecinueve" }],
+        "2": [{ "text": "Девятнадцать" }]
+      }
+    },
+    {
+      "id": 20,
+      "content": { "1": [{ "text": "Veinte" }], "2": [{ "text": "Двадцать" }] }
+    },
+    {
+      "id": 21,
+      "content": {
+        "1": [{ "text": "Veintiuno" }],
+        "2": [{ "text": "Двадцать один" }]
+      }
+    },
+    {
+      "id": 22,
+      "content": {
+        "1": [{ "text": "Veintidós" }],
+        "2": [{ "text": "Двадцать два" }]
+      }
+    },
+    {
+      "id": 23,
+      "content": {
+        "1": [{ "text": "Veintitrés" }],
+        "2": [{ "text": "Двадцать три" }]
+      }
+    },
+    {
+      "id": 24,
+      "content": {
+        "1": [{ "text": "Veinticuatro" }],
+        "2": [{ "text": "Двадцать четыре" }]
+      }
+    },
+    {
+      "id": 25,
+      "content": {
+        "1": [{ "text": "Veinticinco" }],
+        "2": [{ "text": "Двадцать пять" }]
+      }
+    },
+    {
+      "id": 26,
+      "content": {
+        "1": [{ "text": "Veintiséis" }],
+        "2": [{ "text": "Двадцать шесть" }]
+      }
+    },
+    {
+      "id": 27,
+      "content": {
+        "1": [{ "text": "Veintisiete" }],
+        "2": [{ "text": "Двадцать семь" }]
+      }
+    },
+    {
+      "id": 28,
+      "content": {
+        "1": [{ "text": "Ventiocho" }],
+        "2": [{ "text": "Двадцать восемь" }]
+      }
+    },
+    {
+      "id": 29,
+      "content": {
+        "1": [{ "text": "Veintinueve" }],
+        "2": [{ "text": "Двадцать девять" }]
+      }
+    },
+    {
+      "id": 30,
+      "content": { "1": [{ "text": "Treinta" }], "2": [{ "text": "Тридцать" }] }
+    },
+    {
+      "id": 31,
+      "content": { "1": [{ "text": "Cuarenta" }], "2": [{ "text": "Сорок" }] }
+    },
+    {
+      "id": 32,
+      "content": {
+        "1": [{ "text": "Cincuenta" }],
+        "2": [{ "text": "Пятдесят" }]
+      }
+    },
+    {
+      "id": 33,
+      "content": {
+        "1": [{ "text": "Sesenta" }],
+        "2": [{ "text": "Шестьдесят" }]
+      }
+    },
+    {
+      "id": 34,
+      "content": {
+        "1": [{ "text": "Setenta" }],
+        "2": [{ "text": "Семьдесят" }]
+      }
+    },
+    {
+      "id": 35,
+      "content": {
+        "1": [{ "text": "Ochenta" }],
+        "2": [{ "text": "Восемьдесят" }]
+      }
+    },
+    {
+      "id": 36,
+      "content": {
+        "1": [{ "text": "Noventa" }],
+        "2": [{ "text": "Девяносто" }]
+      }
+    },
+    {
+      "id": 37,
+      "content": { "1": [{ "text": "Cien" }], "2": [{ "text": "Сто" }] }
+    },
+    {
+      "id": 38,
+      "content": {
+        "1": [{ "text": "Doscientos" }],
+        "2": [{ "text": "Двести" }]
+      }
+    },
+    {
+      "id": 39,
+      "content": {
+        "1": [{ "text": "Trescientos" }],
+        "2": [{ "text": "Триста" }]
+      }
+    },
+    {
+      "id": 40,
+      "content": {
+        "1": [{ "text": "Cuatrocientos" }],
+        "2": [{ "text": "Четыреста" }]
+      }
+    },
+    {
+      "id": 41,
+      "content": {
+        "1": [{ "text": "Quinientos" }],
+        "2": [{ "text": "Пятьсот" }]
+      }
+    },
+    {
+      "id": 42,
+      "content": {
+        "1": [{ "text": "Seiscientos" }],
+        "2": [{ "text": "Шестьсот" }]
+      }
+    },
+    {
+      "id": 43,
+      "content": {
+        "1": [{ "text": "Setecientos" }],
+        "2": [{ "text": "Семьсот" }]
+      }
+    },
+    {
+      "id": 44,
+      "content": {
+        "1": [{ "text": "Ochocientos" }],
+        "2": [{ "text": "Восемьсот" }]
+      }
+    },
+    {
+      "id": 45,
+      "content": {
+        "1": [{ "text": "Novecientos" }],
+        "2": [{ "text": "Девятьсот" }]
+      }
+    },
+    {
+      "id": 46,
+      "content": { "1": [{ "text": "Mil" }], "2": [{ "text": "Тысяча" }] }
+    },
+    {
+      "id": 47,
+      "content": { "1": [{ "text": "Millón" }], "2": [{ "text": "Миллион" }] }
+    }
+  ]
+}
