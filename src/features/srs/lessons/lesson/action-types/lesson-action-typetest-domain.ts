@@ -15,6 +15,8 @@ const ACCENT_LETTERS = [
   ['Ü', 'U'],
   ['ñ', 'n'],
   ['Ñ', 'N'],
+  ['ё', 'е'],
+  ['Ё', 'Е'],
 ];
 
 export type TypeTestProcessing = (values: string[]) => string[];
