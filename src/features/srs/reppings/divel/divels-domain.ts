@@ -15,10 +15,7 @@ export const PHASE_OFFSET_TYPES = [
 ];
 
 export const PHASE_DEFAULT_ACTIONS: PhaseAction[] = [
-  [
-    getPhaseActionTypeIdByValue('show')!,
-    1,
-  ],
+  [getPhaseActionTypeIdByValue('show')!, 1],
 ];
 
 /**
