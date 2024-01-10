@@ -41,16 +41,16 @@ export const PHASE_DEFAULT: Phase = {
   triggers: {
     0: {
       offset: [getPhaseOffsetTypeIdByValue('forward') || 0, 0],
-      delay: [0, 0, 0, 0, 23],
+      delay: [0, 0, 0, 0, 0],
     },
     1: {
       offset: [getPhaseOffsetTypeIdByValue('back') || 0, 0],
-      delay: [0, 0, 0, 0, 23],
+      delay: [0, 0, 0, 0, 0],
     },
   },
 };
 
-export const PHASE_TRIGGERS = [0, 1] as const;
+export const PHASE_TRIGGERS = [1, 0] as const;
 
 export const PHASE_PERIODS = [
   'years',
