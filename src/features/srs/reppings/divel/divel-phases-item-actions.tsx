@@ -5,7 +5,7 @@ import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { EditbarMode } from 'features/app/ui/editbar/editbar';
 import { Phase } from 'features/srs/srs-types';
 import Button from 'features/app/ui/form/button';
-import PhasesListItemActionsItem from './phases-list-item-actions-item';
+import DivelPhasesItemActionsItem from './divel-phases-item-actions-item';
 
 const PREFIX = 'srs:phases.one.actions';
 
@@ -16,7 +16,7 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesListItemActions({ mode, phase, index, dispatch }: Props) {
+export default function DivelPhasesItemActions({ mode, phase, index, dispatch }: Props) {
   const { t } = useTranslation('srs');
 
   const handleAddClick = useCallback(() => {
@@ -31,7 +31,7 @@ export default function PhasesListItemActions({ mode, phase, index, dispatch }: 
       <div className="phase-actions__content">
         <ol className="phase-actions__list">
           { phase.actions.map((action, i) => (
-            <PhasesListItemActionsItem
+            <DivelPhasesItemActionsItem
               key={i}
               mode={mode}
               phaseIndex={index}

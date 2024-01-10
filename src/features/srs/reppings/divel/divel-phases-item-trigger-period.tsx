@@ -19,7 +19,7 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesListItemTriggerTimeInputElement(
+export default function DivelPhasesItemTriggerPeriod(
   { mode, incorrectTotal, phaseIndex, trigger, period, dispatch }: Props,
 ) {
   const { t } = useTranslation('srs');

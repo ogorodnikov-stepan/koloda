@@ -15,7 +15,7 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesListItemHeader({ mode, phaseIndex, phase, dispatch }: Props) {
+export default function DivelPhasesItemHeader({ mode, phaseIndex, phase, dispatch }: Props) {
   const { t } = useTranslation('srs');
 
   const handleTitleChange = useCallback((event) => {
@@ -23,7 +23,7 @@ export default function PhasesListItemHeader({ mode, phaseIndex, phase, dispatch
   }, [phaseIndex]);
 
   const handleDeleteClick = useCallback(() => {
-    dispatch(['phaseDeleted', { phaseIndex }]);
+    dispatch(['phaseDeleted', { index: phaseIndex }]);
   }, [phaseIndex]);
 
   return (

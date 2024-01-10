@@ -24,7 +24,7 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesListItemActionsItem(
+export default function DivelPhasesItemActionsItem(
   { mode, phaseIndex, actionIndex, actionsTotal, action, dispatch }: Props,
 ) {
   const { t } = useTranslation('srs');

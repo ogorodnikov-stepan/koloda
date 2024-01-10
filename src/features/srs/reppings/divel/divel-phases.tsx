@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/reppings/divel/divel-reducer';
 import Button from 'features/app/ui/form/button';
-import PhasesListItem from './phases-list-item';
+import DivelPhasesItem from './divel-phases-item';
 
 const PREFIX = 'srs:phases.many';
 
@@ -12,7 +12,7 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesList({ state, dispatch }: Props) {
+export default function DivelPhases({ state, dispatch }: Props) {
   const { t } = useTranslation('srs');
   const { data, status: { editbar: { mode } } } = state.phases;
 
@@ -24,7 +24,7 @@ export default function PhasesList({ state, dispatch }: Props) {
     <>
       <ul className="phases">
         { data && data.map((phase, index) => (
-          <PhasesListItem
+          <DivelPhasesItem
             key={phase.id}
             mode={mode}
             phase={phase}
