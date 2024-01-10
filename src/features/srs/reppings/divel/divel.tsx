@@ -10,7 +10,7 @@ import { divelReducer, divelDefault } from './divel-reducer';
 import DivelSkeleton from './divel-skeleton';
 import DivelToolbar from './divel-toolbar';
 import DivelEdit from './divel-edit';
-import PhasesList from './phases/phases-list';
+import PhasesList from './divel-phases';
 import './divel.scss';
 
 interface Props extends PageProps {

@@ -2,9 +2,9 @@ import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { Phase } from 'features/srs/srs-types';
 import { EditbarMode } from 'features/app/ui/editbar/editbar';
 import { PHASE_TRIGGERS } from 'features/srs/reppings/reppings-defaults';
-import PhasesListItemHeader from './phases-list-item-header';
-import PhasesListItemTrigger from './phases-list-item-trigger';
-import PhasesListItemActions from './phases-list-item-actions';
+import DivelPhasesItemHeader from './divel-phases-item-header';
+import DivelPhasesItemTrigger from './divel-phases-item-trigger';
+import DivelPhasesItemActions from './divel-phases-item-actions';
 
 interface Props {
   mode: EditbarMode;
@@ -13,10 +13,10 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesListItem({ mode, phase, index, dispatch }: Props) {
+export default function DivelDivelPhasesItem({ mode, phase, index, dispatch }: Props) {
   return (
     <li className="phase">
-      <PhasesListItemHeader
+      <DivelPhasesItemHeader
         mode={mode}
         phaseIndex={index}
         phase={phase}
@@ -25,7 +25,7 @@ export default function PhasesListItem({ mode, phase, index, dispatch }: Props) 
       <div className="phase__content">
         <ul className="phase-triggers">
           { PHASE_TRIGGERS.map((total) => (
-            <PhasesListItemTrigger
+            <DivelPhasesItemTrigger
               key={total}
               mode={mode}
               incorrectTotal={total}
@@ -35,7 +35,7 @@ export default function PhasesListItem({ mode, phase, index, dispatch }: Props) 
             />
           ))}
         </ul>
-        <PhasesListItemActions
+        <DivelPhasesItemActions
           mode={mode}
           index={index}
           phase={phase}

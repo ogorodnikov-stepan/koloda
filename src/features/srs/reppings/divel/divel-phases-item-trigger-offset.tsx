@@ -22,7 +22,7 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesListItemTriggerOffset(
+export default function DivelPhasesItemTriggerOffset(
   { mode, incorrectTotal, phaseIndex, trigger, dispatch }: Props,
 ) {
   const { t } = useTranslation('srs');
@@ -66,8 +66,8 @@ export default function PhasesListItemTriggerOffset(
           { mode === 'edit' && (
             <NumberInput
               className="phase-offset__value"
-              name="value"
-              value={`${trigger.offset[1]}`}
+              name="1"
+              value={trigger.offset[1]}
               onChange={handleChange}
             />
           )}

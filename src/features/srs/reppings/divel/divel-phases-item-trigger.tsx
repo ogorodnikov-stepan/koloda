@@ -3,8 +3,8 @@ import { PhaseTrigger } from 'features/srs/srs-types';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { EditbarMode } from 'features/app/ui/editbar/editbar';
 import { PHASE_PERIODS } from 'features/srs/reppings/reppings-defaults';
-import PhasesListItemTriggerOffset from './phases-list-item-trigger-offset';
-import PhasesListItemTriggerPeriod from './phases-list-item-trigger-period';
+import DivelPhasesItemTriggerOffset from './divel-phases-item-trigger-offset';
+import DivelPhasesItemTriggerPeriod from './divel-phases-item-trigger-period';
 
 const PREFIX = 'srs:phases';
 
@@ -16,7 +16,7 @@ interface Props {
   dispatch: ReducerDispatch;
 }
 
-export default function PhasesListItemTrigger(
+export default function DivelPhasesItemTrigger(
   { mode, incorrectTotal, phaseIndex, trigger, dispatch }: Props,
 ) {
   const { t } = useTranslation('srs');
@@ -26,7 +26,7 @@ export default function PhasesListItemTrigger(
       <h3 className="phase-trigger__title title">
         {t(`${PREFIX}.triggers.titles.${incorrectTotal}`)}
       </h3>
-      <PhasesListItemTriggerOffset
+      <DivelPhasesItemTriggerOffset
         mode={mode}
         incorrectTotal={incorrectTotal}
         phaseIndex={phaseIndex}
@@ -44,7 +44,7 @@ export default function PhasesListItemTrigger(
               {t(`${PREFIX}.triggers.titles.periods`)}
             </span>
             {PHASE_PERIODS.map((period, i) => (
-              <PhasesListItemTriggerPeriod
+              <DivelPhasesItemTriggerPeriod
                 key={period}
                 mode={mode}
                 phaseIndex={phaseIndex}
