@@ -43,7 +43,6 @@ const actions: ReducerActions = {
   divelReceived,
   phaseAdded,
   phaseDeleted,
-  phaseMoved,
   titleUpdated,
   actionAdded,
   actionUpdated,
@@ -91,29 +90,20 @@ function phaseAdded(draft: State) {
   if (data) {
     const id = getNextNumericId(data);
     data.push({ ...PHASE_DEFAULT, id });
+    entityUpdated(status);
   }
-  entityUpdated(status);
 }
 
-function phaseDeleted(draft: State, payload: Phase) {
+interface PhaseDeletedPayload {
+  index: number;
+}
+
+function phaseDeleted(draft: State, { index }: PhaseDeletedPayload) {
   const { data, status } = draft.phases;
   if (data) {
-    const index = data.findIndex((e) => e.id !== payload.id);
-    if (index !== -1) data.splice(index, 1);
+    data.splice(index, 1);
+    entityUpdated(status);
   }
-  entityUpdated(status);
-}
-
-interface PhaseMovedPayload {
-  destination: number;
-  source: number;
-}
-
-function phaseMoved(draft: State, payload: PhaseMovedPayload) {
-  const { destination, source } = payload;
-  const { data, status } = draft.phases;
-  if (data) data.splice(destination, 0, data.splice(source, 1)[0]);
-  entityUpdated(status);
 }
 
 interface TitleUpdatedPayload {
