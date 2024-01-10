@@ -14,12 +14,14 @@
     }
     .skeleton-list { max-width: 15rem; }
   }
+
+  &__add { margin: 1rem var(--content-padding-inline); }
 }
 
 .phase {
   padding-block: 0.75rem;
   padding-inline: calc(var(--content-padding-inline) + var(--input-padding-inline));
-  border-block-end: var(--content-section-border);
+  border-block-end: var(--content-subsection-border);
 
   .number-input {
     width: 3rem;
@@ -75,6 +77,8 @@
     line-height: 2.5rem;
   }
 
+  &-offset__type__value { width: 7rem; }
+
   &-period, &-offset, &-action-times {
     &__value .value { padding-inline: 0.125rem; }
   }
@@ -100,5 +104,13 @@
     }
 
     &__type { flex-grow: 1; }
+  }
+}
+
+.phases[data-mode="edit"] {
+  .phase-period__label {
+    overflow: hidden;
+    width: 4ch;
+    mask: linear-gradient(to right, var(--primary-color) 50%, transparent 100%);
   }
 }
