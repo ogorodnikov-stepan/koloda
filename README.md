@@ -1,5 +1,7 @@
 This repo contains source code for frontend part of Koloda.
 
+Demo: https://ogorodnikov-stepan.github.io/koloda/try
+
 ## About
 
 Koloda is a learning assistant based on the [spaced-repetition method](https://en.wikipedia.org/wiki/Spaced_repetition). 
