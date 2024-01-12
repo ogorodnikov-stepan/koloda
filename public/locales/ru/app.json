@@ -89,10 +89,16 @@
     "demo": {
       "title": "Настройка демо",
       "language": {
-        "label": "Язык контента",
-        "message": "Initial data will be created in this language. You can still change interface language."
+        "label": "Язык контента"
       },
-      "submit": "Приступить"
+      "submit": "Приступить",
+      "status": {
+        "idle": "",
+        "loading": "Данные загружаются",
+        "success": "Всё готово",
+        "error": "Что-то пошло не так"
+      },
+      "auth": "Вход / Регистрация"
     }
   }
 }

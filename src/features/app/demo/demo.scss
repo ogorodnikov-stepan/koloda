@@ -1,5 +1,16 @@
 @use 'assets/styles/_index.scss' as *;
 
+.feature[data-entity="demo"] {
+  max-width: 30rem;
+  max-height: 25rem;
+  margin: auto;
+
+  .feature__title,
+  .feature__footer { text-align: center; }
+
+  .feature__footer { padding-block-start: 1rem; }
+}
+
 .demo {
   @include flex-col($align: center, $justify: center);
 
@@ -7,14 +18,12 @@
 
   &__content {
     @include flex-col($gap: 1rem);
-
-    max-width: 25rem;
   }
 
   &__form {
-    @include flex-col($gap: 1rem);
+    @include flex-col($gap: 1.5rem);
 
-    &-title { margin: 0; }
+    width: 14rem;
   }
 
   &__hint {
@@ -24,4 +33,43 @@
   }
 
   &__submit { @include button-blue; }
+
+  &__status {
+    @include flex-row($align: center, $justify: center, $gap: 0.5rem);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &[data-status="loading"]::before { background: url("assets/images/loading.svg"); }
+
+    &[data-status="error"] {
+      color: var(--error-color);
+
+      &::before {
+        mask: url("assets/images/error.svg") 0 0/1.5rem 1.5rem;
+        background-color: var(--error-color);
+      }
+    }
+
+    &[data-status="success"] {
+      animation: fadeOut 2s forwards;
+      color: var(--success-color);
+
+      &::before {
+        mask: url("assets/images/check.svg") 0 0/1.5rem 1.5rem;
+        background-color: var(--success-color);
+      }
+    }
+  }
+
+  &__auth-link {
+    @include button-link;
+
+    padding: var(--button-padding-block) var(--button-padding-inline);
+    font-weight: 500;
+  }
 }
