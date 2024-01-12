@@ -10,6 +10,7 @@ import FeatureSectionContent from './section/feature-section-content';
 import FeatureSubsection from './section/feature-subsection';
 import FeatureSubsectionHeader from './section/feature-subsection-header';
 import FeatureSubsectionContent from './section/feature-subsection-content';
+import FeatureFooter from './feature-footer';
 import './feature.scss';
 
 interface Props extends BasicProps {
@@ -41,5 +42,6 @@ Feature.SectionContent = FeatureSectionContent;
 Feature.Subsection = FeatureSubsection;
 Feature.SubsectionHeader = FeatureSubsectionHeader;
 Feature.SubsectionContent = FeatureSubsectionContent;
+Feature.Footer = FeatureFooter;
 
 export default Feature;
