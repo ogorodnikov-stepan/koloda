@@ -8,12 +8,13 @@ import './app-language-select.scss';
 interface Props {
   className?: string;
   label?: React.ReactNode;
+  disabled?: boolean;
   value?: FilterValue;
   onChange: (x: FilterValue) => void;
 }
 
 export default function AppLanguageSelect(
-  { className, label, value, onChange }: Props,
+  { className, label, disabled, value, onChange }: Props,
 ) {
   const { data: { data } = {} } = useLanguagesQuery();
 
@@ -28,6 +29,7 @@ export default function AppLanguageSelect(
       className={className}
       name="language"
       label={label}
+      disabled={disabled}
       items={data}
       selectedItem={selectedItem}
       ValueComponent={AppLanguageSelectItem}
