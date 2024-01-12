@@ -1,7 +1,7 @@
 @use 'assets/styles/_index.scss' as *;
 
 .button {
-  padding: 0.5rem 1rem;
+  padding: var(--button-padding-block) var(--button-padding-inline);
   border: 0;
   border-radius: var(--button-border-radius);
   background: var(--button-bg-color);
