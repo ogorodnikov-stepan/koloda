@@ -1,0 +1,143 @@
+{
+  "reppingId": "foreign-sentences",
+  "title": "Spanish Proverbs",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 3,
+  "fields": [
+    {
+      "title": "Spanish",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignoreAccents": true,
+              "ignorePunctuation": true
+            }
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "English",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": {
+        "1": [{ "text": "Más vale pájaro en mano que cien volando" }],
+        "2": [{ "text": "A bird in the hand is worth two in the bush" }]
+      }
+    },
+    {
+      "id": 2,
+      "content": {
+        "1": [{ "text": "Cada loco con su tema" }],
+        "2": [{ "text": "To each their own" }]
+      }
+    },
+    {
+      "id": 3,
+      "content": {
+        "1": [{ "text": "A quien madruga, Dios le ayuda" }],
+        "2": [{ "text": "The early bird catches the worm" }]
+      }
+    },
+    {
+      "id": 4,
+      "content": {
+        "1": [{ "text": "A caballo regalado, no le mires el diente" }],
+        "2": [{ "text": "Never look a gift horse in the mouth" }]
+      }
+    },
+    {
+      "id": 5,
+      "content": {
+        "1": [{ "text": "El mundo es un pañuelo" }],
+        "2": [{ "text": "It’s a small world" }]
+      }
+    },
+    {
+      "id": 6,
+      "content": {
+        "1": [{ "text": "El que ríe último, ríe mejor" }],
+        "2": [{ "text": "He who laughs last laughs best" }]
+      }
+    },
+    {
+      "id": 7,
+      "content": {
+        "1": [{ "text": "En las malas se conoce a los amigos" }],
+        "2": [{ "text": "A friend in need is a friend indeed" }]
+      }
+    },
+    {
+      "id": 8,
+      "content": {
+        "1": [{ "text": "No juzgues un libro por su portada" }],
+        "2": [{ "text": "Don’t judge a book by its cover" }]
+      }
+    },
+    {
+      "id": 9,
+      "content": {
+        "1": [{ "text": "El tiempo lo cura todo" }],
+        "2": [{ "text": "Time heals everything" }]
+      }
+    },
+    {
+      "id": 10,
+      "content": {
+        "1": [{ "text": "Dime con quién andas y te diré quién eres" }],
+        "2": [{ "text": "A man is known by the company he keeps" }]
+      }
+    },
+    {
+      "id": 11,
+      "content": {
+        "1": [{ "text": "No todo lo que brilla es oro" }],
+        "2": [{ "text": "Not everything that shines is gold" }]
+      }
+    },
+    {
+      "id": 12,
+      "content": {
+        "1": [{ "text": "Las desgracias nunca vienen solas" }],
+        "2": [{ "text": "When it rains, it pours" }]
+      }
+    },
+    {
+      "id": 13,
+      "content": {
+        "1": [{ "text": "Más vale tarde que nunca" }],
+        "2": [{ "text": "Better late than never" }]
+      }
+    }
+  ]
+}

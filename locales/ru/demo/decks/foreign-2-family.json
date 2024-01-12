@@ -1,0 +1,128 @@
+{
+  "reppingId": "foreign-words",
+  "title": "Испанский: Семья",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 5,
+  "fields": [
+    {
+      "title": "Испанский",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "Английский",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": { "1": [{ "text": "Padre" }], "2": [{ "text": "Отец" }] }
+    },
+    {
+      "id": 2,
+      "content": { "1": [{ "text": "Madre" }], "2": [{ "text": "Мать" }] }
+    },
+    {
+      "id": 3,
+      "content": { "1": [{ "text": "Hermano" }], "2": [{ "text": "Брат" }] }
+    },
+    {
+      "id": 4,
+      "content": { "1": [{ "text": "Hermana" }], "2": [{ "text": "Сестра" }] }
+    },
+    {
+      "id": 5,
+      "content": { "1": [{ "text": "Hijo" }], "2": [{ "text": "Сын" }] }
+    },
+    {
+      "id": 6,
+      "content": { "1": [{ "text": "Hija" }], "2": [{ "text": "Дочь" }] }
+    },
+    {
+      "id": 7,
+      "content": { "1": [{ "text": "Abuelo" }], "2": [{ "text": "Дедушка" }] }
+    },
+    {
+      "id": 8,
+      "content": { "1": [{ "text": "Abuela" }], "2": [{ "text": "Бабушка" }] }
+    },
+    {
+      "id": 9,
+      "content": { "1": [{ "text": "Nieto" }], "2": [{ "text": "Внук" }] }
+    },
+    {
+      "id": 10,
+      "content": { "1": [{ "text": "Nieta" }], "2": [{ "text": "Внучка" }] }
+    },
+    {
+      "id": 11,
+      "content": {
+        "1": [{ "text": "Prima" }],
+        "2": [{ "text": "Двоюродная сестра" }]
+      }
+    },
+    {
+      "id": 12,
+      "content": {
+        "1": [{ "text": "Primo" }],
+        "2": [{ "text": "Двоюродный брат" }]
+      }
+    },
+    {
+      "id": 13,
+      "content": { "1": [{ "text": "Tío" }], "2": [{ "text": "Дядя" }] }
+    },
+    {
+      "id": 14,
+      "content": { "1": [{ "text": "Tía" }], "2": [{ "text": "Тётя" }] }
+    },
+    {
+      "id": 15,
+      "content": {
+        "1": [{ "text": "Sobrino" }],
+        "2": [{ "text": "Племянник" }]
+      }
+    },
+    {
+      "id": 16,
+      "content": {
+        "1": [{ "text": "Sobrina" }],
+        "2": [{ "text": "Племянница" }]
+      }
+    }
+  ]
+}

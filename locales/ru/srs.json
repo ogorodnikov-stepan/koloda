@@ -62,7 +62,7 @@
           },
           "requirements": {
             "divels": "Алгоритм имеет хотя бы один уровень",
-            "phases": "В каждом уровне есть хотя бы одна ступень"
+            "phases": "В каждом уровне есть хотя бы один шаг"
           }
         },
         "delete": {
@@ -112,13 +112,13 @@
   },
   "phases": {
     "many": {
-      "amount_one": "ступень всего",
-      "amount_few": "ступени всего",
-      "amount_many": "ступеней всего",
+      "amount_one": "шаг всего",
+      "amount_few": "шага всего",
+      "amount_many": "шагов всего",
       "empty": {
-        "message": "У этого уровня нет ступеней."
+        "message": "У этого уровня нет шагов."
       },
-      "add": "+ Добавить ступень"
+      "add": "+ Добавить шаг"
     },
     "one": {
       "title": {
@@ -139,19 +139,20 @@
     },
     "offset": {
       "types": {
-        "back": "вперёд",
-        "forward": "обратно",
-        "to": "на ступень",
+        "back": "обратно",
+        "forward": "вперёд",
+        "to": "на шаг №",
         "repeat": "повтор",
         "complete": "завершение"
       },
-      "phases_one": "ступень",
-      "phases_few": "ступени",
-      "phases_many": "ступеней"
+      "phases_one": "шаг",
+      "phases_few": "шага",
+      "phases_many": "шагов"
     },
     "triggers": {
       "titles": {
         "periods": "через",
+        "emptyDelay": "сразу",
         "0": "Верно:",
         "1": "Неверно:"
       }
@@ -339,6 +340,19 @@
           "back": "Оборот",
           "extra": "Другое"
         },
+        "settings": {
+          "actions": {
+            "show": "Показ",
+            "typeTest": "Тест"
+          },
+          "values": {
+            "isLabelVisible": "Отображать название",
+            "trimSpaces": "Игнорировать пробелы",
+            "ignoreCase": "Игнорировать регистр",
+            "ignorePunctuation": "Игнорировать пунктуацию",
+            "ignoreAccents": "Игнорировать ударения в буквах"
+          }
+        },
         "many": {
           "title": "Поля",
           "empty": {
@@ -363,6 +377,9 @@
               },
               "role": {
                 "caption": "Роль"
+              },
+              "settings": {
+                "caption": ""
               },
               "actions": {
                 "caption": ""

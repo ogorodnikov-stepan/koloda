@@ -1,0 +1,144 @@
+{
+  "reppingId": "foreign-words",
+  "title": "Spanish Basic",
+  "description": [{ "type": "p", "children": [{ "text": "" }] }],
+  "categoryId": 3,
+  "subjectId": 4,
+  "languageId": 3,
+  "fields": [
+    {
+      "title": "Spanish",
+      "type": 1,
+      "role": 1,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "English",
+      "type": 1,
+      "role": 2,
+      "settings": {
+        "actions": {
+          "show": { "isLabelVisible": false },
+          "typeTest": {
+            "isLabelVisible": false,
+            "processings": {
+              "trimSpaces": true,
+              "ignoreCase": true,
+              "ignorePunctuation": true,
+              "ignoreAccents": true
+            }
+          }
+        }
+      },
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "content": { "1": [{ "text": "¡Hola!" }], "2": [{ "text": "Hello" }] }
+    },
+    {
+      "id": 2,
+      "content": {
+        "1": [{ "text": "¡Buenos días!" }],
+        "2": [{ "text": "Good morning" }]
+      }
+    },
+    {
+      "id": 3,
+      "content": {
+        "1": [{ "text": "¡Buenas tardes!" }],
+        "2": [{ "text": "Good afternoon" }]
+      }
+    },
+    {
+      "id": 4,
+      "content": {
+        "1": [{ "text": "¡Buenas noches!" }],
+        "2": [{ "text": "Good evening" }]
+      }
+    },
+    {
+      "id": 5,
+      "content": { "1": [{ "text": "¡Adiós!" }], "2": [{ "text": "Bye" }] }
+    },
+    {
+      "id": 6,
+      "content": {
+        "1": [{ "text": "¡Gracias!" }],
+        "2": [{ "text": "Thank you" }]
+      }
+    },
+    {
+      "id": 7,
+      "content": {
+        "1": [{ "text": "¡Por favor!" }],
+        "2": [{ "text": "Please" }]
+      }
+    },
+    {
+      "id": 8,
+      "content": {
+        "1": [{ "text": "¡Lo siento!" }],
+        "2": [{ "text": "I'm sorry" }]
+      }
+    },
+    {
+      "id": 9,
+      "content": {
+        "1": [{ "text": "¡Mucho gusto!" }],
+        "2": [{ "text": "Nice to meet you" }]
+      }
+    },
+    {
+      "id": 10,
+      "content": {
+        "1": [{ "text": "¿Qué tal?" }],
+        "2": [{ "text": "How is it going?" }]
+      }
+    },
+    {
+      "id": 11,
+      "content": {
+        "1": [{ "text": "Muy bien" }],
+        "2": [{ "text": "Very well" }]
+      }
+    },
+    {
+      "id": 12,
+      "content": {
+        "1": [{ "text": "Más o menos" }],
+        "2": [{ "text": "So-so" }]
+      }
+    },
+    {
+      "id": 13,
+      "content": {
+        "1": [{ "text": "¿De verdad?" }],
+        "2": [{ "text": "Really?" }]
+      }
+    },
+    {
+      "id": 14,
+      "content": {
+        "1": [{ "text": " ¡Buena suerte!" }],
+        "2": [{ "text": "Good luck" }]
+      }
+    }
+  ]
+}

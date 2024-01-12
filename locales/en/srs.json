@@ -150,6 +150,7 @@
     "triggers": {
       "titles": {
         "periods": "in",
+        "emptyDelay": "right away",
         "0": "Correct:",
         "1": "Incorrect:"
       }
@@ -330,6 +331,19 @@
           "back": "Back",
           "extra": "Other"
         },
+        "settings": {
+          "actions": {
+            "show": "Show",
+            "typeTest": "Test"
+          },
+          "values": {
+            "isLabelVisible": "Show label",
+            "trimSpaces": "Ignore whitespace",
+            "ignoreCase": "Ignore case",
+            "ignorePunctuation": "Ignore punctuation marks",
+            "ignoreAccents": "Ignore accents in letters"
+          }
+        },
         "many": {
           "title": "Fields",
           "empty": {
@@ -354,6 +368,9 @@
               },
               "role": {
                 "caption": "Role"
+              },
+              "settings": {
+                "caption": ""
               },
               "actions": {
                 "caption": ""

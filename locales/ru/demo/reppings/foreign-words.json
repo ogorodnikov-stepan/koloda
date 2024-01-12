@@ -4,1547 +4,250 @@
     {
       "type": "p",
       "children": [
-        {
-          "text": "Алгоритм для расширения словаря (слова и короткие фразы)."
-        }
+        { "text": "Алгоритм для расширения словаря (слова и короткие фразы)." }
       ]
     },
     {
       "type": "p",
-      "children": [
-        {
-          "text": "Включает прямые и обратные тесты."
-        }
-      ]
+      "children": [{ "text": "Включает прямые и обратные тесты." }]
     },
-    {
-      "type": "p",
-      "children": [
-        {
-          "text": "Три уровня сложности."
-        }
-      ]
-    }
+    { "type": "p", "children": [{ "text": "Три уровня сложности." }] }
   ],
   "divels": [
     {
-      "id": 1,
       "title": "Легко",
+      "id": 1,
       "isDefault": false,
       "phases": [
         {
           "id": 1,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 3,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Начало"
+            "0": { "offset": [2, 1], "delay": [0, 0, 0, 3, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 2,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 4,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-01"
+            "0": { "offset": [2, 1], "delay": [0, 0, 0, 3, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 3,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-02"
+            "0": { "offset": [2, 0], "delay": [0, 0, 2, 0, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 4,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 0
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-01"
+            "0": { "offset": [2, 1], "delay": [0, 1, 0, 0, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 5,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 2,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-03"
+            "0": { "offset": [2, 1], "delay": [0, 3, 0, 0, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 3, 0] }
+          }
         },
         {
           "id": 6,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 1,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-04"
+            "0": { "offset": [2, 1], "delay": [0, 6, 0, 0, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 3, 0] }
+          }
         },
         {
           "id": 7,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 1,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 0
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-02"
-        },
-        {
-          "id": 8,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 2,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-05"
-        },
-        {
-          "id": 9,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 2,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-06"
-        },
-        {
-          "id": 10,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 6,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 0
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-03"
-        },
-        {
-          "id": 11,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 0,
-                "years": 1
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-07"
-        },
-        {
-          "id": 12,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 0,
-                "years": 1
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-04"
+            "0": { "offset": [4, 0], "delay": [1, 0, 0, 0, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 3, 0] }
+          }
         }
       ]
     },
     {
-      "id": 2,
       "title": "Нормально",
+      "id": 2,
       "isDefault": true,
       "phases": [
         {
           "id": 1,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 2,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Начало"
+            "0": { "offset": [2, 1], "delay": [0, 0, 0, 3, 0] },
+            "1": { "offset": [4, 1], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 2,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 2,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-01"
+            "0": { "offset": [2, 1], "delay": [0, 0, 0, 3, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 3,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 5,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-02"
+            "0": { "offset": [2, 1], "delay": [0, 0, 1, 0, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 4,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 5,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 0
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-01"
+            "0": { "offset": [2, 1], "delay": [0, 0, 2, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 5,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-03"
+            "0": { "offset": [2, 1], "delay": [0, 1, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 3, 0] }
+          }
         },
         {
           "id": 6,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 3,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-04"
+            "0": { "offset": [2, 1], "delay": [0, 2, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 7,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 3,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 0
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-02"
+            "0": { "offset": [2, 1], "delay": [0, 3, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 8,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 2,
-                "months": 1,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-05"
+            "0": { "offset": [2, 1], "delay": [0, 6, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 9,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 2,
-                "months": 1,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-06"
-        },
-        {
-          "id": 10,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 3,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 0
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-03"
-        },
-        {
-          "id": 11,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 9,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-07"
-        },
-        {
-          "id": 12,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 9,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-04"
+            "0": { "offset": [4, 0], "delay": [1, 0, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 1, 0, 0] }
+          }
         }
       ]
     },
     {
-      "id": 3,
       "title": "Трудно",
+      "id": 3,
       "isDefault": false,
       "phases": [
         {
           "id": 1,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 4,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Начало"
+            "0": { "offset": [2, 1], "delay": [0, 0, 0, 2, 0] },
+            "1": { "offset": [4, 0], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 2,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[2, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-01"
+            "0": { "offset": [2, 0], "delay": [0, 0, 0, 2, 0] },
+            "1": { "offset": [1, 1], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 3,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-02"
+            "0": { "offset": [2, 1], "delay": [0, 0, 0, 5, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 4,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 3,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-01"
+            "0": { "offset": [2, 1], "delay": [0, 0, 1, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 5,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 4,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-03"
+            "0": { "offset": [2, 1], "delay": [0, 0, 2, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 1, 0] }
+          }
         },
         {
           "id": 6,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 1,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-04"
+            "0": { "offset": [2, 1], "delay": [0, 1, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 7,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 2,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-02"
+            "0": { "offset": [2, 1], "delay": [0, 2, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 8,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 3,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-05"
+            "0": { "offset": [2, 1], "delay": [0, 3, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 9,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 3,
-                "months": 0,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-06"
+            "0": { "offset": [2, 1], "delay": [0, 6, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 10,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 2,
-                "months": 1,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-03"
+            "0": { "offset": [2, 1], "delay": [0, 9, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         },
         {
           "id": 11,
-          "actions": [
-            {
-              "type": 2,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
+          "actions": [[3, 1]],
           "triggers": {
-            "0": {
-              "offset": {
-                "type": 2,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 6,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Прямой-07"
-        },
-        {
-          "id": 12,
-          "actions": [
-            {
-              "type": 3,
-              "times": 1
-            }
-          ],
-          "actionsDraft": {
-            "type": 1,
-            "times": 1
-          },
-          "triggers": {
-            "0": {
-              "offset": {
-                "type": 1,
-                "value": 1
-              },
-              "delay": {
-                "hours": 0,
-                "days": 0,
-                "weeks": 0,
-                "months": 6,
-                "years": 0
-              }
-            },
-            "1": {
-              "offset": {
-                "type": 1,
-                "value": 2
-              },
-              "delay": {
-                "hours": 0,
-                "days": 1,
-                "weeks": 0,
-                "months": 0,
-                "years": 0
-              }
-            }
-          },
-          "title": "Обратный-04"
+            "0": { "offset": [4, 0], "delay": [1, 0, 0, 0, 0] },
+            "1": { "offset": [1, 2], "delay": [0, 0, 0, 2, 0] }
+          }
         }
       ]
     }

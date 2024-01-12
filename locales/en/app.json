@@ -46,6 +46,12 @@
             "clear": "Clear"
           }
         }
+      },
+      "one": {
+        "export": {
+          "copy": "Copy",
+          "download": "Download"
+        }
       }
     },
     "editbar": {
@@ -83,10 +89,16 @@
     "demo": {
       "title": "Setting up a demo",
       "language": {
-        "label": "Content language",
-        "message": "Initial data will be created in this language. You can still change interface language."
+        "label": "Content language"
       },
-      "submit": "Get Started"
+      "submit": "Get Started",
+      "status": {
+        "idle": "",
+        "loading": "Loading content",
+        "success": "We're all set",
+        "error": "Something went wrong"
+      },
+      "auth": "Log In / Sign Up"
     }
   }
 }
