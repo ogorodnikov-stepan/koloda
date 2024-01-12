@@ -1,10 +1,22 @@
 @use 'assets/styles/_index.scss' as *;
 
-.feature.authentication {
+.feature[data-entity="authentication"] {
+  max-height: 25rem;
   max-width: 30rem;
   margin: auto;
 
   .feature__header { justify-content: center; }
+
+  .feature__footer {
+    text-align: center;
+    padding-block-start: 1rem;
+  }
+
+  .tabs {
+    @include flex-col;
+
+    flex-grow: 1;
+  }
 
   .tabs-header {
     gap: 1rem;
@@ -12,14 +24,24 @@
   }
 }
 
-.login-form {
-  @include flex-col($align: center, $gap: 1rem);
+.authentication__demo-link {
+  @include button-link;
 
-  padding-block: var(--content-section-padding-block);
+  padding: var(--button-padding-block) var(--button-padding-inline);
+  font-weight: 500;
+}
+
+.login-form {
+  @include flex-col($align: center, $gap: 0.5rem);
+
+  padding-block: calc(var(--content-section-padding-block) * 3) var(--content-section-padding-block);
   padding-inline: var(--content-padding-inline);
 
   &__login,
-  &__password { width: 100%; }
+  &__password {
+    min-height: 4rem;
+    width: 100%;
+  }
 
   &__submit {
     @include button-blue;
@@ -30,7 +52,6 @@
   }
 
   &__status {
-    margin-block: var(--content-section-padding-block);
     margin-inline: var(--content-padding-inline);
 
     &[data-status="error"] { color: var(--error-color); }
