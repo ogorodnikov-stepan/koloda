@@ -15,6 +15,7 @@ interface Props {
 
 export default function DemoForm({ state, dispatch }: Props) {
   const { t } = useTranslation('app');
+  const { meta: { status, isLoading, isError } } = state;
 
   const handleChange = useCallback(({ target: { value } }) => {
     dispatch(['languageUpdated', { value }]);
@@ -26,17 +27,24 @@ export default function DemoForm({ state, dispatch }: Props) {
 
   return (
     <div className="demo__form">
-      <h2 className="demo__form-title">{t(`${PREFIX}.title`)}</h2>
       <AppLanguageSelect
         label={t(`${PREFIX}.language.label`)}
+        disabled={status !== 'idle'}
         value={state.language}
         onChange={handleChange}
       />
       <Button
         className="demo__submit"
+        disabled={isLoading || isError}
         onClick={handleSubmit}
         content={t(`${PREFIX}.submit`)}
       />
+      <span
+        className="demo__status"
+        data-status={status}
+      >
+        {t(`${PREFIX}.status.${status}`)}
+      </span>
     </div>
   );
 }

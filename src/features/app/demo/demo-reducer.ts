@@ -7,7 +7,8 @@ import { UserProfile } from 'features/auth/auth-types';
 
 export interface State {
   meta: {
-    isSubmitted?: boolean;
+    status: 'idle' | 'loading' | 'error' | 'success';
+    isLoading?: boolean;
     isLoaded?: boolean;
     isCleared?: boolean;
     isDone?: boolean;
@@ -35,7 +36,9 @@ export interface State {
 }
 
 export const demoDefault: State = {
-  meta: {},
+  meta: {
+    status: 'idle',
+  },
   language: '',
   reppings: {
     ids: {},
@@ -70,16 +73,17 @@ const actions: ReducerActions = {
   deckAdded,
 };
 
-interface DataUpdatedPayload {
-  value: any;
+interface LanguageUpdatedPayload {
+  value: string;
 }
 
-function languageUpdated(draft: State, { value }: DataUpdatedPayload) {
-  if (!draft.meta.isSubmitted) draft.language = value;
+function languageUpdated(draft: State, { value }: LanguageUpdatedPayload) {
+  draft.language = value;
 }
 
 function dataSubmitted(draft: State) {
-  draft.meta.isSubmitted = true;
+  draft.meta.isLoading = true;
+  draft.meta.status = 'loading';
 }
 
 interface DataReceivedPayload {
@@ -148,10 +152,13 @@ function deckAdded(draft: State) {
 
 function userAdded(draft: State) {
   draft.meta.isDone = true;
+  draft.meta.status = 'success';
 }
 
 function errorReceived(draft: State) {
   draft.meta.isError = true;
+  draft.meta.isLoading = false;
+  draft.meta.status = 'error';
   delete draft.reppings.load;
   delete draft.reppings.add;
   delete draft.decks.load;
