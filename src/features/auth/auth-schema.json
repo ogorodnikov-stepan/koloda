@@ -16,6 +16,12 @@
       "format": "email"
     },
 
+    "login_password": {
+      "$id": "#login_password",
+      "type": "string",
+      "minLength": 1
+    },
+
     "email": {
       "$id": "#email",
       "type": "string",
@@ -63,7 +69,7 @@
       "type": "object",
       "properties": {
         "login": { "$ref": "#/definitions/login" },
-        "password": { "$ref": "#/definitions/password" }
+        "password": { "$ref": "#/definitions/login_password" }
       },
       "required": ["login", "password"],
       "additionalProperties": false
