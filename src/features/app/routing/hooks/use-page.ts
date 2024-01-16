@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useStore, setIsDemoSelector } from 'features/app/app-store';
-import { useCurrentUserQuery } from 'features/auth/auth-queries';
 import urls from 'features/app/routing/urls';
+import { useCurrentUserQuery } from 'features/auth/auth-queries';
 
 interface Props {
   isDemo?: boolean;

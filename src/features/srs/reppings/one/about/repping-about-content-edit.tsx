@@ -5,8 +5,8 @@ import urls from 'features/app/routing/urls';
 import { ReducerDispatch } from 'features/app/reducer/reducer-types';
 import { State } from 'features/srs/reppings/one/repping-reducer';
 import { useDeleteReppingMutation } from 'features/srs/reppings/reppings-queries';
-import TextInput from 'features/app/ui/form/text-input';
 import Editor from 'features/app/ui/editor/editor';
+import TextInput from 'features/app/ui/form/text-input';
 import DeleteDialog from 'features/app/ui/modal/delete-dialog/delete-dialog';
 
 const PREFIX = 'srs:reppings.one.about';

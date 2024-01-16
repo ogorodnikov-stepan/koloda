@@ -1,10 +1,10 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 import { UseMutationResult } from 'react-query';
 import { HTTPParams } from 'features/app/api/request';
 import Modal from 'features/app/ui/modal/modal';
 import Button from 'features/app/ui/form/button';
-import { useHistory } from 'react-router-dom';
 import './delete-dialog.scss';
 
 const NAVIGATE_TIMEOUT = 1000;

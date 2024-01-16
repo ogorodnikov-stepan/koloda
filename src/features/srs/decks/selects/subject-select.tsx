@@ -2,8 +2,8 @@ import { useReducer, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 import { FilterValue } from 'features/app/reducer/reducer-filters';
-import Autocomplete from 'features/app/ui/select/autocomplete';
 import { useSubjectsQuery } from 'features/srs/decks/decks-queries';
+import Autocomplete from 'features/app/ui/select/autocomplete';
 import { subjectsReducer, subjectsInit } from './subjects-reducer';
 
 const PREFIX = 'srs:decks.selects';
