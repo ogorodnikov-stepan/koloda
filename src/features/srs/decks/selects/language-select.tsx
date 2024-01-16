@@ -2,8 +2,8 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 import { FilterValue } from 'features/app/reducer/reducer-filters';
-import Autocomplete from 'features/app/ui/select/autocomplete';
 import { useLanguagesQuery } from 'features/srs/decks/decks-queries';
+import Autocomplete from 'features/app/ui/select/autocomplete';
 
 const PREFIX = 'srs:decks.selects.language';
 

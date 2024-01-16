@@ -7,9 +7,9 @@ import { State } from 'features/srs/decks/one/deck-reducer';
 import { useDeleteDeckMutation } from 'features/srs/decks/decks-queries';
 import TextInput from 'features/app/ui/form/text-input';
 import Editor from 'features/app/ui/editor/editor';
+import DeleteDialog from 'features/app/ui/modal/delete-dialog/delete-dialog';
 import SubjectSelect from 'features/srs/decks/selects/subject-select';
 import LanguageSelect from 'features/srs/decks/selects/language-select';
-import DeleteDialog from 'features/app/ui/modal/delete-dialog/delete-dialog';
 
 const PREFIX = 'srs:decks.one.about';
 const OPERATION = 'deck_update';
