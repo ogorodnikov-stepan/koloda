@@ -1,31 +1,21 @@
-import { useEffect, Suspense } from 'react';
-import WebFont from 'webfontloader';
-import { useCurrentUserQuery } from 'features/auth/auth-queries';
-import { useStore, isDemoSelector, setTutorialIsOnSelector } from 'features/app/app-store';
-import Layout from 'features/app/layout/layout';
-import 'assets/styles/normalize.scss';
-import 'assets/styles/main.scss';
-import './app.scss';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import queryClient from 'config/query';
+import 'config/i18n';
+
+const AppContent = lazy(() => import('./app-content'));
 
 export default function App() {
-  const isDemo = useStore(isDemoSelector);
-  const setTutorialIsOn = useStore(setTutorialIsOnSelector);
-  const { data } = useCurrentUserQuery({ isDemo });
-
-  useEffect(() => {
-    WebFont.load({
-      google: { families: ['Inter:100,200,300,400,500,600,700,800,900'] },
-      classes: false,
-    });
-  }, []);
-
-  useEffect(() => {
-    setTutorialIsOn(data?.data?.tutorial?.isDone === false);
-  }, [data?.data?.tutorial?.isDone]);
-
   return (
     <Suspense fallback={null}>
-      <Layout />
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <AppContent />
+        </Router>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </Suspense>
   );
 }
